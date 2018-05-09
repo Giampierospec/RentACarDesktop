@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userTxt = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.passTxt = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.errLabel = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
-            // textBox1
+            // userTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(242, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 22);
-            this.textBox1.TabIndex = 0;
+            this.userTxt.Location = new System.Drawing.Point(242, 137);
+            this.userTxt.Name = "userTxt";
+            this.userTxt.Size = new System.Drawing.Size(198, 22);
+            this.userTxt.TabIndex = 0;
             // 
             // materialLabel1
             // 
@@ -56,13 +57,13 @@
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "Usuario";
             // 
-            // textBox2
+            // passTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(242, 179);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(198, 22);
-            this.textBox2.TabIndex = 2;
+            this.passTxt.Location = new System.Drawing.Point(242, 179);
+            this.passTxt.Name = "passTxt";
+            this.passTxt.PasswordChar = '*';
+            this.passTxt.Size = new System.Drawing.Size(198, 22);
+            this.passTxt.TabIndex = 2;
             // 
             // materialLabel2
             // 
@@ -77,28 +78,43 @@
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Contraseña";
             // 
-            // materialRaisedButton1
+            // btnLogin
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(242, 234);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(172, 28);
-            this.materialRaisedButton1.TabIndex = 4;
-            this.materialRaisedButton1.Text = "Ingresar";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.btnLogin.Depth = 0;
+            this.btnLogin.Location = new System.Drawing.Point(242, 234);
+            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Primary = true;
+            this.btnLogin.Size = new System.Drawing.Size(172, 28);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Ingresar";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.MouseHover += new System.EventHandler(this.btnLogin_MouseHover);
+            // 
+            // errLabel
+            // 
+            this.errLabel.AutoSize = true;
+            this.errLabel.Depth = 0;
+            this.errLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.errLabel.ForeColor = System.Drawing.Color.Red;
+            this.errLabel.Location = new System.Drawing.Point(242, 81);
+            this.errLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.errLabel.Name = "errLabel";
+            this.errLabel.Size = new System.Drawing.Size(0, 24);
+            this.errLabel.TabIndex = 5;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 397);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.errLabel);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.passTxt);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userTxt);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.Text = "Rent A Car - Login";
@@ -110,11 +126,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox userTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox passTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
+        private MaterialSkin.Controls.MaterialLabel errLabel;
     }
 }
 

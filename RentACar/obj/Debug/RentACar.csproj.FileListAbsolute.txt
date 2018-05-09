@@ -9,3 +9,7 @@ C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.csproj.CoreCompileInputs.cache
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.exe
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.pdb
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\bin\Debug\EntityFramework.dll
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\bin\Debug\EntityFramework.xml
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\bin\Debug\EntityFramework.SqlServer.xml

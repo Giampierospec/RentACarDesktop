@@ -57,15 +57,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\Cliente.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Empleado.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Estado.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Inspeccion.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Marca.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Modelo.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Renta.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\RentCar.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RentCar.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Context\RentCar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\RentCar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RentCar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Rol.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\TipoCombustible.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\TipoVehiculo.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Usuario.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Vehiculo.cs">
+      <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -73,8 +114,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\UserRepo.cs" />
+    <Compile Include="Utils\Validate.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +157,12 @@
     <Content Include="Context\RentCar.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RentCar.Context.cs</LastGenOutput>
+      <DependentUpon>RentCar.edmx</DependentUpon>
+    </Content>
+    <Content Include="Context\RentCar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RentCar.edmx</DependentUpon>
+      <LastGenOutput>RentCar.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
