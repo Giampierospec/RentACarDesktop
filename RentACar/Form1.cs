@@ -13,5 +13,10 @@ namespace RentACar
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
+
+        private void LoginForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
