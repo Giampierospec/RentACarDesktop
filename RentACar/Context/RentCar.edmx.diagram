@@ -40,6 +40,13 @@
         <AssociationConnector Association="RentCarModel.FK_ID_ROL" ManuallyRouted="false" />
         <AssociationConnector Association="RentCarModel.FK_ID_TIPO_COMBUSTIBLE_VH" ManuallyRouted="false" />
         <AssociationConnector Association="RentCarModel.FK_ID_TIPO_VEHICULO_VH" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK_ID_USER_IN" />
+        <AssociationConnector Association="RentCarModel.FK_ID_USER_MR" />
+        <AssociationConnector Association="RentCarModel.FK_ID_USER_MD" />
+        <AssociationConnector Association="RentCarModel.FK_ID_USER_R" />
+        <AssociationConnector Association="RentCarModel.FK_ID_USER_TC" />
+        <AssociationConnector Association="RentCarModel.FK_ID_USER_TP" />
+        <AssociationConnector Association="RentCarModel.FK_ID_USER_VH" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

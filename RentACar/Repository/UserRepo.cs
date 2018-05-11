@@ -17,12 +17,20 @@ namespace RentACar.Repository
             _db = new RentCarContext();
         }
         /// <summary>
-        /// Funcion para revisar si el usuario existe
+        /// Funcion para devolver el usuario
+        /// <paramref name="loginModel"/>
         /// </summary>
         /// <returns></returns>
-        public bool CheckIfUserExists(LoginModel loginModel)
+        public Usuario GetUserByEmailAddress(LoginModel loginModel)
         {
-            return _db.Usuarios.Any(x => x.Email == loginModel.Usuario && x.Pass == loginModel.Password);
+            return _db.Usuarios.FirstOrDefault(x => x.Email == loginModel.Usuario && x.Pass == loginModel.Password);
         }
+        /// <summary>
+        /// Funcion para conseguir el usuario mediante el Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Usuario GetUserById(int id) => _db.Usuarios.FirstOrDefault(x => x.Id == id);
+        
     }
 }

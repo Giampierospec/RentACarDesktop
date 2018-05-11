@@ -24,10 +24,12 @@ namespace RentACar.Context
         public string Descripcion { get; set; }
         public Nullable<int> Id_Estado { get; set; }
         public Nullable<int> Id_Marca { get; set; }
+        public Nullable<int> Id_User { get; set; }
     
         public virtual Estado Estado { get; set; }
         public virtual Marca Marca { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vehiculo> Vehiculoes { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

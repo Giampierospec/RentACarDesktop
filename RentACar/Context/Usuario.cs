@@ -19,6 +19,13 @@ namespace RentACar.Context
         {
             this.Clientes = new HashSet<Cliente>();
             this.Empleadoes = new HashSet<Empleado>();
+            this.Inspeccions = new HashSet<Inspeccion>();
+            this.Marcas = new HashSet<Marca>();
+            this.Modeloes = new HashSet<Modelo>();
+            this.Rentas = new HashSet<Renta>();
+            this.TipoCombustibles = new HashSet<TipoCombustible>();
+            this.TipoVehiculoes = new HashSet<TipoVehiculo>();
+            this.Vehiculoes = new HashSet<Vehiculo>();
         }
     
         public int Id { get; set; }
@@ -31,5 +38,19 @@ namespace RentACar.Context
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Empleado> Empleadoes { get; set; }
         public virtual Rol Rol { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Inspeccion> Inspeccions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Marca> Marcas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Modelo> Modeloes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Renta> Rentas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TipoCombustible> TipoCombustibles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TipoVehiculo> TipoVehiculoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Vehiculo> Vehiculoes { get; set; }
     }
 }

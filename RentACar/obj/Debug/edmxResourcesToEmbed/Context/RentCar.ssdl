@@ -49,6 +49,7 @@
     <Property Name="Id_Vehiculo" Type="int" />
     <Property Name="Id_Cliente" Type="int" />
     <Property Name="Id_Estado" Type="int" />
+    <Property Name="Id_User" Type="int" />
   </EntityType>
   <EntityType Name="Marca">
     <Key>
@@ -57,6 +58,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="varchar(max)" />
     <Property Name="Id_Estado" Type="int" />
+    <Property Name="Id_User" Type="int" />
   </EntityType>
   <EntityType Name="Modelo">
     <Key>
@@ -66,6 +68,7 @@
     <Property Name="Descripcion" Type="varchar(max)" />
     <Property Name="Id_Estado" Type="int" />
     <Property Name="Id_Marca" Type="int" />
+    <Property Name="Id_User" Type="int" />
   </EntityType>
   <EntityType Name="Renta">
     <Key>
@@ -81,6 +84,7 @@
     <Property Name="Id_Vehiculo" Type="int" />
     <Property Name="Id_Cliente" Type="int" />
     <Property Name="Id_Estado" Type="int" />
+    <Property Name="Id_User" Type="int" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>
@@ -96,6 +100,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="varchar(max)" />
     <Property Name="Id_Estado" Type="int" />
+    <Property Name="Id_User" Type="int" />
   </EntityType>
   <EntityType Name="TipoVehiculo">
     <Key>
@@ -104,6 +109,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="varchar(max)" />
     <Property Name="Id_Estado" Type="int" />
+    <Property Name="Id_User" Type="int" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
@@ -128,6 +134,7 @@
     <Property Name="Id_Modelo" Type="int" />
     <Property Name="Id_Tipo_Combustible" Type="int" />
     <Property Name="Id_Estado" Type="int" />
+    <Property Name="Id_User" Type="int" />
   </EntityType>
   <Association Name="FK_ID_CLIENTE_IN">
     <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
@@ -381,6 +388,90 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ID_USER_IN">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Inspeccion" Type="Self.Inspeccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inspeccion">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USER_MD">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Modelo">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USER_MR">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Marca" Type="Self.Marca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Marca">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USER_R">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Renta" Type="Self.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USER_TC">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoCombustible" Type="Self.TipoCombustible" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TipoCombustible">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USER_TP">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="TipoVehiculo" Type="Self.TipoVehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TipoVehiculo">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USER_VH">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ID_VEHICULO_IN">
     <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="0..1" />
     <End Role="Inspeccion" Type="Self.Inspeccion" Multiplicity="*" />
@@ -501,6 +592,34 @@
     <AssociationSet Name="FK_ID_USER_EM" Association="Self.FK_ID_USER_EM">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USER_IN" Association="Self.FK_ID_USER_IN">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Inspeccion" EntitySet="Inspeccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USER_MD" Association="Self.FK_ID_USER_MD">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Modelo" EntitySet="Modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USER_MR" Association="Self.FK_ID_USER_MR">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Marca" EntitySet="Marca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USER_R" Association="Self.FK_ID_USER_R">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Renta" EntitySet="Renta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USER_TC" Association="Self.FK_ID_USER_TC">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoCombustible" EntitySet="TipoCombustible" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USER_TP" Association="Self.FK_ID_USER_TP">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="TipoVehiculo" EntitySet="TipoVehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USER_VH" Association="Self.FK_ID_USER_VH">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
     </AssociationSet>
     <AssociationSet Name="FK_ID_VEHICULO_IN" Association="Self.FK_ID_VEHICULO_IN">
       <End Role="Vehiculo" EntitySet="Vehiculo" />

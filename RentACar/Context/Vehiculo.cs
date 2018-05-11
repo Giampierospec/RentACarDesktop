@@ -31,6 +31,7 @@ namespace RentACar.Context
         public Nullable<int> Id_Modelo { get; set; }
         public Nullable<int> Id_Tipo_Combustible { get; set; }
         public Nullable<int> Id_Estado { get; set; }
+        public Nullable<int> Id_User { get; set; }
     
         public virtual Estado Estado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -41,5 +42,6 @@ namespace RentACar.Context
         public virtual ICollection<Renta> Rentas { get; set; }
         public virtual TipoCombustible TipoCombustible { get; set; }
         public virtual TipoVehiculo TipoVehiculo { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }
