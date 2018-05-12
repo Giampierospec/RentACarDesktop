@@ -16,24 +16,35 @@ namespace RentACar
     {
         private int _userId;
         private VehiculosRepo _vehRepo;
+        private UserRepo _userRepo;
         private int _vehiculoId = 0;
 
         public VehiculosForm(int id = 0)
         {
-            _userId = 0;
+            _userId = id;
             InitializeComponent();
             _vehRepo = new VehiculosRepo();
+            _userRepo = new UserRepo();
         }
 
         private void VehiculosForm_Load(object sender, EventArgs e)
         {
             vehiculosTable.DataSource = _vehRepo.GetAllVehiculos();
+            var user = _userRepo.GetUserById(_userId);
+            if(user != null)
+            {
+                if(user.Id_Rol == 2)
+                {
+                    insertVehiculoBtn.Enabled = false;
+                    editarVehiculoBtn.Enabled = false;
+                }
+            }
             
         }
 
         private void insertVehiculoBtn_Click(object sender, EventArgs e)
         {
-            var insertVehiculoForm = new InsertVehiculoForm(_userId);
+            var insertVehiculoForm = new InsertVehiculoForm(_userId,0,"Insertar");
             Hide();
             insertVehiculoBtn.Enabled = false;
             insertVehiculoForm.ShowDialog();
@@ -43,6 +54,21 @@ namespace RentACar
         private void vehiculosTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             _vehiculoId = int.Parse(vehiculosTable.Rows[e.RowIndex].Cells[0].Value.ToString());
+        }
+
+        private void editarVehiculoBtn_Click(object sender, EventArgs e)
+        {
+            if(_vehiculoId == 0)
+            {
+                MessageBox.Show("Escoja una fila para Editar sus propiedades");
+            }
+            else
+            {
+                Hide();
+                var insertVehiculosForm = new InsertVehiculoForm(_userId,_vehiculoId,"Editar");
+                insertVehiculosForm.ShowDialog();
+                Close();
+            }
         }
     }
 }

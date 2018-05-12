@@ -278,7 +278,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InsertVehiculoForm";
-            this.Text = "Rent A Car - Insertar Vehiculo";
+            this.Text = "Rent A Car - ";
             this.Load += new System.EventHandler(this.InsertVehiculoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,6 +12,7 @@ namespace RentACar.Models
         public string Descripcion { get; set; }
         public string NoChasis { get; set; }
         public string NoPlaca { get; set; }
+        public string NoMotor { get; set; }
         public string TipoVehiculo { get; set; }
         public string  Marca { get; set; }
         public string Modelo { get; set; }

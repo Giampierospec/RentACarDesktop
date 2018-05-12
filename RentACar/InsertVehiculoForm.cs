@@ -20,18 +20,22 @@ namespace RentACar
         private int _vehiculoId;
         private LoadComboBoxesRepo _comboBoxesRepo;
         private VehiculosRepo _vhRepo;
+        private string _keyword;
 
-        public InsertVehiculoForm(int userId = 0, int VehiculoId = 0)
+        public InsertVehiculoForm(int userId = 0, int VehiculoId = 0, string keyword = "")
         {
             _userId = userId;
             _vehiculoId = VehiculoId;
             _comboBoxesRepo = new LoadComboBoxesRepo();
             _vhRepo = new VehiculosRepo();
+            _keyword = keyword;
             InitializeComponent();
         }
 
         private void InsertVehiculoForm_Load(object sender, EventArgs e)
         {
+            Text += $" {_keyword}";
+            btnEnviarVehiculo.Text = _keyword;
             if (_vehiculoId == 0)
             {
                 InitializeTextBoxes();
@@ -72,11 +76,15 @@ namespace RentACar
         }
         private void SetValues(Vehiculo vh)
         {
-            marcaSelectVh.SelectedValue = vh.Marca;
-            tipoVehiculoSelectVh.SelectedValue = vh.TipoVehiculo;
-            tipoCombustibleSelectVh.SelectedValue = vh.TipoCombustible;
-            estadoSelectVh.SelectedValue = vh.Estado;
-            modeloSelectVh.SelectedValue = vh.Modelo;
+            txtDescripcionVehiculo.Text = vh.Descripcion;
+            txtNoChasis.Text = vh.NoChasis;
+            txtNoMotor.Text = vh.NoMotor;
+            txtNoPlaca.Text = vh.NoPlaca;
+            marcaSelectVh.SelectedValue = vh.Marca.Id;
+            tipoVehiculoSelectVh.SelectedValue = vh.TipoVehiculo.Id;
+            tipoCombustibleSelectVh.SelectedValue = vh.TipoCombustible.Id;
+            estadoSelectVh.SelectedValue = vh.Estado.Id;
+            modeloSelectVh.SelectedValue = vh.Modelo.Id;
         }
         private void ArrangeModelo()
         {
@@ -92,27 +100,48 @@ namespace RentACar
         {
             try
             {
-                btnEnviarVehiculo.Enabled = false;
-                Cursor = Cursors.WaitCursor;
-                _vhRepo.InsertVehiculos(new Context.Vehiculo()
+                var errorMsg = Utils.Validate.GenerateErrorMessage(this);
+                if (string.IsNullOrEmpty(errorMsg))
                 {
-                    Descripcion = txtDescripcionVehiculo.Text.Trim(),
-                    NoChasis = txtNoChasis.Text.Trim(),
-                    NoMotor = txtNoMotor.Text.Trim(),
-                    NoPlaca = txtNoPlaca.Text.Trim(),
-                    Id_Estado = int.Parse(estadoSelectVh.SelectedValue.ToString()),
-                    Id_Marca = int.Parse(marcaSelectVh.SelectedValue.ToString()),
-                    Id_Modelo = int.Parse(modeloSelectVh.SelectedValue.ToString()),
-                    Id_TipoVehiculo = int.Parse(tipoVehiculoSelectVh.SelectedValue.ToString()),
-                    Id_Tipo_Combustible = int.Parse(tipoCombustibleSelectVh.SelectedValue.ToString()),
-                    Id_User = _userId
-                });
-                if(MessageBox.Show("Usuario Insertado Correctamente") == DialogResult.OK)
+
+                    var vehiculoExists = _vhRepo.VehiculoExists(txtDescripcionVehiculo.Text);
+                    btnEnviarVehiculo.Enabled = false;
+                    if (vehiculoExists && _vehiculoId == 0)
+                    {
+
+                        btnEnviarVehiculo.Enabled = true;
+                        MessageBox.Show("El vehiculo ya existe por favor intente denuevo");
+                    }
+                    else
+                    {
+                        Cursor = Cursors.WaitCursor;
+                        _vhRepo.InsertVehiculos(new Context.Vehiculo()
+                        {
+                            Id = _vehiculoId,
+                            Descripcion = txtDescripcionVehiculo.Text.Trim(),
+                            NoChasis = txtNoChasis.Text.Trim(),
+                            NoMotor = txtNoMotor.Text.Trim(),
+                            NoPlaca = txtNoPlaca.Text.Trim(),
+                            Id_Estado = int.Parse(estadoSelectVh.SelectedValue.ToString()),
+                            Id_Marca = int.Parse(marcaSelectVh.SelectedValue.ToString()),
+                            Id_Modelo = int.Parse(modeloSelectVh.SelectedValue.ToString()),
+                            Id_TipoVehiculo = int.Parse(tipoVehiculoSelectVh.SelectedValue.ToString()),
+                            Id_Tipo_Combustible = int.Parse(tipoCombustibleSelectVh.SelectedValue.ToString()),
+                            Id_User = _userId
+                        });
+                        if (MessageBox.Show("Usuario Procesado Correctamente") == DialogResult.OK)
+                        {
+                            var vehiculosForm = new VehiculosForm();
+                            Hide();
+                            vehiculosForm.ShowDialog();
+                            Close();
+                        }
+                    }
+                }
+                else
                 {
-                    var vehiculosForm = new VehiculosForm();
-                    Hide();
-                    vehiculosForm.ShowDialog();
-                    Close();
+                    btnEnviarVehiculo.Enabled = true;
+                    MessageBox.Show(errorMsg);
                 }
 
             }

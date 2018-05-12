@@ -64,6 +64,7 @@
             this.editarVehiculoBtn.TabIndex = 1;
             this.editarVehiculoBtn.Text = "Editar Vehiculo";
             this.editarVehiculoBtn.UseVisualStyleBackColor = true;
+            this.editarVehiculoBtn.Click += new System.EventHandler(this.editarVehiculoBtn_Click);
             // 
             // vehiculosTable
             // 
