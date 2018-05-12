@@ -16,3 +16,7 @@ C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.MainForm.resources
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.VehiculosForm.resources
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.InsertVehiculoForm.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.TipoVehiculoForm.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModifyTipoVehiculosForm.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.MarcasForm.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModifyMarca.resources

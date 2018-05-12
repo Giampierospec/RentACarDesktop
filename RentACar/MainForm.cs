@@ -25,9 +25,31 @@ namespace RentACar
         private void vehiculoBtn_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-            vehiculoBtn.Enabled = false;
+            Utils.Validate.LockBtns(this);
             Thread.Sleep(2000);
             var vehiculosForm = new VehiculosForm(_id);
+            Hide();
+            vehiculosForm.ShowDialog();
+            Close();
+        }
+
+        private void tpVehiculoBtn_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            Utils.Validate.LockBtns(this);
+            Thread.Sleep(2000);
+            var vehiculosForm = new TipoVehiculoForm(_id);
+            Hide();
+            vehiculosForm.ShowDialog();
+            Close();
+        }
+
+        private void marcasBtn_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            Utils.Validate.LockBtns(this);
+            Thread.Sleep(2000);
+            var vehiculosForm = new MarcasForm(_id);
             Hide();
             vehiculosForm.ShowDialog();
             Close();

@@ -34,7 +34,7 @@ namespace RentACar
 
         private void InsertVehiculoForm_Load(object sender, EventArgs e)
         {
-            Text += $" {_keyword}";
+            Text += $" {_keyword} Vehiculos";
             btnEnviarVehiculo.Text = _keyword;
             if (_vehiculoId == 0)
             {
@@ -131,7 +131,7 @@ namespace RentACar
                         });
                         if (MessageBox.Show("Usuario Procesado Correctamente") == DialogResult.OK)
                         {
-                            var vehiculosForm = new VehiculosForm();
+                            var vehiculosForm = new VehiculosForm(_userId);
                             Hide();
                             vehiculosForm.ShowDialog();
                             Close();

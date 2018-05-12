@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.vehiculoBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.tpVehiculoBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.marcasBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // vehiculoBtn
@@ -48,11 +50,45 @@
             this.vehiculoBtn.UseVisualStyleBackColor = true;
             this.vehiculoBtn.Click += new System.EventHandler(this.vehiculoBtn_Click);
             // 
+            // tpVehiculoBtn
+            // 
+            this.tpVehiculoBtn.AutoSize = true;
+            this.tpVehiculoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tpVehiculoBtn.Depth = 0;
+            this.tpVehiculoBtn.Location = new System.Drawing.Point(185, 141);
+            this.tpVehiculoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.tpVehiculoBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tpVehiculoBtn.Name = "tpVehiculoBtn";
+            this.tpVehiculoBtn.Primary = false;
+            this.tpVehiculoBtn.Size = new System.Drawing.Size(147, 36);
+            this.tpVehiculoBtn.TabIndex = 1;
+            this.tpVehiculoBtn.Text = "Tipo Vehiculos";
+            this.tpVehiculoBtn.UseVisualStyleBackColor = true;
+            this.tpVehiculoBtn.Click += new System.EventHandler(this.tpVehiculoBtn_Click);
+            // 
+            // marcasBtn
+            // 
+            this.marcasBtn.AutoSize = true;
+            this.marcasBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.marcasBtn.Depth = 0;
+            this.marcasBtn.Location = new System.Drawing.Point(370, 141);
+            this.marcasBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.marcasBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.marcasBtn.Name = "marcasBtn";
+            this.marcasBtn.Primary = false;
+            this.marcasBtn.Size = new System.Drawing.Size(83, 36);
+            this.marcasBtn.TabIndex = 2;
+            this.marcasBtn.Text = "Marcas";
+            this.marcasBtn.UseVisualStyleBackColor = true;
+            this.marcasBtn.Click += new System.EventHandler(this.marcasBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 449);
+            this.Controls.Add(this.marcasBtn);
+            this.Controls.Add(this.tpVehiculoBtn);
             this.Controls.Add(this.vehiculoBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -65,5 +101,7 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialFlatButton vehiculoBtn;
+        private MaterialSkin.Controls.MaterialFlatButton tpVehiculoBtn;
+        private MaterialSkin.Controls.MaterialFlatButton marcasBtn;
     }
 }

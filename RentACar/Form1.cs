@@ -28,8 +28,7 @@ namespace RentACar
         private void btnLogin_Click(object sender, System.EventArgs e)
         {
             btnLogin.Cursor = Cursors.WaitCursor;
-            userTxt.ReadOnly = true;
-            passTxt.ReadOnly = true;
+            Utils.Validate.LockControls(this);
            var user =  _repo.GetUserByEmailAddress(new Models.LoginModel()
             {
                 Usuario = userTxt.Text.Trim(),
@@ -37,13 +36,13 @@ namespace RentACar
             });
             if (user == null)
             {
-                userTxt.ReadOnly = false;
-                passTxt.ReadOnly = false;
+                Utils.Validate.UnLockControls(this);
                 errLabel.ForeColor = Color.Red;
-                errLabel.Text = $"El usuario {userTxt.Text.Trim()} no existe  o la contraseña es incorrecta";
+               MessageBox.Show($"El usuario {userTxt.Text.Trim()} no existe  o la contraseña es incorrecta");
             }
             else
             {
+
                 Hide();
                 var mainForm = new MainForm(user.Id);
                 mainForm.ShowDialog();

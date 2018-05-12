@@ -33,5 +33,61 @@ namespace RentACar.Utils
                 finalString = $"Siguientes campos están vacíos \n {validateMsg}";
             return finalString;
         }
+        /// <summary>
+        /// Lockea Controles
+        /// <paramref name="ctrl"/>
+        /// </summary>
+        public static void LockControls(Control ctrls)
+        {
+            foreach (Control ctrl in ctrls.Controls)
+            {
+                if(ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(CheckBox))
+                {
+                    ctrl.Enabled = false;
+                }
+            }
+        }
+        /// <summary>
+        ///Desbloquea Controles
+        /// <paramref name="ctrl"/>
+        /// </summary>
+        public static void UnLockControls(Control ctrls)
+        {
+            foreach (Control ctrl in ctrls.Controls)
+            {
+                if (ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(CheckBox))
+                {
+                    ctrl.Enabled = true;
+                }
+            }
+        }
+        /// <summary>
+        /// Bloquea los botones
+        /// </summary>
+        /// <param name="ctrls"></param>
+        public static void LockBtns(Control ctrls)
+        {
+            foreach (Control ctrl in ctrls.Controls)
+            {
+                if (ctrl.GetType() == typeof(Button) || ctrl.GetType() == typeof(MaterialSkin.Controls.MaterialFlatButton))
+                {
+                    ctrl.Enabled = false;
+                }
+            }
+        }
+        /// <summary>
+        /// Activa los botones
+        /// </summary>
+        /// <param name="ctrls"></param>
+        public static void EnableBtns(Control ctrls)
+        {
+            foreach (Control ctrl in ctrls.Controls)
+            {
+                if (ctrl.GetType() == typeof(Button) || ctrl.GetType() == typeof(MaterialSkin.Controls.MaterialFlatButton))
+                {
+                    ctrl.Enabled = true;
+                }
+            }
+        }
     }
 }

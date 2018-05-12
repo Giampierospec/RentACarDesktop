@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -44,9 +45,10 @@ namespace RentACar
 
         private void insertVehiculoBtn_Click(object sender, EventArgs e)
         {
+            Utils.Validate.LockBtns(this);
             var insertVehiculoForm = new InsertVehiculoForm(_userId,0,"Insertar");
+            Thread.Sleep(2000);
             Hide();
-            insertVehiculoBtn.Enabled = false;
             insertVehiculoForm.ShowDialog();
             Close();
         }
@@ -64,6 +66,8 @@ namespace RentACar
             }
             else
             {
+                Utils.Validate.LockBtns(this);
+                Thread.Sleep(2000);
                 Hide();
                 var insertVehiculosForm = new InsertVehiculoForm(_userId,_vehiculoId,"Editar");
                 insertVehiculosForm.ShowDialog();
