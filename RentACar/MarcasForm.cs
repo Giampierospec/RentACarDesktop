@@ -69,5 +69,16 @@ namespace RentACar
                 Close();
             }
         }
+
+        private void logoutMarcaMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils.Returning.ReturnToLogin(this);
+        }
+
+        private void atrásMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils.Returning.ReturnToPreviousForm(this, new MainForm(_userId));
+            
+        }
     }
 }

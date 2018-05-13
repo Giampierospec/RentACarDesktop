@@ -88,6 +88,7 @@ namespace RentACar
         }
         private void ArrangeModelo()
         {
+            modeloSelectVh.DataSource = null;
             int marcaId;
             int.TryParse(marcaSelectVh.SelectedValue.ToString(), out marcaId);
 
@@ -131,10 +132,8 @@ namespace RentACar
                         });
                         if (MessageBox.Show("Usuario Procesado Correctamente") == DialogResult.OK)
                         {
-                            var vehiculosForm = new VehiculosForm(_userId);
-                            Hide();
-                            vehiculosForm.ShowDialog();
-                            Close();
+                            Utils.Returning.ReturnToPreviousForm(this,new VehiculosForm(_userId));
+                            
                         }
                     }
                 }
@@ -149,6 +148,16 @@ namespace RentACar
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void atrásMenuVhItem_Click(object sender, EventArgs e)
+        {
+            Utils.Returning.ReturnToPreviousForm(this,new VehiculosForm(_userId));
+        }
+
+        private void marcaSelectVh_ValueMemberChanged(object sender, EventArgs e)
+        {
+            ArrangeModelo();
         }
     }
 }

@@ -41,7 +41,7 @@ namespace RentACar.Utils
         {
             foreach (Control ctrl in ctrls.Controls)
             {
-                if(ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(CheckBox))
+                if(ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox))
                 {
                     ctrl.Enabled = false;
                 }
@@ -55,7 +55,7 @@ namespace RentACar.Utils
         {
             foreach (Control ctrl in ctrls.Controls)
             {
-                if (ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(CheckBox))
+                if (ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox))
                 {
                     ctrl.Enabled = true;
                 }

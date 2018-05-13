@@ -54,7 +54,9 @@ namespace RentACar.Repository
                 var mrc = _db.Marcas.FirstOrDefault(x => x.Id == mr.Id);
                 mrc.Id_Estado = mr.Id_Estado;
                 mrc.Descripcion = mr.Descripcion;
+                mrc.Id_User = mr.Id_User;
             }
+            _db.SaveChanges();
         }
 
 

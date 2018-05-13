@@ -66,36 +66,50 @@ namespace RentACar
                 Cursor = Cursors.WaitCursor;
                 Utils.Validate.LockBtns(this);
                 Utils.Validate.LockControls(this);
-                var marcaExists = _marcasRepo.CheckMarcaExists(marcaTxt.Text.Trim());
-                if (marcaExists && _marcaId == 0)
+                var errorMessage = Utils.Validate.GenerateErrorMessage(this);
+                if (string.IsNullOrEmpty(errorMessage))
                 {
-                    MessageBox.Show("La marca ya existe intente denuevo");
-                    Utils.Validate.UnLockControls(this);
-                    Utils.Validate.EnableBtns(this);
+                    var marcaExists = _marcasRepo.CheckMarcaExists(marcaTxt.Text.Trim());
+                    if (marcaExists && _marcaId == 0)
+                    {
+                        MessageBox.Show("La marca ya existe intente denuevo");
+                        Utils.Validate.UnLockControls(this);
+                        Utils.Validate.EnableBtns(this);
+                    }
+                    else
+                    {
+                        _marcasRepo.InsertMarca(new Context.Marca()
+                        {
+                            Descripcion = marcaTxt.Text,
+                            Id_Estado = int.Parse(estadoTxt.SelectedValue.ToString()),
+                            Id_User = _userId,
+                            Id = _marcaId
+                        });
+                        if (MessageBox.Show("Marca Procesada Correctamente") == DialogResult.OK)
+                        {
+                            Utils.Returning.ReturnToPreviousForm(this,new MarcasForm(_userId));
+                        }
+                    }
                 }
                 else
                 {
-                    _marcasRepo.InsertMarca(new Context.Marca()
-                    {
-                        Descripcion = marcaTxt.Text,
-                        Id_Estado = int.Parse(estadoTxt.SelectedValue.ToString()),
-                        Id_User = _userId,
-                        Id = _marcaId
-                    });
-                    if(MessageBox.Show("Marca Procesada Correctamente") == DialogResult.OK)
-                    {
-                        Thread.Sleep(2000);
-                        Hide();
-                        var marcasForm = new MarcasForm(_userId);
-                        marcasForm.ShowDialog();
-                        Close();
-                    }
+                    MessageBox.Show(errorMessage);
                 }
             }
             catch
             {
                 MessageBox.Show("No se pudo procesar la Marca");
             }
+        }
+
+        private void atrToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            Thread.Sleep(2000);
+            Hide();
+            var mainLogin = new MarcasForm();
+            mainLogin.ShowDialog();
+            Close();
         }
     }
 }

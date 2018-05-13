@@ -28,7 +28,10 @@ namespace RentACar.Repository
                 Id = x.Id
             })
             .ToList();
-
+        /// <summary>
+        /// Inserta el tipo de vehiculo
+        /// </summary>
+        /// <param name="tp"></param>
         public void InsertTipoVehiculo(TipoVehiculo tp)
         {
             if(tp.Id == 0)

@@ -31,7 +31,11 @@
             this.TVehiculosTable = new System.Windows.Forms.DataGridView();
             this.editarVehiculoBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.insertTVehiculoBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.logoutTVMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrásMenuTvItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.TVehiculosTable)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TVehiculosTable
@@ -81,11 +85,38 @@
             this.insertTVehiculoBtn.UseVisualStyleBackColor = true;
             this.insertTVehiculoBtn.Click += new System.EventHandler(this.insertTVehiculoBtn_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logoutTVMenuItem,
+            this.atrásMenuTvItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(915, 28);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // logoutTVMenuItem
+            // 
+            this.logoutTVMenuItem.Name = "logoutTVMenuItem";
+            this.logoutTVMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.logoutTVMenuItem.Text = "Logout";
+            this.logoutTVMenuItem.Click += new System.EventHandler(this.logoutTVMenuItem_Click);
+            // 
+            // atrásMenuTvItem
+            // 
+            this.atrásMenuTvItem.Name = "atrásMenuTvItem";
+            this.atrásMenuTvItem.Size = new System.Drawing.Size(55, 24);
+            this.atrásMenuTvItem.Text = "Atrás";
+            this.atrásMenuTvItem.Click += new System.EventHandler(this.atrásMenuTvItem_Click);
+            // 
             // TipoVehiculoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 519);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.TVehiculosTable);
             this.Controls.Add(this.editarVehiculoBtn);
             this.Controls.Add(this.insertTVehiculoBtn);
@@ -93,6 +124,8 @@
             this.Text = "Rent A Car - Tipo Vehiculos";
             this.Load += new System.EventHandler(this.TipoVehiculoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TVehiculosTable)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +136,8 @@
         private System.Windows.Forms.DataGridView TVehiculosTable;
         private MaterialSkin.Controls.MaterialFlatButton editarVehiculoBtn;
         private MaterialSkin.Controls.MaterialFlatButton insertTVehiculoBtn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem logoutTVMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atrásMenuTvItem;
     }
 }

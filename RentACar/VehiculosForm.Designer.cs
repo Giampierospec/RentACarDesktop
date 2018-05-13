@@ -31,7 +31,11 @@
             this.insertVehiculoBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.editarVehiculoBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.vehiculosTable = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.logoutVhMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrásMenuVhItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosTable)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // insertVehiculoBtn
@@ -81,11 +85,38 @@
             this.vehiculosTable.TabIndex = 2;
             this.vehiculosTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vehiculosTable_CellClick);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logoutVhMenuItem,
+            this.atrásMenuVhItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(953, 28);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // logoutVhMenuItem
+            // 
+            this.logoutVhMenuItem.Name = "logoutVhMenuItem";
+            this.logoutVhMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.logoutVhMenuItem.Text = "Logout";
+            this.logoutVhMenuItem.Click += new System.EventHandler(this.logoutVhMenuItem_Click);
+            // 
+            // atrásMenuVhItem
+            // 
+            this.atrásMenuVhItem.Name = "atrásMenuVhItem";
+            this.atrásMenuVhItem.Size = new System.Drawing.Size(55, 24);
+            this.atrásMenuVhItem.Text = "Atrás";
+            this.atrásMenuVhItem.Click += new System.EventHandler(this.atrásMenuVhItem_Click);
+            // 
             // VehiculosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 571);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.vehiculosTable);
             this.Controls.Add(this.editarVehiculoBtn);
             this.Controls.Add(this.insertVehiculoBtn);
@@ -93,6 +124,8 @@
             this.Text = "Rent A Car - Vehiculos";
             this.Load += new System.EventHandler(this.VehiculosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosTable)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +136,8 @@
         private MaterialSkin.Controls.MaterialFlatButton insertVehiculoBtn;
         private MaterialSkin.Controls.MaterialFlatButton editarVehiculoBtn;
         private System.Windows.Forms.DataGridView vehiculosTable;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem logoutVhMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atrásMenuVhItem;
     }
 }

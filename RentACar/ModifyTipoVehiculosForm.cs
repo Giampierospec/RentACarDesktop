@@ -87,11 +87,7 @@ namespace RentACar
                         });
                         if(MessageBox.Show("Tipo Vehiculo Procesado Correctamente") == DialogResult.OK)
                         {
-                            Hide();
-                            var tipoVehiculosForm = new TipoVehiculoForm(_userId);
-                            Thread.Sleep(2000);
-                            tipoVehiculosForm.ShowDialog();
-                            Close();
+                            Utils.Returning.ReturnToPreviousForm(this,new TipoVehiculoForm(_userId));
                         }
                     }
                 }
@@ -104,6 +100,13 @@ namespace RentACar
             {
                 MessageBox.Show("No se pudo Editar el tipo de vehiculo");
             }
+        }
+
+        private void atrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            Utils.Returning.ReturnToPreviousForm(this,new TipoVehiculoForm(_userId));
+            
         }
     }
 }

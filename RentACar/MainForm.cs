@@ -54,5 +54,21 @@ namespace RentACar
             vehiculosForm.ShowDialog();
             Close();
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils.Returning.ReturnToLogin(this);
+        }
+
+        private void modelosBtn_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            Utils.Validate.LockBtns(this);
+            Thread.Sleep(2000);
+            var modelosForm = new ModelosForm(_id);
+            Hide();
+            modelosForm.ShowDialog();
+            Close();
+        }
     }
 }

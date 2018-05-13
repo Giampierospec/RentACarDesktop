@@ -32,7 +32,11 @@
             this.marcaTable = new System.Windows.Forms.DataGridView();
             this.editarMarcaBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.insertMarcaBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.logoutMarcaMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrásMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.marcaTable)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // marcaTable
@@ -82,6 +86,32 @@
             this.insertMarcaBtn.UseVisualStyleBackColor = true;
             this.insertMarcaBtn.Click += new System.EventHandler(this.insertMarcaBtn_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logoutMarcaMenuItem,
+            this.atrásMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(652, 28);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // logoutMarcaMenuItem
+            // 
+            this.logoutMarcaMenuItem.Name = "logoutMarcaMenuItem";
+            this.logoutMarcaMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.logoutMarcaMenuItem.Text = "Logout";
+            this.logoutMarcaMenuItem.Click += new System.EventHandler(this.logoutMarcaMenuItem_Click);
+            // 
+            // atrásMenuItem
+            // 
+            this.atrásMenuItem.Name = "atrásMenuItem";
+            this.atrásMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.atrásMenuItem.Text = "Atrás";
+            this.atrásMenuItem.Click += new System.EventHandler(this.atrásMenuItem_Click);
+            // 
             // MarcasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -90,11 +120,15 @@
             this.Controls.Add(this.marcaTable);
             this.Controls.Add(this.editarMarcaBtn);
             this.Controls.Add(this.insertMarcaBtn);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MarcasForm";
             this.Text = "Rent A Car - Marcas";
             this.Load += new System.EventHandler(this.MarcasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.marcaTable)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +139,8 @@
         private System.Windows.Forms.DataGridView marcaTable;
         private MaterialSkin.Controls.MaterialFlatButton editarMarcaBtn;
         private MaterialSkin.Controls.MaterialFlatButton insertMarcaBtn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem logoutMarcaMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atrásMenuItem;
     }
 }

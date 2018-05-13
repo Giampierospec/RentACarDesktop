@@ -75,5 +75,16 @@ namespace RentACar
         {
             _tpId = int.Parse(TVehiculosTable.Rows[e.RowIndex].Cells[0].Value.ToString());
         }
+
+        private void logoutTVMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils.Returning.ReturnToLogin(this);
+        }
+
+        private void atrásMenuTvItem_Click(object sender, EventArgs e)
+        {
+           
+            Utils.Returning.ReturnToPreviousForm(this,new MainForm(_userId));
+        }
     }
 }

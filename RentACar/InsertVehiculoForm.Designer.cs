@@ -48,6 +48,9 @@
             this.modeloSelectVh = new System.Windows.Forms.ComboBox();
             this.tipoCombustibleSelectVh = new System.Windows.Forms.ComboBox();
             this.estadoSelectVh = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.atrásMenuVhItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -227,6 +230,7 @@
             this.marcaSelectVh.Size = new System.Drawing.Size(221, 24);
             this.marcaSelectVh.TabIndex = 19;
             this.marcaSelectVh.SelectedIndexChanged += new System.EventHandler(this.marcaSelectVh_SelectedIndexChanged);
+            this.marcaSelectVh.ValueMemberChanged += new System.EventHandler(this.marcaSelectVh_ValueMemberChanged);
             // 
             // modeloSelectVh
             // 
@@ -252,11 +256,30 @@
             this.estadoSelectVh.Size = new System.Drawing.Size(221, 24);
             this.estadoSelectVh.TabIndex = 22;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.atrásMenuVhItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(777, 28);
+            this.menuStrip1.TabIndex = 23;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // atrásMenuVhItem
+            // 
+            this.atrásMenuVhItem.Name = "atrásMenuVhItem";
+            this.atrásMenuVhItem.Size = new System.Drawing.Size(55, 24);
+            this.atrásMenuVhItem.Text = "Atrás";
+            this.atrásMenuVhItem.Click += new System.EventHandler(this.atrásMenuVhItem_Click);
+            // 
             // InsertVehiculoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 646);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.estadoSelectVh);
             this.Controls.Add(this.tipoCombustibleSelectVh);
             this.Controls.Add(this.modeloSelectVh);
@@ -280,6 +303,8 @@
             this.Name = "InsertVehiculoForm";
             this.Text = "Rent A Car - ";
             this.Load += new System.EventHandler(this.InsertVehiculoForm_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +331,7 @@
         private System.Windows.Forms.ComboBox modeloSelectVh;
         private System.Windows.Forms.ComboBox tipoCombustibleSelectVh;
         private System.Windows.Forms.ComboBox estadoSelectVh;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem atrásMenuVhItem;
     }
 }

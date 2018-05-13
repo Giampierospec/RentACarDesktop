@@ -66,6 +66,7 @@ namespace RentACar.Repository
                 veh.NoChasis = vh.NoChasis;
                 veh.NoMotor = vh.NoMotor;
                 veh.NoPlaca = vh.NoPlaca;
+                veh.Id_User = vh.Id_User;
             }
             _db.SaveChanges();
         }
