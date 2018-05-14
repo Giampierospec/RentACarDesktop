@@ -41,16 +41,8 @@ namespace RentACar
 
         private void insertTVehiculoBtn_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-            insertTVehiculoBtn.Enabled = false;
-            editarVehiculoBtn.Enabled = false;
-            insertTVehiculoBtn.Enabled = false;
-            var modifyTipoVehiculoForm = new ModifyTipoVehiculosForm(_userId,0,"Insertar Tipo Vehiculo");
-            Thread.Sleep(2000);
-            Hide();
-            modifyTipoVehiculoForm.ShowDialog();
-            Close();
-
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this,new ModifyTipoVehiculosForm(_userId,0,"Insertar Tipo Vehiculo"));
         }
 
         private void editarVehiculoBtn_Click(object sender, EventArgs e)
@@ -61,13 +53,10 @@ namespace RentACar
             }
             else
             {
-                Cursor = Cursors.WaitCursor;
-                Thread.Sleep(2000);
-                Hide();
+                
                 Utils.Validate.LockBtns(this);
-                var modifyTipoVehiculoForm = new ModifyTipoVehiculosForm(_userId, _tpId, "Editar Tipo Vehiculo");
-                modifyTipoVehiculoForm.ShowDialog();
-                Close();
+               Utils.Returning.ReturnToPreviousForm(this,new ModifyTipoVehiculosForm(_userId, _tpId, "Editar Tipo Vehiculo"));
+               
             }
         }
 

@@ -89,6 +89,7 @@
             // 
             // estadoTipoVehiculoTxt
             // 
+            this.estadoTipoVehiculoTxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.estadoTipoVehiculoTxt.FormattingEnabled = true;
             this.estadoTipoVehiculoTxt.Location = new System.Drawing.Point(310, 203);
             this.estadoTipoVehiculoTxt.Name = "estadoTipoVehiculoTxt";

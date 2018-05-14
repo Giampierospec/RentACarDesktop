@@ -71,10 +71,41 @@ namespace RentACar.Repository
             _db.SaveChanges();
         }
         /// <summary>
+        /// Filtra los vehiculos
+        /// </summary>
+        /// <param name="vMd"></param>
+        /// <returns></returns>
+        public List<VehiculosModel> Filter(VehiculosModel vMd) =>
+            _db.Vehiculoes
+               .Where(x =>
+               (
+               (x.Id_Estado == 1) &&
+               ((vMd.Descripcion == null || vMd.Descripcion == string.Empty) ? true : x.Descripcion.ToLower().Trim().Contains(vMd.Descripcion.ToLower().Trim())) &&
+               ((vMd.Marca == null || vMd.Marca == string.Empty) ? true : x.Marca.Descripcion.ToLower().Trim().Contains(vMd.Marca.ToLower().Trim())) &&
+               ((vMd.Modelo == null || vMd.Modelo == string.Empty) ? true : x.Modelo.Descripcion.ToLower().Trim().Contains(vMd.Modelo.ToLower().Trim())) &&
+               ((vMd.TipoCombustible == null || vMd.TipoCombustible == string.Empty) ? true : x.TipoCombustible.Descripcion.ToLower().Trim().Contains(vMd.TipoCombustible.ToLower().Trim())) &&
+                ((vMd.TipoVehiculo == null || vMd.TipoVehiculo == string.Empty) ? true : x.TipoVehiculo.Descripcion.ToLower().Trim().Contains(vMd.TipoVehiculo.ToLower().Trim())))
+               )
+                .Select(x => new VehiculosModel()
+                {
+                    Id = x.Id,
+                    Estado = x.Estado.Estado1,
+                    Descripcion = x.Descripcion,
+                    Marca = x.Marca.Descripcion,
+                    Modelo = x.Modelo.Descripcion,
+                    NoChasis = x.NoChasis,
+                    NoPlaca = x.NoPlaca,
+                    NoMotor = x.NoMotor,
+                    TipoCombustible = x.TipoCombustible.Descripcion,
+                    TipoVehiculo = x.TipoVehiculo.Descripcion
+                })
+                .ToList();
+
+        /// <summary>
         /// Verifica si el vehiculo ya existe
         /// </summary>
         /// <param name="desc"></param>
         /// <returns></returns>
-        public bool VehiculoExists(string desc) => _db.Vehiculoes.Any(x => x.Descripcion.Trim().ToLower() == desc.Trim().ToLower());
+        public bool VehiculoExists(string desc) => _db.Vehiculoes.Any(x => x.Descripcion.Trim().ToLower() == desc.Trim().ToLower() && x.Id_Estado == 1);
     }
 }

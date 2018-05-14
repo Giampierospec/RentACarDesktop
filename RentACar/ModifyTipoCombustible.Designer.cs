@@ -1,6 +1,6 @@
 ﻿namespace RentACar
 {
-    partial class ModifyMarca
+    partial class ModifyTipoCombustible
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyTipoCombustible));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.marcaTxt = new System.Windows.Forms.TextBox();
-            this.estadoTxt = new System.Windows.Forms.ComboBox();
-            this.btnEnviarMarca = new MaterialSkin.Controls.MaterialFlatButton();
+            this.estadoCbx = new System.Windows.Forms.ComboBox();
+            this.tcText = new System.Windows.Forms.TextBox();
+            this.enviarTCBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.atrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,12 +45,12 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(170, 154);
+            this.materialLabel1.Location = new System.Drawing.Point(112, 102);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(63, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(161, 24);
             this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Marca";
+            this.materialLabel1.Text = "Tipo Combustible";
             // 
             // materialLabel2
             // 
@@ -57,78 +58,79 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(170, 216);
+            this.materialLabel2.Location = new System.Drawing.Point(112, 155);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(69, 24);
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Estado";
             // 
-            // marcaTxt
+            // estadoCbx
             // 
-            this.marcaTxt.Location = new System.Drawing.Point(262, 156);
-            this.marcaTxt.Name = "marcaTxt";
-            this.marcaTxt.Size = new System.Drawing.Size(169, 22);
-            this.marcaTxt.TabIndex = 3;
+            this.estadoCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.estadoCbx.FormattingEnabled = true;
+            this.estadoCbx.Location = new System.Drawing.Point(290, 157);
+            this.estadoCbx.Name = "estadoCbx";
+            this.estadoCbx.Size = new System.Drawing.Size(135, 24);
+            this.estadoCbx.TabIndex = 2;
             // 
-            // estadoTxt
+            // tcText
             // 
-            this.estadoTxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.estadoTxt.FormattingEnabled = true;
-            this.estadoTxt.Location = new System.Drawing.Point(262, 218);
-            this.estadoTxt.Name = "estadoTxt";
-            this.estadoTxt.Size = new System.Drawing.Size(169, 24);
-            this.estadoTxt.TabIndex = 4;
+            this.tcText.Location = new System.Drawing.Point(290, 103);
+            this.tcText.Name = "tcText";
+            this.tcText.Size = new System.Drawing.Size(135, 22);
+            this.tcText.TabIndex = 3;
             // 
-            // btnEnviarMarca
+            // enviarTCBtn
             // 
-            this.btnEnviarMarca.AutoSize = true;
-            this.btnEnviarMarca.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEnviarMarca.Depth = 0;
-            this.btnEnviarMarca.Location = new System.Drawing.Point(262, 264);
-            this.btnEnviarMarca.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnEnviarMarca.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEnviarMarca.Name = "btnEnviarMarca";
-            this.btnEnviarMarca.Primary = false;
-            this.btnEnviarMarca.Size = new System.Drawing.Size(106, 36);
-            this.btnEnviarMarca.TabIndex = 5;
-            this.btnEnviarMarca.Text = "EnviarBtn";
-            this.btnEnviarMarca.UseVisualStyleBackColor = true;
-            this.btnEnviarMarca.Click += new System.EventHandler(this.btnEnviarMarca_Click);
+            this.enviarTCBtn.AutoSize = true;
+            this.enviarTCBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.enviarTCBtn.Depth = 0;
+            this.enviarTCBtn.Location = new System.Drawing.Point(290, 218);
+            this.enviarTCBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.enviarTCBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.enviarTCBtn.Name = "enviarTCBtn";
+            this.enviarTCBtn.Primary = false;
+            this.enviarTCBtn.Size = new System.Drawing.Size(106, 36);
+            this.enviarTCBtn.TabIndex = 4;
+            this.enviarTCBtn.Text = "enviarBtn";
+            this.enviarTCBtn.UseVisualStyleBackColor = true;
+            this.enviarTCBtn.Click += new System.EventHandler(this.enviarTCBtn_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.atrToolStripMenuItem});
+            this.atrásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(601, 28);
-            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Size = new System.Drawing.Size(537, 28);
+            this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // atrToolStripMenuItem
+            // atrásToolStripMenuItem
             // 
-            this.atrToolStripMenuItem.Name = "atrToolStripMenuItem";
-            this.atrToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.atrToolStripMenuItem.Text = "Atrás";
-            this.atrToolStripMenuItem.Click += new System.EventHandler(this.atrToolStripMenuItem_Click);
+            this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
+            this.atrásToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.atrásToolStripMenuItem.Text = "Atrás";
+            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
-            // ModifyMarca
+            // ModifyTipoCombustible
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 455);
-            this.Controls.Add(this.btnEnviarMarca);
-            this.Controls.Add(this.estadoTxt);
-            this.Controls.Add(this.marcaTxt);
+            this.ClientSize = new System.Drawing.Size(537, 411);
+            this.Controls.Add(this.enviarTCBtn);
+            this.Controls.Add(this.tcText);
+            this.Controls.Add(this.estadoCbx);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "ModifyMarca";
+            this.Name = "ModifyTipoCombustible";
             this.Text = "Rent A Car - ";
-            this.Load += new System.EventHandler(this.ModifyMarca_Load);
+            this.Load += new System.EventHandler(this.ModifyTipoCombustible_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -140,10 +142,10 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.TextBox marcaTxt;
-        private System.Windows.Forms.ComboBox estadoTxt;
-        private MaterialSkin.Controls.MaterialFlatButton btnEnviarMarca;
+        private System.Windows.Forms.ComboBox estadoCbx;
+        private System.Windows.Forms.TextBox tcText;
+        private MaterialSkin.Controls.MaterialFlatButton enviarTCBtn;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem atrToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
     }
 }

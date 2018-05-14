@@ -22,3 +22,5 @@ C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModifyMarca.resources
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModelosForm.resources
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModifyModelos.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.TipoCombustibleForm.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModifyTipoCombustible.resources

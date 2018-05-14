@@ -102,20 +102,18 @@ namespace RentACar
             try
             {
                 var errorMsg = Utils.Validate.GenerateErrorMessage(this);
+                Utils.Validate.LockBtns(this);
                 if (string.IsNullOrEmpty(errorMsg))
                 {
 
                     var vehiculoExists = _vhRepo.VehiculoExists(txtDescripcionVehiculo.Text);
-                    btnEnviarVehiculo.Enabled = false;
                     if (vehiculoExists && _vehiculoId == 0)
                     {
-
-                        btnEnviarVehiculo.Enabled = true;
+                        Utils.Validate.EnableBtns(this);
                         MessageBox.Show("El vehiculo ya existe por favor intente denuevo");
                     }
                     else
                     {
-                        Cursor = Cursors.WaitCursor;
                         _vhRepo.InsertVehiculos(new Context.Vehiculo()
                         {
                             Id = _vehiculoId,
@@ -130,7 +128,7 @@ namespace RentACar
                             Id_Tipo_Combustible = int.Parse(tipoCombustibleSelectVh.SelectedValue.ToString()),
                             Id_User = _userId
                         });
-                        if (MessageBox.Show("Usuario Procesado Correctamente") == DialogResult.OK)
+                        if (MessageBox.Show("Vehiculo Procesado Correctamente") == DialogResult.OK)
                         {
                             Utils.Returning.ReturnToPreviousForm(this,new VehiculosForm(_userId));
                             

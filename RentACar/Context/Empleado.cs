@@ -25,7 +25,7 @@ namespace RentACar.Context
         public string Nombre { get; set; }
         public string Cedula { get; set; }
         public string Tanda { get; set; }
-        public string Comision { get; set; }
+        public Nullable<decimal> Comision { get; set; }
         public Nullable<System.DateTime> FechaIngreso { get; set; }
         public Nullable<int> Id_Estado { get; set; }
         public Nullable<int> Id_User { get; set; }

@@ -216,6 +216,7 @@
             // 
             // tipoVehiculoSelectVh
             // 
+            this.tipoVehiculoSelectVh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoVehiculoSelectVh.FormattingEnabled = true;
             this.tipoVehiculoSelectVh.Location = new System.Drawing.Point(184, 328);
             this.tipoVehiculoSelectVh.Name = "tipoVehiculoSelectVh";
@@ -224,6 +225,7 @@
             // 
             // marcaSelectVh
             // 
+            this.marcaSelectVh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.marcaSelectVh.FormattingEnabled = true;
             this.marcaSelectVh.Location = new System.Drawing.Point(184, 386);
             this.marcaSelectVh.Name = "marcaSelectVh";
@@ -234,6 +236,7 @@
             // 
             // modeloSelectVh
             // 
+            this.modeloSelectVh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.modeloSelectVh.FormattingEnabled = true;
             this.modeloSelectVh.Location = new System.Drawing.Point(184, 439);
             this.modeloSelectVh.Name = "modeloSelectVh";
@@ -242,6 +245,7 @@
             // 
             // tipoCombustibleSelectVh
             // 
+            this.tipoCombustibleSelectVh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoCombustibleSelectVh.FormattingEnabled = true;
             this.tipoCombustibleSelectVh.Location = new System.Drawing.Point(184, 486);
             this.tipoCombustibleSelectVh.Name = "tipoCombustibleSelectVh";
@@ -250,6 +254,7 @@
             // 
             // estadoSelectVh
             // 
+            this.estadoSelectVh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.estadoSelectVh.FormattingEnabled = true;
             this.estadoSelectVh.Location = new System.Drawing.Point(184, 536);
             this.estadoSelectVh.Name = "estadoSelectVh";

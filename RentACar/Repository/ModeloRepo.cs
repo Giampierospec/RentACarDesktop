@@ -41,7 +41,7 @@ namespace RentACar.Repository
         /// </summary>
         /// <param name="desc"></param>
         /// <returns></returns>
-        public bool CheckIfModeloExists(string desc) => _db.Modeloes.Any(x => x.Descripcion.ToLower().Trim() == desc.ToLower().Trim());
+        public bool CheckIfModeloExists(string desc) => _db.Modeloes.Any(x => x.Descripcion.ToLower().Trim() == desc.ToLower().Trim() && x.Id_Estado == 1);
 
         public void InsertModelo(Modelo md)
         {

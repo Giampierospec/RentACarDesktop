@@ -41,7 +41,7 @@ namespace RentACar.Repository
         /// </summary>
         /// <param name="desc"></param>
         /// <returns></returns>
-        public bool CheckMarcaExists(string desc) => _db.Marcas.Any(x => x.Descripcion.ToLower().Trim() == desc.ToLower().Trim());
+        public bool CheckMarcaExists(string desc) => _db.Marcas.Any(x => x.Descripcion.ToLower().Trim() == desc.ToLower().Trim() && x.Id_Estado == 1);
 
         public void InsertMarca(Marca mr)
         {

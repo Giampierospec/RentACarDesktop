@@ -46,11 +46,8 @@ namespace RentACar
         private void insertMarcaBtn_Click(object sender, EventArgs e)
         {
             Utils.Validate.LockBtns(this);
-            Thread.Sleep(2000);
-            var modifyMarca = new ModifyMarca(_userId, 0, "Insertar");
-            Hide();
-            modifyMarca.ShowDialog();
-            Close();
+            Utils.Returning.ReturnToPreviousForm(this, new ModifyMarca(_userId, 0, "Insertar"));
+        
         }
 
         private void editarMarcaBtn_Click(object sender, EventArgs e)
@@ -62,11 +59,8 @@ namespace RentACar
             else
             {
                 Utils.Validate.LockBtns(this);
-                Thread.Sleep(2000);
-                var modifyMarca = new ModifyMarca(_userId, _marcaId, "Editar");
-                Hide();
-                modifyMarca.ShowDialog();
-                Close();
+                Utils.Returning.ReturnToPreviousForm(this,new ModifyMarca(_userId, _marcaId, "Editar"));
+               
             }
         }
 

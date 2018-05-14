@@ -18,7 +18,6 @@ namespace RentACar.Context
         public Usuario()
         {
             this.Clientes = new HashSet<Cliente>();
-            this.Empleadoes = new HashSet<Empleado>();
             this.Inspeccions = new HashSet<Inspeccion>();
             this.Marcas = new HashSet<Marca>();
             this.Modeloes = new HashSet<Modelo>();
@@ -26,6 +25,7 @@ namespace RentACar.Context
             this.TipoCombustibles = new HashSet<TipoCombustible>();
             this.TipoVehiculoes = new HashSet<TipoVehiculo>();
             this.Vehiculoes = new HashSet<Vehiculo>();
+            this.Empleadoes = new HashSet<Empleado>();
         }
     
         public int Id { get; set; }
@@ -35,8 +35,6 @@ namespace RentACar.Context
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente> Clientes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Empleado> Empleadoes { get; set; }
         public virtual Rol Rol { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inspeccion> Inspeccions { get; set; }
@@ -52,5 +50,7 @@ namespace RentACar.Context
         public virtual ICollection<TipoVehiculo> TipoVehiculoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vehiculo> Vehiculoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Empleado> Empleadoes { get; set; }
     }
 }

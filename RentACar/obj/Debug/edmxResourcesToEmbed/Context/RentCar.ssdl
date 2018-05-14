@@ -19,9 +19,9 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="varchar(max)" />
-    <Property Name="Cedula" Type="varchar(max)" />
+    <Property Name="Cedula" Type="varchar" MaxLength="11" />
     <Property Name="Tanda" Type="varchar(max)" />
-    <Property Name="Comision" Type="varchar(max)" />
+    <Property Name="Comision" Type="decimal" Precision="13" Scale="2" />
     <Property Name="FechaIngreso" Type="datetime" />
     <Property Name="Id_Estado" Type="int" />
     <Property Name="Id_User" Type="int" />

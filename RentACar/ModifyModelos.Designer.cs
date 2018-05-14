@@ -89,6 +89,7 @@
             // 
             // marcaDrp
             // 
+            this.marcaDrp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.marcaDrp.FormattingEnabled = true;
             this.marcaDrp.Location = new System.Drawing.Point(255, 122);
             this.marcaDrp.Name = "marcaDrp";
@@ -97,6 +98,7 @@
             // 
             // estadoTxt
             // 
+            this.estadoTxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.estadoTxt.FormattingEnabled = true;
             this.estadoTxt.Location = new System.Drawing.Point(255, 219);
             this.estadoTxt.Name = "estadoTxt";

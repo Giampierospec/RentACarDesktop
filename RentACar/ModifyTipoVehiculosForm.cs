@@ -64,20 +64,24 @@ namespace RentACar
         {
             try
             {
+                Cursor = Cursors.WaitCursor;
                 enviarTpBtn.Enabled = false;
                 var errorMsg = Utils.Validate.GenerateErrorMessage(this);
+                Utils.Validate.LockControls(this);
+                Utils.Validate.LockBtns(this);
                 if (string.IsNullOrEmpty(errorMsg))
                 {
                     var tpExists = _tpRepo.TipoVehiculoExists(tipoVehiculoDesc.Text);
                     if(tpExists && _tpId == 0)
                     {
                         MessageBox.Show("El tipo Vehiculo ya existe intente denuevo");
+                        Utils.Validate.UnLockControls(this);
+                        Utils.Validate.EnableBtns(this);
                         enviarTpBtn.Enabled = true;
                     }
                     else
                     {
-                        Cursor = Cursors.WaitCursor;
-                        Utils.Validate.LockControls(this);
+                      
                         _tpRepo.InsertTipoVehiculo(new Context.TipoVehiculo()
                         {
                             Id = _tpId,

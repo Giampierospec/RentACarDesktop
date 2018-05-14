@@ -27,9 +27,9 @@ namespace RentACar.Context
         public Nullable<int> Id_User { get; set; }
     
         public virtual Cliente Cliente { get; set; }
-        public virtual Empleado Empleado { get; set; }
         public virtual Estado Estado { get; set; }
         public virtual Vehiculo Vehiculo { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual Empleado Empleado { get; set; }
     }
 }

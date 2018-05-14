@@ -34,6 +34,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.logoutVhMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásMenuVhItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.searchDesc = new System.Windows.Forms.TextBox();
+            this.searchMod = new System.Windows.Forms.TextBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.searchMarca = new System.Windows.Forms.TextBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.searchTipoV = new System.Windows.Forms.TextBox();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.searchTipoCo = new System.Windows.Forms.TextBox();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +87,7 @@
             this.vehiculosTable.AllowUserToOrderColumns = true;
             this.vehiculosTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.vehiculosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vehiculosTable.Location = new System.Drawing.Point(37, 229);
+            this.vehiculosTable.Location = new System.Drawing.Point(51, 302);
             this.vehiculosTable.Name = "vehiculosTable";
             this.vehiculosTable.ReadOnly = true;
             this.vehiculosTable.RowTemplate.Height = 24;
@@ -93,7 +103,7 @@
             this.atrásMenuVhItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(953, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(999, 28);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -111,11 +121,126 @@
             this.atrásMenuVhItem.Text = "Atrás";
             this.atrásMenuVhItem.Click += new System.EventHandler(this.atrásMenuVhItem_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(42, 224);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(52, 24);
+            this.materialLabel1.TabIndex = 11;
+            this.materialLabel1.Text = "Desc";
+            // 
+            // searchDesc
+            // 
+            this.searchDesc.Location = new System.Drawing.Point(100, 226);
+            this.searchDesc.Name = "searchDesc";
+            this.searchDesc.Size = new System.Drawing.Size(100, 22);
+            this.searchDesc.TabIndex = 12;
+            this.searchDesc.TextChanged += new System.EventHandler(this.searchDesc_TextChanged);
+            // 
+            // searchMod
+            // 
+            this.searchMod.Location = new System.Drawing.Point(305, 226);
+            this.searchMod.Name = "searchMod";
+            this.searchMod.Size = new System.Drawing.Size(100, 22);
+            this.searchMod.TabIndex = 14;
+            this.searchMod.TextChanged += new System.EventHandler(this.searchMod_TextChanged);
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(247, 224);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(49, 24);
+            this.materialLabel2.TabIndex = 13;
+            this.materialLabel2.Text = "Mod";
+            // 
+            // searchMarca
+            // 
+            this.searchMarca.Location = new System.Drawing.Point(505, 228);
+            this.searchMarca.Name = "searchMarca";
+            this.searchMarca.Size = new System.Drawing.Size(100, 22);
+            this.searchMarca.TabIndex = 16;
+            this.searchMarca.TextChanged += new System.EventHandler(this.searchMarca_TextChanged);
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(447, 226);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(53, 24);
+            this.materialLabel3.TabIndex = 15;
+            this.materialLabel3.Text = "Marc";
+            // 
+            // searchTipoV
+            // 
+            this.searchTipoV.Location = new System.Drawing.Point(679, 230);
+            this.searchTipoV.Name = "searchTipoV";
+            this.searchTipoV.Size = new System.Drawing.Size(100, 22);
+            this.searchTipoV.TabIndex = 18;
+            this.searchTipoV.TextChanged += new System.EventHandler(this.searchTipoV_TextChanged);
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(621, 228);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(43, 24);
+            this.materialLabel4.TabIndex = 17;
+            this.materialLabel4.Text = "TVe";
+            // 
+            // searchTipoCo
+            // 
+            this.searchTipoCo.Location = new System.Drawing.Point(857, 232);
+            this.searchTipoCo.Name = "searchTipoCo";
+            this.searchTipoCo.Size = new System.Drawing.Size(100, 22);
+            this.searchTipoCo.TabIndex = 20;
+            this.searchTipoCo.TextChanged += new System.EventHandler(this.searchTipoCo_TextChanged);
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(799, 230);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(44, 24);
+            this.materialLabel5.TabIndex = 19;
+            this.materialLabel5.Text = "TCo";
+            // 
             // VehiculosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 571);
+            this.ClientSize = new System.Drawing.Size(999, 615);
+            this.Controls.Add(this.searchTipoCo);
+            this.Controls.Add(this.materialLabel5);
+            this.Controls.Add(this.searchTipoV);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.searchMarca);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.searchMod);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.searchDesc);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.vehiculosTable);
             this.Controls.Add(this.editarVehiculoBtn);
@@ -139,5 +264,15 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem logoutVhMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atrásMenuVhItem;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.TextBox searchDesc;
+        private System.Windows.Forms.TextBox searchMod;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.TextBox searchMarca;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.TextBox searchTipoV;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.TextBox searchTipoCo;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
     }
 }

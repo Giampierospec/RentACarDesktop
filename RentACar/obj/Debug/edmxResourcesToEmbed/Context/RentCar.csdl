@@ -17,23 +17,6 @@
     <NavigationProperty Name="Estado" Relationship="Self.FK_ID_ESTADO_CL" FromRole="Cliente" ToRole="Estado" />
     <NavigationProperty Name="Usuario" Relationship="Self.FK_ID_USER_CL" FromRole="Cliente" ToRole="Usuario" />
   </EntityType>
-  <EntityType Name="Empleado">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Cedula" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Tanda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Comision" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
-    <Property Name="Id_Estado" Type="Int32" />
-    <Property Name="Id_User" Type="Int32" />
-    <NavigationProperty Name="Inspeccions" Relationship="Self.FK_ID_EMPLEADO_IN" FromRole="Empleado" ToRole="Inspeccion" />
-    <NavigationProperty Name="Rentas" Relationship="Self.FK_ID_EMPLEADO_R" FromRole="Empleado" ToRole="Renta" />
-    <NavigationProperty Name="Estado" Relationship="Self.FK_ID_ESTADO_EM" FromRole="Empleado" ToRole="Estado" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK_ID_USER_EM" FromRole="Empleado" ToRole="Usuario" />
-  </EntityType>
   <EntityType Name="Estado">
     <Key>
       <PropertyRef Name="Id" />
@@ -41,7 +24,6 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Estado1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Clientes" Relationship="Self.FK_ID_ESTADO_CL" FromRole="Estado" ToRole="Cliente" />
-    <NavigationProperty Name="Empleadoes" Relationship="Self.FK_ID_ESTADO_EM" FromRole="Estado" ToRole="Empleado" />
     <NavigationProperty Name="Inspeccions" Relationship="Self.FK_ID_ESTADO_IN" FromRole="Estado" ToRole="Inspeccion" />
     <NavigationProperty Name="Modeloes" Relationship="Self.FK_ID_ESTADO_MD" FromRole="Estado" ToRole="Modelo" />
     <NavigationProperty Name="Marcas" Relationship="Self.FK_ID_ESTADO_MR" FromRole="Estado" ToRole="Marca" />
@@ -49,6 +31,7 @@
     <NavigationProperty Name="TipoCombustibles" Relationship="Self.FK_ID_ESTADO_TC" FromRole="Estado" ToRole="TipoCombustible" />
     <NavigationProperty Name="TipoVehiculoes" Relationship="Self.FK_ID_ESTADO_TP" FromRole="Estado" ToRole="TipoVehiculo" />
     <NavigationProperty Name="Vehiculoes" Relationship="Self.FK_ID_ESTADO_VH" FromRole="Estado" ToRole="Vehiculo" />
+    <NavigationProperty Name="Empleadoes" Relationship="RentCarModel.FK_ID_ESTADO_EM" FromRole="Estado" ToRole="Empleado" />
   </EntityType>
   <EntityType Name="Inspeccion">
     <Key>
@@ -67,11 +50,11 @@
     <Property Name="Id_Cliente" Type="Int32" />
     <Property Name="Id_Estado" Type="Int32" />
     <NavigationProperty Name="Cliente" Relationship="Self.FK_ID_CLIENTE_IN" FromRole="Inspeccion" ToRole="Cliente" />
-    <NavigationProperty Name="Empleado" Relationship="Self.FK_ID_EMPLEADO_IN" FromRole="Inspeccion" ToRole="Empleado" />
     <NavigationProperty Name="Estado" Relationship="Self.FK_ID_ESTADO_IN" FromRole="Inspeccion" ToRole="Estado" />
     <NavigationProperty Name="Vehiculo" Relationship="Self.FK_ID_VEHICULO_IN" FromRole="Inspeccion" ToRole="Vehiculo" />
     <Property Name="Id_User" Type="Int32" />
     <NavigationProperty Name="Usuario" Relationship="RentCarModel.FK_ID_USER_IN" FromRole="Inspeccion" ToRole="Usuario" />
+    <NavigationProperty Name="Empleado" Relationship="RentCarModel.FK_ID_EMPLEADO_IN" FromRole="Inspeccion" ToRole="Empleado" />
   </EntityType>
   <EntityType Name="Marca">
     <Key>
@@ -115,11 +98,11 @@
     <Property Name="Id_Cliente" Type="Int32" />
     <Property Name="Id_Estado" Type="Int32" />
     <NavigationProperty Name="Cliente" Relationship="Self.FK_ID_CLIENTE_R" FromRole="Renta" ToRole="Cliente" />
-    <NavigationProperty Name="Empleado" Relationship="Self.FK_ID_EMPLEADO_R" FromRole="Renta" ToRole="Empleado" />
     <NavigationProperty Name="Estado" Relationship="Self.FK_ID_ESTADO_R" FromRole="Renta" ToRole="Estado" />
     <NavigationProperty Name="Vehiculo" Relationship="Self.FK_ID_VEHICULO_R" FromRole="Renta" ToRole="Vehiculo" />
     <Property Name="Id_User" Type="Int32" />
     <NavigationProperty Name="Usuario" Relationship="RentCarModel.FK_ID_USER_R" FromRole="Renta" ToRole="Usuario" />
+    <NavigationProperty Name="Empleado" Relationship="RentCarModel.FK_ID_EMPLEADO_R" FromRole="Renta" ToRole="Empleado" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>
@@ -162,7 +145,6 @@
     <Property Name="Pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Id_Rol" Type="Int32" />
     <NavigationProperty Name="Clientes" Relationship="Self.FK_ID_USER_CL" FromRole="Usuario" ToRole="Cliente" />
-    <NavigationProperty Name="Empleadoes" Relationship="Self.FK_ID_USER_EM" FromRole="Usuario" ToRole="Empleado" />
     <NavigationProperty Name="Rol" Relationship="Self.FK_ID_ROL" FromRole="Usuario" ToRole="Rol" />
     <NavigationProperty Name="Inspeccions" Relationship="RentCarModel.FK_ID_USER_IN" FromRole="Usuario" ToRole="Inspeccion" />
     <NavigationProperty Name="Marcas" Relationship="RentCarModel.FK_ID_USER_MR" FromRole="Usuario" ToRole="Marca" />
@@ -171,6 +153,7 @@
     <NavigationProperty Name="TipoCombustibles" Relationship="RentCarModel.FK_ID_USER_TC" FromRole="Usuario" ToRole="TipoCombustible" />
     <NavigationProperty Name="TipoVehiculoes" Relationship="RentCarModel.FK_ID_USER_TP" FromRole="Usuario" ToRole="TipoVehiculo" />
     <NavigationProperty Name="Vehiculoes" Relationship="RentCarModel.FK_ID_USER_VH" FromRole="Usuario" ToRole="Vehiculo" />
+    <NavigationProperty Name="Empleadoes" Relationship="RentCarModel.FK_ID_USER_EM" FromRole="Usuario" ToRole="Empleado" />
   </EntityType>
   <EntityType Name="Vehiculo">
     <Key>
@@ -240,54 +223,6 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Cliente">
-        <PropertyRef Name="Id_User" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ID_EMPLEADO_IN">
-    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
-    <End Role="Inspeccion" Type="Self.Inspeccion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empleado">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Inspeccion">
-        <PropertyRef Name="Id_Empleado" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ID_EMPLEADO_R">
-    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
-    <End Role="Renta" Type="Self.Renta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empleado">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Renta">
-        <PropertyRef Name="Id_Empleado" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ID_ESTADO_EM">
-    <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
-    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Estado">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Empleado">
-        <PropertyRef Name="Id_Estado" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ID_USER_EM">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
-    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Empleado">
         <PropertyRef Name="Id_User" />
       </Dependent>
     </ReferentialConstraint>
@@ -474,7 +409,6 @@
   </Association>
   <EntityContainer Name="RentCarContext" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Clientes" EntityType="Self.Cliente" />
-    <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
     <EntitySet Name="Estadoes" EntityType="Self.Estado" />
     <EntitySet Name="Inspeccions" EntityType="Self.Inspeccion" />
     <EntitySet Name="Marcas" EntityType="Self.Marca" />
@@ -500,22 +434,6 @@
     <AssociationSet Name="FK_ID_USER_CL" Association="Self.FK_ID_USER_CL">
       <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Cliente" EntitySet="Clientes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ID_EMPLEADO_IN" Association="Self.FK_ID_EMPLEADO_IN">
-      <End Role="Empleado" EntitySet="Empleadoes" />
-      <End Role="Inspeccion" EntitySet="Inspeccions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ID_EMPLEADO_R" Association="Self.FK_ID_EMPLEADO_R">
-      <End Role="Empleado" EntitySet="Empleadoes" />
-      <End Role="Renta" EntitySet="Rentas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ID_ESTADO_EM" Association="Self.FK_ID_ESTADO_EM">
-      <End Role="Estado" EntitySet="Estadoes" />
-      <End Role="Empleado" EntitySet="Empleadoes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ID_USER_EM" Association="Self.FK_ID_USER_EM">
-      <End Role="Usuario" EntitySet="Usuarios" />
-      <End Role="Empleado" EntitySet="Empleadoes" />
     </AssociationSet>
     <AssociationSet Name="FK_ID_ESTADO_IN" Association="Self.FK_ID_ESTADO_IN">
       <End Role="Estado" EntitySet="Estadoes" />
@@ -605,6 +523,23 @@
       <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="Vehiculo" EntitySet="Vehiculoes" />
     </AssociationSet>
+    <EntitySet Name="Empleadoes" EntityType="RentCarModel.Empleado" />
+    <AssociationSet Name="FK_ID_EMPLEADO_IN" Association="RentCarModel.FK_ID_EMPLEADO_IN">
+      <End Role="Empleado" EntitySet="Empleadoes" />
+      <End Role="Inspeccion" EntitySet="Inspeccions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_EMPLEADO_R" Association="RentCarModel.FK_ID_EMPLEADO_R">
+      <End Role="Empleado" EntitySet="Empleadoes" />
+      <End Role="Renta" EntitySet="Rentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_ESTADO_EM" Association="RentCarModel.FK_ID_ESTADO_EM">
+      <End Role="Estado" EntitySet="Estadoes" />
+      <End Role="Empleado" EntitySet="Empleadoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USER_EM" Association="RentCarModel.FK_ID_USER_EM">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Empleado" EntitySet="Empleadoes" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK_ID_USER_IN">
     <End Type="RentCarModel.Usuario" Role="Usuario" Multiplicity="0..1" />
@@ -686,6 +621,71 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Vehiculo">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Cedula" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Tanda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comision" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
+    <Property Name="Id_Estado" Type="Int32" />
+    <Property Name="Id_User" Type="Int32" />
+    <NavigationProperty Name="Inspeccions" Relationship="RentCarModel.FK_ID_EMPLEADO_IN" FromRole="Empleado" ToRole="Inspeccion" />
+    <NavigationProperty Name="Rentas" Relationship="RentCarModel.FK_ID_EMPLEADO_R" FromRole="Empleado" ToRole="Renta" />
+    <NavigationProperty Name="Estado" Relationship="RentCarModel.FK_ID_ESTADO_EM" FromRole="Empleado" ToRole="Estado" />
+    <NavigationProperty Name="Usuario" Relationship="RentCarModel.FK_ID_USER_EM" FromRole="Empleado" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_ID_EMPLEADO_IN">
+    <End Type="RentCarModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+    <End Type="RentCarModel.Inspeccion" Role="Inspeccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inspeccion">
+        <PropertyRef Name="Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_EMPLEADO_R">
+    <End Type="RentCarModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+    <End Type="RentCarModel.Renta" Role="Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_ESTADO_EM">
+    <End Type="RentCarModel.Estado" Role="Estado" Multiplicity="0..1" />
+    <End Type="RentCarModel.Empleado" Role="Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="Id_Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USER_EM">
+    <End Type="RentCarModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+    <End Type="RentCarModel.Empleado" Role="Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleado">
         <PropertyRef Name="Id_User" />
       </Dependent>
     </ReferentialConstraint>

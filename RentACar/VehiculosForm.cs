@@ -27,30 +27,26 @@ namespace RentACar
             _vehRepo = new VehiculosRepo();
             _userRepo = new UserRepo();
         }
-
         private void VehiculosForm_Load(object sender, EventArgs e)
         {
             vehiculosTable.DataSource = _vehRepo.GetAllVehiculos();
             var user = _userRepo.GetUserById(_userId);
-            if(user != null)
+            if (user != null)
             {
-                if(user.Id_Rol == 2)
+                if (user.Id_Rol == 2)
                 {
                     insertVehiculoBtn.Enabled = false;
                     editarVehiculoBtn.Enabled = false;
                 }
             }
-            
+
         }
 
         private void insertVehiculoBtn_Click(object sender, EventArgs e)
         {
             Utils.Validate.LockBtns(this);
-            var insertVehiculoForm = new InsertVehiculoForm(_userId,0,"Insertar");
-            Thread.Sleep(2000);
-            Hide();
-            insertVehiculoForm.ShowDialog();
-            Close();
+            Utils.Returning.ReturnToPreviousForm(this,new InsertVehiculoForm(_userId, 0, "Insertar"));
+            
         }
 
         private void vehiculosTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -60,18 +56,14 @@ namespace RentACar
 
         private void editarVehiculoBtn_Click(object sender, EventArgs e)
         {
-            if(_vehiculoId == 0)
+            if (_vehiculoId == 0)
             {
                 MessageBox.Show("Escoja una fila para Editar sus propiedades");
             }
             else
             {
                 Utils.Validate.LockBtns(this);
-                Thread.Sleep(2000);
-                Hide();
-                var insertVehiculosForm = new InsertVehiculoForm(_userId,_vehiculoId,"Editar");
-                insertVehiculosForm.ShowDialog();
-                Close();
+                Utils.Returning.ReturnToPreviousForm(this, new InsertVehiculoForm(_userId, _vehiculoId, "Editar"));
             }
         }
 
@@ -82,9 +74,45 @@ namespace RentACar
 
         private void atrásMenuVhItem_Click(object sender, EventArgs e)
         {
-           
-            Utils.Returning.ReturnToPreviousForm(this,new MainForm(_userId));
+
+            Utils.Returning.ReturnToPreviousForm(this, new MainForm(_userId));
+        }
+
+        private void searchDesc_TextChanged(object sender, EventArgs e)
+        {
+            FilterVehiculos();
+        }
+
+        private void searchMod_TextChanged(object sender, EventArgs e)
+        {
+            FilterVehiculos();
+        }
+
+        private void searchMarca_TextChanged(object sender, EventArgs e)
+        {
+            FilterVehiculos();
+        }
+
+        private void searchTipoV_TextChanged(object sender, EventArgs e)
+        {
+            FilterVehiculos();
+        }
+
+        private void searchTipoCo_TextChanged(object sender, EventArgs e)
+        {
+            FilterVehiculos();
+        }
+        private void FilterVehiculos()
+        {
+            vehiculosTable.DataSource = _vehRepo.Filter(new Models.VehiculosModel()
+            {
+                Descripcion = searchDesc.Text.Trim(),
+                Modelo = searchMod.Text.Trim(),
+                Marca = searchMarca.Text.Trim(),
+                TipoVehiculo = searchTipoV.Text.Trim(),
+                TipoCombustible = searchTipoCo.Text.Trim()
+            });
         }
     }
-    
+
 }

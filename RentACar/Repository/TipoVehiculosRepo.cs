@@ -47,6 +47,6 @@ namespace RentACar.Repository
             }
             _db.SaveChanges();
         }
-        public bool TipoVehiculoExists(string txt) => _db.TipoVehiculoes.Any(x => x.Descripcion.ToLower().Trim() == txt.ToLower().Trim());
+        public bool TipoVehiculoExists(string txt) => _db.TipoVehiculoes.Any(x => x.Descripcion.ToLower().Trim() == txt.ToLower().Trim() && x.Id_Estado == 1);
     }
 }

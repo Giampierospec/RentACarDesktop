@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using RentACar.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,44 +16,33 @@ namespace RentACar
     public partial class MainForm : MaterialForm
     {
         private int _id;
+        private UserRepo _userRepo;
 
         public MainForm(int id = 0)
         {
             _id = id;
+            _userRepo = new UserRepo();
             InitializeComponent();
         }
 
         private void vehiculoBtn_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
+           
             Utils.Validate.LockBtns(this);
-            Thread.Sleep(2000);
-            var vehiculosForm = new VehiculosForm(_id);
-            Hide();
-            vehiculosForm.ShowDialog();
-            Close();
+            Utils.Returning.ReturnToPreviousForm(this,new VehiculosForm(_id));
+          
         }
 
         private void tpVehiculoBtn_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
             Utils.Validate.LockBtns(this);
-            Thread.Sleep(2000);
-            var vehiculosForm = new TipoVehiculoForm(_id);
-            Hide();
-            vehiculosForm.ShowDialog();
-            Close();
+            Utils.Returning.ReturnToPreviousForm(this, new TipoVehiculoForm(_id));
         }
 
         private void marcasBtn_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
             Utils.Validate.LockBtns(this);
-            Thread.Sleep(2000);
-            var vehiculosForm = new MarcasForm(_id);
-            Hide();
-            vehiculosForm.ShowDialog();
-            Close();
+            Utils.Returning.ReturnToPreviousForm(this, new MarcasForm(_id));
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,13 +52,26 @@ namespace RentACar
 
         private void modelosBtn_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
+
             Utils.Validate.LockBtns(this);
-            Thread.Sleep(2000);
-            var modelosForm = new ModelosForm(_id);
-            Hide();
-            modelosForm.ShowDialog();
-            Close();
+            Utils.Returning.ReturnToPreviousForm(this, new ModelosForm(_id));
+
+        }
+
+        private void tipoCombustibleBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new TipoCombustibleForm(_id));
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            var user = _userRepo.GetUserById(_id);
+            if(user.Id_Rol == 1)
+            {
+                empleadosBtn.Visible = true;
+                clientesBtn.Visible = true;
+            }
         }
     }
 }

@@ -35,6 +35,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modelosBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.tipoCombustibleBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.empleadosBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.clientesBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +112,7 @@
             this.modelosBtn.AutoSize = true;
             this.modelosBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.modelosBtn.Depth = 0;
-            this.modelosBtn.Location = new System.Drawing.Point(96, 209);
+            this.modelosBtn.Location = new System.Drawing.Point(145, 209);
             this.modelosBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.modelosBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.modelosBtn.Name = "modelosBtn";
@@ -120,11 +123,62 @@
             this.modelosBtn.UseVisualStyleBackColor = true;
             this.modelosBtn.Click += new System.EventHandler(this.modelosBtn_Click);
             // 
+            // tipoCombustibleBtn
+            // 
+            this.tipoCombustibleBtn.AutoSize = true;
+            this.tipoCombustibleBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tipoCombustibleBtn.Depth = 0;
+            this.tipoCombustibleBtn.Location = new System.Drawing.Point(293, 209);
+            this.tipoCombustibleBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.tipoCombustibleBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tipoCombustibleBtn.Name = "tipoCombustibleBtn";
+            this.tipoCombustibleBtn.Primary = false;
+            this.tipoCombustibleBtn.Size = new System.Drawing.Size(171, 36);
+            this.tipoCombustibleBtn.TabIndex = 5;
+            this.tipoCombustibleBtn.Text = "Tipo Combustible";
+            this.tipoCombustibleBtn.UseVisualStyleBackColor = true;
+            this.tipoCombustibleBtn.Click += new System.EventHandler(this.tipoCombustibleBtn_Click);
+            // 
+            // empleadosBtn
+            // 
+            this.empleadosBtn.AutoSize = true;
+            this.empleadosBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.empleadosBtn.Depth = 0;
+            this.empleadosBtn.Location = new System.Drawing.Point(175, 280);
+            this.empleadosBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.empleadosBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.empleadosBtn.Name = "empleadosBtn";
+            this.empleadosBtn.Primary = false;
+            this.empleadosBtn.Size = new System.Drawing.Size(113, 36);
+            this.empleadosBtn.TabIndex = 6;
+            this.empleadosBtn.Text = "Empleados";
+            this.empleadosBtn.UseVisualStyleBackColor = true;
+            this.empleadosBtn.Visible = false;
+            // 
+            // clientesBtn
+            // 
+            this.clientesBtn.AutoSize = true;
+            this.clientesBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.clientesBtn.Depth = 0;
+            this.clientesBtn.Location = new System.Drawing.Point(342, 280);
+            this.clientesBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.clientesBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.clientesBtn.Name = "clientesBtn";
+            this.clientesBtn.Primary = false;
+            this.clientesBtn.Size = new System.Drawing.Size(91, 36);
+            this.clientesBtn.TabIndex = 7;
+            this.clientesBtn.Text = "Clientes";
+            this.clientesBtn.UseVisualStyleBackColor = true;
+            this.clientesBtn.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 449);
+            this.Controls.Add(this.clientesBtn);
+            this.Controls.Add(this.empleadosBtn);
+            this.Controls.Add(this.tipoCombustibleBtn);
             this.Controls.Add(this.modelosBtn);
             this.Controls.Add(this.marcasBtn);
             this.Controls.Add(this.tpVehiculoBtn);
@@ -134,6 +188,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Rent a Car - Main";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -149,5 +204,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private MaterialSkin.Controls.MaterialFlatButton modelosBtn;
+        private MaterialSkin.Controls.MaterialFlatButton tipoCombustibleBtn;
+        private MaterialSkin.Controls.MaterialFlatButton empleadosBtn;
+        private MaterialSkin.Controls.MaterialFlatButton clientesBtn;
     }
 }

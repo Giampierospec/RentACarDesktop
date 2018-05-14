@@ -55,11 +55,7 @@ namespace RentACar
         private void insertModeloBtn_Click(object sender, EventArgs e)
         {
             Utils.Validate.LockBtns(this);
-            Thread.Sleep(2000);
-            var modifyModelo = new ModifyModelos(_userId, 0, "Insertar");
-            Hide();
-            modifyModelo.ShowDialog();
-            Close();
+            Utils.Returning.ReturnToPreviousForm(this,new ModifyModelos(_userId, 0, "Insertar"));
         }
 
         private void editarModeloBtn_Click(object sender, EventArgs e)
@@ -71,11 +67,7 @@ namespace RentACar
             else
             {
                 Utils.Validate.LockBtns(this);
-                Thread.Sleep(2000);
-                var modifyModelo = new ModifyModelos(_userId, _modeloId, "Editar");
-                Hide();
-                modifyModelo.ShowDialog();
-                Close();
+                Utils.Returning.ReturnToPreviousForm(this,new ModifyModelos(_userId, _modeloId, "Editar"));
             }
         }
     }
