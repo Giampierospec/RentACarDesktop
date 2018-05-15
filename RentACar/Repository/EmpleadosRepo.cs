@@ -40,7 +40,7 @@ namespace RentACar.Repository
         /// </summary>
         /// <param name="ced"></param>
         /// <returns></returns>
-        public bool GetEmpleadoByCedula(string ced) => _db.Empleadoes.Any(x => x.Cedula.Trim() == ced.Trim());
+        public bool GetEmpleadoByCedula(string ced) => _db.Empleadoes.Any(x => x.Cedula.Trim() == ced.Trim()&& x.Id_Estado == 1);
         /// <summary>
         /// Inserta el empleado
         /// </summary>
