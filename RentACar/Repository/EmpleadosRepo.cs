@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.Repository
 {
-    class EmpleadosRepo
+    class EmpleadosRepo:UserRepo
     {
         private RentCarContext _db;
 
@@ -30,7 +30,8 @@ namespace RentACar.Repository
                 Estado = x.Estado.Estado1,
                 FechaIngreso = x.FechaIngreso,
                 Nombre = x.Nombre,
-                Tanda = x.Tanda
+                Tanda = x.Tanda,
+                Id = x.Id
 
             }).ToList();
         public Empleado GetEmpleadoById(int id) => _db.Empleadoes.FirstOrDefault(x => x.Id == id);
@@ -59,6 +60,7 @@ namespace RentACar.Repository
                 emp.Cedula = em.Cedula;
                 emp.Comision = em.Comision;
                 emp.Nombre = em.Nombre;
+                emp.Tanda = em.Tanda;
                 emp.FechaIngreso = em.FechaIngreso;
                 emp.Usuario.Email = em.Usuario.Email;
                 emp.Usuario.Pass = em.Usuario.Pass;

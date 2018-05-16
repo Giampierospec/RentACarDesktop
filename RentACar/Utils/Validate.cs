@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -11,6 +12,7 @@ namespace RentACar.Utils
 {
     public static class Validate
     {
+        private static Regex emailValidation = new Regex("^[a-z0-9][-a-z0-9._]+@([-a-z0-9]+.)+[a-z]{2,5}$");
         /// <summary>
         /// Genera Un mensaje de error si el control esta vacio
         /// </summary>
@@ -34,6 +36,12 @@ namespace RentACar.Utils
             return finalString;
         }
         /// <summary>
+        /// Revisa si el email es valido
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static bool CheckIfIsValidEmail(string email) => emailValidation.IsMatch(email);
+        /// <summary>
         /// Lockea Controles
         /// <paramref name="ctrl"/>
         /// </summary>
@@ -41,7 +49,8 @@ namespace RentACar.Utils
         {
             foreach (Control ctrl in ctrls.Controls)
             {
-                if(ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox))
+                if(ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox)
+                    || ctrl.GetType() == typeof(DateTimePicker))
                 {
                     ctrl.Enabled = false;
                 }

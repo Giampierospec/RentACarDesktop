@@ -73,5 +73,11 @@ namespace RentACar
                 clientesBtn.Visible = true;
             }
         }
+
+        private void empleadosBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new EmpleadosForm(_id));
+        }
     }
 }

@@ -144,7 +144,7 @@
             this.empleadosBtn.AutoSize = true;
             this.empleadosBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.empleadosBtn.Depth = 0;
-            this.empleadosBtn.Location = new System.Drawing.Point(175, 280);
+            this.empleadosBtn.Location = new System.Drawing.Point(167, 280);
             this.empleadosBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.empleadosBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.empleadosBtn.Name = "empleadosBtn";
@@ -154,13 +154,14 @@
             this.empleadosBtn.Text = "Empleados";
             this.empleadosBtn.UseVisualStyleBackColor = true;
             this.empleadosBtn.Visible = false;
+            this.empleadosBtn.Click += new System.EventHandler(this.empleadosBtn_Click);
             // 
             // clientesBtn
             // 
             this.clientesBtn.AutoSize = true;
             this.clientesBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.clientesBtn.Depth = 0;
-            this.clientesBtn.Location = new System.Drawing.Point(342, 280);
+            this.clientesBtn.Location = new System.Drawing.Point(351, 280);
             this.clientesBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.clientesBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.clientesBtn.Name = "clientesBtn";

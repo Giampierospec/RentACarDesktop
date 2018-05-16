@@ -108,6 +108,12 @@
     <Compile Include="Context\Vehiculo.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmpleadosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadosForm.Designer.cs">
+      <DependentUpon>EmpleadosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,12 @@
     <Compile Include="Models\TipoCombustibleModel.cs" />
     <Compile Include="Models\TipoVehiculoModel.cs" />
     <Compile Include="Models\VehiculosModel.cs" />
+    <Compile Include="ModifyEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyEmpleados.Designer.cs">
+      <DependentUpon>ModifyEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifyMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +211,9 @@
     <Compile Include="VehiculosForm.Designer.cs">
       <DependentUpon>VehiculosForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EmpleadosForm.resx">
+      <DependentUpon>EmpleadosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModelosForm.resx">
       <DependentUpon>ModelosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyEmpleados.resx">
+      <DependentUpon>ModifyEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyMarca.resx">
       <DependentUpon>ModifyMarca.cs</DependentUpon>
