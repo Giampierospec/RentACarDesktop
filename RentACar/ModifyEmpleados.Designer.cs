@@ -33,8 +33,6 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.enviarEmpBtn = new MaterialSkin.Controls.MaterialFlatButton();
@@ -48,6 +46,8 @@
             this.tandaCbx = new System.Windows.Forms.ComboBox();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.estadoCbx = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.atrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,24 +103,6 @@
             this.materialLabel4.TabIndex = 3;
             this.materialLabel4.Text = "Nombre";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.atrásToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(813, 28);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // atrásToolStripMenuItem
-            // 
-            this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
-            this.atrásToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.atrásToolStripMenuItem.Text = "Atrás";
-            this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
-            // 
             // materialLabel5
             // 
             this.materialLabel5.AutoSize = true;
@@ -161,6 +143,7 @@
             this.enviarEmpBtn.TabIndex = 7;
             this.enviarEmpBtn.Text = "EnviarBtn";
             this.enviarEmpBtn.UseVisualStyleBackColor = true;
+            this.enviarEmpBtn.Click += new System.EventHandler(this.enviarEmpBtn_Click);
             // 
             // cedTxt
             // 
@@ -173,7 +156,7 @@
             // emailTxt
             // 
             this.emailTxt.Location = new System.Drawing.Point(397, 138);
-            this.emailTxt.MaxLength = 11;
+            this.emailTxt.MaxLength = 5000;
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(162, 22);
             this.emailTxt.TabIndex = 9;
@@ -181,7 +164,7 @@
             // passTxt
             // 
             this.passTxt.Location = new System.Drawing.Point(397, 182);
-            this.passTxt.MaxLength = 11;
+            this.passTxt.MaxLength = 5000;
             this.passTxt.Name = "passTxt";
             this.passTxt.PasswordChar = '*';
             this.passTxt.Size = new System.Drawing.Size(162, 22);
@@ -190,7 +173,7 @@
             // nombreTxt
             // 
             this.nombreTxt.Location = new System.Drawing.Point(397, 230);
-            this.nombreTxt.MaxLength = 11;
+            this.nombreTxt.MaxLength = 5000;
             this.nombreTxt.Name = "nombreTxt";
             this.nombreTxt.Size = new System.Drawing.Size(162, 22);
             this.nombreTxt.TabIndex = 11;
@@ -198,7 +181,7 @@
             // cmsTxt
             // 
             this.cmsTxt.Location = new System.Drawing.Point(397, 273);
-            this.cmsTxt.MaxLength = 11;
+            this.cmsTxt.MaxLength = 13;
             this.cmsTxt.Name = "cmsTxt";
             this.cmsTxt.Size = new System.Drawing.Size(162, 22);
             this.cmsTxt.TabIndex = 12;
@@ -258,6 +241,24 @@
             this.estadoCbx.Size = new System.Drawing.Size(162, 24);
             this.estadoCbx.TabIndex = 17;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.atrasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(813, 28);
+            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // atrasToolStripMenuItem
+            // 
+            this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
+            this.atrasToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.atrasToolStripMenuItem.Text = "atras";
+            this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
+            // 
             // ModifyEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,9 +283,9 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "ModifyEmpleados";
             this.Text = "Rent A Car -";
+            this.Load += new System.EventHandler(this.ModifyEmpleados_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -298,8 +299,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialFlatButton enviarEmpBtn;
@@ -313,5 +312,7 @@
         private System.Windows.Forms.ComboBox tandaCbx;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private System.Windows.Forms.ComboBox estadoCbx;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem atrasToolStripMenuItem;
     }
 }

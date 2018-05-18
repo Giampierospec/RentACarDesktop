@@ -13,20 +13,21 @@ namespace RentACar.Utils
     public static class Validate
     {
         private static Regex emailValidation = new Regex("^[a-z0-9][-a-z0-9._]+@([-a-z0-9]+.)+[a-z]{2,5}$");
+        private static Regex numberValidation = new Regex(@"^\d+$");
         /// <summary>
         /// Genera Un mensaje de error si el control esta vacio
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-       public static string GenerateErrorMessage(Control control)
+        public static string GenerateErrorMessage(Control control)
         {
             string validateMsg = string.Empty;
             string finalString = string.Empty;
             foreach (Control ctrl in control.Controls)
             {
-                if(ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox))
+                if (ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox))
                 {
-                    if(string.IsNullOrEmpty(ctrl.Text))
+                    if (string.IsNullOrEmpty(ctrl.Text))
                         validateMsg += $"{ctrl.Name}\n";
 
                 }
@@ -40,7 +41,14 @@ namespace RentACar.Utils
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public static bool CheckIfIsValidEmail(string email) => emailValidation.IsMatch(email);
+        public static string CheckIfIsValidEmail(string email)
+        {
+            string msg = string.Empty;
+
+            if (!emailValidation.IsMatch(email))
+                msg = $"el email {email} No es válido";
+            return msg;
+        }
         /// <summary>
         /// Lockea Controles
         /// <paramref name="ctrl"/>
@@ -49,12 +57,24 @@ namespace RentACar.Utils
         {
             foreach (Control ctrl in ctrls.Controls)
             {
-                if(ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox)
+                if (ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox)
                     || ctrl.GetType() == typeof(DateTimePicker))
                 {
                     ctrl.Enabled = false;
                 }
             }
+        }
+        /// <summary>
+        /// Busca si el texto es un numero
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string IsANumber(Control str)
+        {
+            string msg = string.Empty;
+            if (!numberValidation.IsMatch(str.Text))
+                msg = $"{str.Name} no es un numero Intente Denuevo";
+            return msg;
         }
         /// <summary>
         ///Desbloquea Controles
@@ -64,7 +84,8 @@ namespace RentACar.Utils
         {
             foreach (Control ctrl in ctrls.Controls)
             {
-                if (ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox))
+                if (ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox)
+                        || ctrl.GetType() == typeof(DateTimePicker))
                 {
                     ctrl.Enabled = true;
                 }

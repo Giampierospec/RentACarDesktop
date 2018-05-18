@@ -66,6 +66,7 @@ namespace RentACar.Repository
                 emp.Usuario.Pass = em.Usuario.Pass;
                 emp.Usuario.Id_Rol = em.Usuario.Id_Rol;
             }
+            _db.SaveChanges();
         }
     }
 }

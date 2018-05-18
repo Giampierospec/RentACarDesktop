@@ -36,7 +36,7 @@ namespace RentACar.Repository
             var user = _db.Usuarios.FirstOrDefault(x => x.Email.Trim().Contains(email.Trim()));
             if (user != null)
                 msg += $"El Email {email} ya existe";
-            if (!Utils.Validate.CheckIfIsValidEmail(email))
+            if (!string.IsNullOrEmpty(Utils.Validate.CheckIfIsValidEmail(email)))
                 msg += $"\n El email {email} no es un Email válido";
             return msg;
         }
