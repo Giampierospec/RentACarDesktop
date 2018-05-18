@@ -25,7 +25,6 @@ namespace RentACar.Context
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Estado> Estadoes { get; set; }
         public virtual DbSet<Inspeccion> Inspeccions { get; set; }
         public virtual DbSet<Marca> Marcas { get; set; }
@@ -37,5 +36,6 @@ namespace RentACar.Context
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Vehiculo> Vehiculoes { get; set; }
         public virtual DbSet<Empleado> Empleadoes { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
     }
 }

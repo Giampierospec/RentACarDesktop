@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="de376bf2206146f8a85bd696bab38c09" Name="Diagram1">
-        <EntityTypeShape EntityType="RentCarModel.Cliente" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="RentCarModel.Estado" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="RentCarModel.Inspeccion" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RentCarModel.Marca" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
@@ -16,10 +15,6 @@
         <EntityTypeShape EntityType="RentCarModel.TipoVehiculo" Width="1.5" PointX="3" PointY="28.25" IsExpanded="true" />
         <EntityTypeShape EntityType="RentCarModel.Usuario" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="RentCarModel.Vehiculo" Width="1.5" PointX="7.5" PointY="19.75" IsExpanded="true" />
-        <AssociationConnector Association="RentCarModel.FK_ID_CLIENTE_IN" ManuallyRouted="false" />
-        <AssociationConnector Association="RentCarModel.FK_ID_CLIENTE_R" ManuallyRouted="false" />
-        <AssociationConnector Association="RentCarModel.FK_ID_ESTADO_CL" ManuallyRouted="false" />
-        <AssociationConnector Association="RentCarModel.FK_ID_USER_CL" ManuallyRouted="false" />
         <AssociationConnector Association="RentCarModel.FK_ID_ESTADO_IN" ManuallyRouted="false" />
         <AssociationConnector Association="RentCarModel.FK_ID_ESTADO_MD" ManuallyRouted="false" />
         <AssociationConnector Association="RentCarModel.FK_ID_ESTADO_MR" ManuallyRouted="false" />
@@ -47,6 +42,11 @@
         <AssociationConnector Association="RentCarModel.FK_ID_EMPLEADO_R" />
         <AssociationConnector Association="RentCarModel.FK_ID_ESTADO_EM" />
         <AssociationConnector Association="RentCarModel.FK_ID_USER_EM" />
+        <EntityTypeShape EntityType="RentCarModel.Cliente" Width="1.5" PointX="3" PointY="13.75" />
+        <AssociationConnector Association="RentCarModel.FK_ID_CLIENTE_IN" />
+        <AssociationConnector Association="RentCarModel.FK_ID_CLIENTE_R" />
+        <AssociationConnector Association="RentCarModel.FK_ID_ESTADO_CL" />
+        <AssociationConnector Association="RentCarModel.FK_ID_USER_CL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

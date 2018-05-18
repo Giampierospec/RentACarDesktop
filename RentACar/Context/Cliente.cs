@@ -25,7 +25,7 @@ namespace RentACar.Context
         public string Nombre { get; set; }
         public string Cedula { get; set; }
         public string NoTarjetaCr { get; set; }
-        public string LimiteCredito { get; set; }
+        public Nullable<decimal> LimiteCredito { get; set; }
         public string TipoPersona { get; set; }
         public Nullable<int> Id_Estado { get; set; }
         public Nullable<int> Id_User { get; set; }

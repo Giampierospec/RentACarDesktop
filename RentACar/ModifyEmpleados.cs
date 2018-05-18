@@ -72,6 +72,7 @@ namespace RentACar
                 var emailErrMsg = _empleadoRepo.GenerateMessageIfUserExists(emailTxt.Text.Trim());
                 var comisionError = Utils.Validate.IsANumber(cmsTxt);
                 var empleadoExists = _empleadoRepo.GetEmpleadoByCedula(cedTxt.Text.Trim());
+                var cedulaIsValid = Utils.Validate.ValidaCedula(cedTxt.Text.Trim());
                 
                 if (string.IsNullOrEmpty(errorMsg) && string.IsNullOrEmpty(emailErrMsg) && string.IsNullOrEmpty(comisionError))
                 {
@@ -80,6 +81,12 @@ namespace RentACar
                         Utils.Validate.UnLockControls(this);
                         Utils.Validate.EnableBtns(this);
                         MessageBox.Show("El empleado ya existe intente denuevo");
+                    }
+                    if (!cedulaIsValid)
+                    {
+                        Utils.Validate.UnLockControls(this);
+                        Utils.Validate.EnableBtns(this);
+                        MessageBox.Show("Cedula invalida intente denuevo");
                     }
                     else
                     {
