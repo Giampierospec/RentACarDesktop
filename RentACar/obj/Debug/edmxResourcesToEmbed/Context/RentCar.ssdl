@@ -6,9 +6,9 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="varchar(max)" />
-    <Property Name="Cedula" Type="varchar(max)" />
+    <Property Name="Cedula" Type="varchar" MaxLength="11" />
     <Property Name="NoTarjetaCr" Type="varchar(max)" />
-    <Property Name="LimiteCredito" Type="varchar(max)" />
+    <Property Name="LimiteCredito" Type="decimal" Precision="12" Scale="2" />
     <Property Name="TipoPersona" Type="varchar(max)" />
     <Property Name="Id_Estado" Type="int" />
     <Property Name="Id_User" Type="int" />

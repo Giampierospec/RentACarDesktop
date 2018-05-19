@@ -19,7 +19,7 @@ namespace RentACar.Repository
         /// <summary>
         /// Busca todos los clientes
         /// </summary>
-        public List<ClienteModel> GetAllClientes =>
+        public List<ClienteModel> GetAllClientes() =>
             _db.Clientes
                 .Where(x => x.Id_Estado == 1)
             .Select(x => new ClienteModel()

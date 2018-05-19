@@ -55,11 +55,13 @@ namespace RentACar
         {
             var empleado = _empleadoRepo.GetEmpleadoById(_empleadoId);
             cedTxt.Text = empleado.Cedula;
+            nombreTxt.Text = empleado.Nombre;
             emailTxt.Text = empleado.Usuario.Email;
             passTxt.Text = empleado.Usuario.Pass;
             cmsTxt.Text = empleado.Comision.ToString();
             fechaIngrestoDt.Value = empleado.FechaIngreso.HasValue? empleado.FechaIngreso.Value: default(DateTime);
             estadoCbx.SelectedValue = empleado.Id_Estado;
+            tandaCbx.Text = empleado.Tanda;
         }
 
         private void enviarEmpBtn_Click(object sender, EventArgs e)
@@ -69,14 +71,14 @@ namespace RentACar
                 Utils.Validate.LockBtns(this);
                 Utils.Validate.LockControls(this);
                 var errorMsg = Utils.Validate.GenerateErrorMessage(this);
-                var emailErrMsg = _empleadoRepo.GenerateMessageIfUserExists(emailTxt.Text.Trim());
+                var emailErrMsg = _empleadoRepo.GenerateMessageIfUserExists(emailTxt.Text.Trim(),_empleadoId);
                 var comisionError = Utils.Validate.IsANumber(cmsTxt);
                 var empleadoExists = _empleadoRepo.GetEmpleadoByCedula(cedTxt.Text.Trim());
                 var cedulaIsValid = Utils.Validate.ValidaCedula(cedTxt.Text.Trim());
                 
                 if (string.IsNullOrEmpty(errorMsg) && string.IsNullOrEmpty(emailErrMsg) && string.IsNullOrEmpty(comisionError))
                 {
-                    if (empleadoExists)
+                    if (empleadoExists && _empleadoId == 0)
                     {
                         Utils.Validate.UnLockControls(this);
                         Utils.Validate.EnableBtns(this);
@@ -98,7 +100,7 @@ namespace RentACar
                             Tanda = tandaCbx.Text.Trim(),
                             Id_User = _userId,
                             Id_Estado = int.Parse(estadoCbx.SelectedValue.ToString()),
-                            Nombre = nombreTxt.Text.Trim(),
+                            Nombre = nombreTxt.Text.Trim().ToUpper(),
                             Usuario = new Context.Usuario()
                             {
                                 Email = emailTxt.Text.Trim(),

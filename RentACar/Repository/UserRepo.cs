@@ -30,11 +30,11 @@ namespace RentACar.Repository
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public string GenerateMessageIfUserExists(string email)
+        public string GenerateMessageIfUserExists(string email, int id = 0)
         {
             string msg = string.Empty;
             var user = _db.Usuarios.FirstOrDefault(x => x.Email.Trim().Contains(email.Trim()));
-            if (user != null)
+            if (user != null && id == 0)
                 msg += $"El Email {email} ya existe";
             if (!string.IsNullOrEmpty(Utils.Validate.CheckIfIsValidEmail(email)))
                 msg += $"\n El email {email} no es un Email válido";

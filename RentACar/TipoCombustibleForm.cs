@@ -67,7 +67,7 @@ namespace RentACar
             else
             {
                 Utils.Validate.LockBtns(this);
-                Utils.Returning.ReturnToPreviousForm(this, new ModifyTipoCombustible(_userId, _tcId, "Insertar"));
+                Utils.Returning.ReturnToPreviousForm(this, new ModifyTipoCombustible(_userId, _tcId, "Editar"));
             }
         }
     }

@@ -65,8 +65,13 @@ namespace RentACar
             else
             {
                 Utils.Validate.LockBtns(this);
-                Utils.Returning.ReturnToPreviousForm(this, new ModifyEmpleados(_userId, _empleadoId, "Insertar"));
+                Utils.Returning.ReturnToPreviousForm(this, new ModifyEmpleados(_userId, _empleadoId, "Editar"));
             }
+        }
+
+        private void EmpleadoTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

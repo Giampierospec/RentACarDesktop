@@ -171,6 +171,7 @@
             this.clientesBtn.Text = "Clientes";
             this.clientesBtn.UseVisualStyleBackColor = true;
             this.clientesBtn.Visible = false;
+            this.clientesBtn.Click += new System.EventHandler(this.clientesBtn_Click);
             // 
             // MainForm
             // 

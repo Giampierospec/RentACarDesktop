@@ -79,5 +79,11 @@ namespace RentACar
             Utils.Validate.LockBtns(this);
             Utils.Returning.ReturnToPreviousForm(this, new EmpleadosForm(_id));
         }
+
+        private void clientesBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ClientesForm(_id));
+        }
     }
 }

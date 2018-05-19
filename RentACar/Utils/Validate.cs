@@ -13,7 +13,7 @@ namespace RentACar.Utils
     public static class Validate
     {
         private static Regex emailValidation = new Regex("^[a-z0-9][-a-z0-9._]+@([-a-z0-9]+.)+[a-z]{2,5}$");
-        private static Regex numberValidation = new Regex(@"^\d+$");
+        private static Regex numberValidation = new Regex(@"^[0-9.]+$");
         /// <summary>
         /// Genera Un mensaje de error si el control esta vacio
         /// </summary>

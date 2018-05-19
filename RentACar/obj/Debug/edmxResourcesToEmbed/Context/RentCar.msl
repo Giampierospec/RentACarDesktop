@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="RentCarModelStoreContainer" CdmEntityContainer="RentCarContext">
-    <EntitySetMapping Name="Clientes">
-      <EntityTypeMapping TypeName="RentCarModel.Cliente">
-        <MappingFragment StoreEntitySet="Cliente">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-          <ScalarProperty Name="NoTarjetaCr" ColumnName="NoTarjetaCr" />
-          <ScalarProperty Name="LimiteCredito" ColumnName="LimiteCredito" />
-          <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
-          <ScalarProperty Name="Id_Estado" ColumnName="Id_Estado" />
-          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Estadoes">
       <EntityTypeMapping TypeName="RentCarModel.Estado">
         <MappingFragment StoreEntitySet="Estado">
@@ -143,6 +129,20 @@
           <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
           <ScalarProperty Name="Comision" ColumnName="Comision" />
           <ScalarProperty Name="Tanda" ColumnName="Tanda" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="RentCarModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Id_Estado" ColumnName="Id_Estado" />
+          <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
+          <ScalarProperty Name="LimiteCredito" ColumnName="LimiteCredito" />
+          <ScalarProperty Name="NoTarjetaCr" ColumnName="NoTarjetaCr" />
           <ScalarProperty Name="Cedula" ColumnName="Cedula" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Id" ColumnName="Id" />

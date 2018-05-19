@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientesForm.Designer.cs">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Context\Cliente.cs">
       <DependentUpon>RentCar.tt</DependentUpon>
     </Compile>
@@ -152,6 +158,12 @@
     <Compile Include="Models\TipoCombustibleModel.cs" />
     <Compile Include="Models\TipoVehiculoModel.cs" />
     <Compile Include="Models\VehiculosModel.cs" />
+    <Compile Include="ModifyClientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyClientesForm.Designer.cs">
+      <DependentUpon>ModifyClientesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifyEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +225,9 @@
     <Compile Include="VehiculosForm.Designer.cs">
       <DependentUpon>VehiculosForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientesForm.resx">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmpleadosForm.resx">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModelosForm.resx">
       <DependentUpon>ModelosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyClientesForm.resx">
+      <DependentUpon>ModifyClientesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyEmpleados.resx">
       <DependentUpon>ModifyEmpleados.cs</DependentUpon>

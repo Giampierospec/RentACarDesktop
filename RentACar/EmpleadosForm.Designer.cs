@@ -53,6 +53,7 @@
             this.EmpleadoTable.Size = new System.Drawing.Size(603, 299);
             this.EmpleadoTable.TabIndex = 11;
             this.EmpleadoTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpleadoTable_CellClick);
+            this.EmpleadoTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpleadoTable_CellContentClick);
             // 
             // editarEmpleadoBtn
             // 
