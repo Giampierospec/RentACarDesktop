@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.Repository
 {
-    class VehiculosRepo
+    public class VehiculosRepo
     {
         private RentCarContext _db;
 
@@ -100,7 +100,16 @@ namespace RentACar.Repository
                     TipoVehiculo = x.TipoVehiculo.Descripcion
                 })
                 .ToList();
-
+        /// <summary>
+        /// Cambia El Estado del Vehiculo
+        /// </summary>
+        /// <param name="vh"></param>
+        public void CambiarEstado(Vehiculo vh)
+        {
+            var vehiculo = _db.Vehiculoes.FirstOrDefault(x => x.Id == vh.Id);
+            vehiculo.Id_Estado = vh.Id_Estado;
+            _db.SaveChanges();
+        }
         /// <summary>
         /// Verifica si el vehiculo ya existe
         /// </summary>

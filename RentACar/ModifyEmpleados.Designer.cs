@@ -189,6 +189,7 @@
             // fechaIngrestoDt
             // 
             this.fechaIngrestoDt.CustomFormat = "dd-MM-yyyy";
+            this.fechaIngrestoDt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fechaIngrestoDt.Location = new System.Drawing.Point(397, 322);
             this.fechaIngrestoDt.Name = "fechaIngrestoDt";
             this.fechaIngrestoDt.Size = new System.Drawing.Size(162, 22);

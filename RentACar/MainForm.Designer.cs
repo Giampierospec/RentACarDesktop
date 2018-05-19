@@ -38,6 +38,7 @@
             this.tipoCombustibleBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.empleadosBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.clientesBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.inspeccionBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,11 +174,29 @@
             this.clientesBtn.Visible = false;
             this.clientesBtn.Click += new System.EventHandler(this.clientesBtn_Click);
             // 
+            // inspeccionBtn
+            // 
+            this.inspeccionBtn.AutoSize = true;
+            this.inspeccionBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.inspeccionBtn.Depth = 0;
+            this.inspeccionBtn.Location = new System.Drawing.Point(264, 342);
+            this.inspeccionBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.inspeccionBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.inspeccionBtn.Name = "inspeccionBtn";
+            this.inspeccionBtn.Primary = false;
+            this.inspeccionBtn.Size = new System.Drawing.Size(112, 36);
+            this.inspeccionBtn.TabIndex = 8;
+            this.inspeccionBtn.Text = "Inspeccion";
+            this.inspeccionBtn.UseVisualStyleBackColor = true;
+            this.inspeccionBtn.Visible = false;
+            this.inspeccionBtn.Click += new System.EventHandler(this.inspeccionBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 449);
+            this.Controls.Add(this.inspeccionBtn);
             this.Controls.Add(this.clientesBtn);
             this.Controls.Add(this.empleadosBtn);
             this.Controls.Add(this.tipoCombustibleBtn);
@@ -209,5 +228,6 @@
         private MaterialSkin.Controls.MaterialFlatButton tipoCombustibleBtn;
         private MaterialSkin.Controls.MaterialFlatButton empleadosBtn;
         private MaterialSkin.Controls.MaterialFlatButton clientesBtn;
+        private MaterialSkin.Controls.MaterialFlatButton inspeccionBtn;
     }
 }

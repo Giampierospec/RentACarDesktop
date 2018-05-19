@@ -24,5 +24,9 @@ namespace RentACar.Repository
         public List<Modelo> GetModelosByMarca(int marcaId) => _db.Modeloes.Where(x => x.Id_Marca == marcaId && x.Id_Estado == 1).ToList();
 
         public List<TipoVehiculo> GetAllTipoVehiculos() => _db.TipoVehiculoes.Where(x => x.Id_Estado == 1).ToList();
+        public List<Cliente> GetAllClientes() => _db.Clientes.Where(x => x.Id_Estado == 1).ToList();
+        public List<Vehiculo> GetAllVehiculos() => _db.Vehiculoes.Where(x => x.Id_Estado == 1).ToList();
+        public List<Empleado> GetAllEmpleados() => _db.Empleadoes.Where(x => x.Id_Estado == 1).ToList();
+
     }
 }

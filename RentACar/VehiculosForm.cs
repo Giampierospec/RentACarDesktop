@@ -113,6 +113,21 @@ namespace RentACar
                 TipoCombustible = searchTipoCo.Text.Trim()
             });
         }
+
+        private void InspeccionBtn_Click(object sender, EventArgs e)
+        {
+            if (_vehiculoId == 0)
+            {
+                MessageBox.Show("Escoja una fila para Inspeccionar el vehiculo");
+            }
+            else
+            {
+                Utils.Validate.LockBtns(this);
+                
+                if(MessageBox.Show("Vehiculo va a pasar a proceso de inspeccion") == DialogResult.OK)
+                    Utils.Returning.ReturnToPreviousForm(this, new ModifyInspeccion(_userId, _vehiculoId, 0,"Crear"));
+            }
+        }
     }
 
 }

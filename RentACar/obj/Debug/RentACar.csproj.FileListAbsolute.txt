@@ -28,3 +28,5 @@ C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModifyEmpleados.resources
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ClientesForm.resources
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModifyClientesForm.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.InspeccionForm.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ModifyInspeccion.resources
