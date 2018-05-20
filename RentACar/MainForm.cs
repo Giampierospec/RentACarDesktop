@@ -73,7 +73,11 @@ namespace RentACar
                 clientesBtn.Visible = true;
             }
             if (user.Id_Rol != 2)
+            {
                 inspeccionBtn.Visible = true;
+                rentasBtn.Visible = true;
+            }
+                
         }
 
         private void empleadosBtn_Click(object sender, EventArgs e)
@@ -92,6 +96,12 @@ namespace RentACar
         {
             Utils.Validate.LockBtns(this);
             Utils.Returning.ReturnToPreviousForm(this, new InspeccionForm(_id));
+        }
+
+        private void rentasBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new RentaForm(_id));
         }
     }
 }

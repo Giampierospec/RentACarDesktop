@@ -1,4 +1,5 @@
-﻿using RentACar.Models;
+﻿using MaterialSkin.Controls;
+using RentACar.Models;
 using RentACar.Repository;
 using System;
 using System.Collections.Generic;
@@ -58,7 +59,9 @@ namespace RentACar.Utils
             foreach (Control ctrl in ctrls.Controls)
             {
                 if (ctrl.GetType() == typeof(TextBox) || ctrl.GetType() == typeof(ComboBox)
-                    || ctrl.GetType() == typeof(DateTimePicker))
+                    || ctrl.GetType() == typeof(DateTimePicker)
+                    || ctrl.GetType() == typeof(CheckBox)
+                    || ctrl.GetType() == typeof(MaterialCheckBox))
                 {
                     ctrl.Enabled = false;
                 }
@@ -69,11 +72,16 @@ namespace RentACar.Utils
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string IsANumber(Control str)
+        public static string IsANumber(params Control[] strs)
         {
             string msg = string.Empty;
-            if (!numberValidation.IsMatch(str.Text))
-                msg = $"{str.Name} no es un numero Intente Denuevo";
+            foreach (var  str in strs)
+            {
+                if (!numberValidation.IsMatch(str.Text))
+                    msg += $"{str.Name} no es un numero\n";
+            }
+            if (!string.IsNullOrEmpty(msg))
+                msg += "Intente denuevo";
             return msg;
         }
         /// <summary>
@@ -161,7 +169,7 @@ namespace RentACar.Utils
         {
             foreach (Control ctrl in ctrls.Controls)
             {
-                if (ctrl.GetType() == typeof(Button) || ctrl.GetType() == typeof(MaterialSkin.Controls.MaterialFlatButton))
+                if (ctrl.GetType() == typeof(Button) || ctrl.GetType() == typeof(MaterialFlatButton))
                 {
                     ctrl.Enabled = false;
                 }

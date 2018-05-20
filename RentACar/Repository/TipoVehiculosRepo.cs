@@ -34,7 +34,7 @@ namespace RentACar.Repository
         /// <param name="tp"></param>
         public void InsertTipoVehiculo(TipoVehiculo tp)
         {
-            if(tp.Id == 0)
+            if (tp.Id == 0)
             {
                 _db.TipoVehiculoes.Add(tp);
             }
@@ -47,6 +47,27 @@ namespace RentACar.Repository
             }
             _db.SaveChanges();
         }
+        /// <summary>
+        /// Revisa si el tipo de vehiculo existe
+        /// </summary>
+        /// <param name="txt"></param>
+        /// <returns></returns>
         public bool TipoVehiculoExists(string txt) => _db.TipoVehiculoes.Any(x => x.Descripcion.ToLower().Trim() == txt.ToLower().Trim() && x.Id_Estado == 1);
+        /// <summary>
+        /// Filtra los tipos de vehiculos
+        /// </summary>
+        /// <param name="tv"></param>
+        /// <returns></returns>
+        public List<TipoVehiculoModel> Filter(TipoVehiculo tv) =>
+            _db.TipoVehiculoes
+            .Where(x => (x.Id_Estado == 1) &&
+                    ((tv.Descripcion == null || tv.Descripcion == string.Empty) ? true : x.Descripcion.ToLower().Trim().Contains(tv.Descripcion.ToLower().Trim()))
+                ).Select(x => new TipoVehiculoModel()
+                {
+                    TipoVehiculo = x.Descripcion,
+                    Estado = x.Estado.Estado1,
+                    Id = x.Id
+                }).ToList();
+
     }
 }

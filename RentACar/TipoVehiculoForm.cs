@@ -75,5 +75,18 @@ namespace RentACar
            
             Utils.Returning.ReturnToPreviousForm(this,new MainForm(_userId));
         }
+
+        private void tipoVhTxt_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void Filter()
+        {
+            TVehiculosTable.DataSource = _tpVehiculoRepo.Filter(new Context.TipoVehiculo()
+            {
+                Descripcion = tipoVhTxt.Text.Trim()
+            });
+        }
     }
 }

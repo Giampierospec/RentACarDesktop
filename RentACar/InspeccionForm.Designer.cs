@@ -52,6 +52,7 @@
             this.inspeccionTable.RowTemplate.Height = 24;
             this.inspeccionTable.Size = new System.Drawing.Size(654, 224);
             this.inspeccionTable.TabIndex = 11;
+            this.inspeccionTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inspeccionTable_CellClick);
             // 
             // rentarBtn
             // 
@@ -67,6 +68,7 @@
             this.rentarBtn.TabIndex = 10;
             this.rentarBtn.Text = "Rentar";
             this.rentarBtn.UseVisualStyleBackColor = true;
+            this.rentarBtn.Click += new System.EventHandler(this.rentarBtn_Click);
             // 
             // editarInsBtn
             // 
@@ -82,6 +84,7 @@
             this.editarInsBtn.TabIndex = 9;
             this.editarInsBtn.Text = "Editar Inspeccion";
             this.editarInsBtn.UseVisualStyleBackColor = true;
+            this.editarInsBtn.Click += new System.EventHandler(this.editarInsBtn_Click);
             // 
             // menuStrip1
             // 

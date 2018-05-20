@@ -52,6 +52,7 @@
     <EntitySetMapping Name="Rentas">
       <EntityTypeMapping TypeName="RentCarModel.Renta">
         <MappingFragment StoreEntitySet="Renta">
+          <ScalarProperty Name="MontoTotalPorDia" ColumnName="MontoTotalPorDia" />
           <ScalarProperty Name="Id_User" ColumnName="Id_User" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FechaRenta" ColumnName="FechaRenta" />

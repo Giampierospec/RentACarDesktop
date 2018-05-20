@@ -34,6 +34,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.logoutTVMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásMenuTvItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.tipoVhTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TVehiculosTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -45,11 +47,11 @@
             this.TVehiculosTable.AllowUserToOrderColumns = true;
             this.TVehiculosTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.TVehiculosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TVehiculosTable.Location = new System.Drawing.Point(268, 216);
+            this.TVehiculosTable.Location = new System.Drawing.Point(252, 260);
             this.TVehiculosTable.Name = "TVehiculosTable";
             this.TVehiculosTable.ReadOnly = true;
             this.TVehiculosTable.RowTemplate.Height = 24;
-            this.TVehiculosTable.Size = new System.Drawing.Size(379, 205);
+            this.TVehiculosTable.Size = new System.Drawing.Size(413, 213);
             this.TVehiculosTable.TabIndex = 5;
             this.TVehiculosTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TVehiculosTable_CellContentClick);
             // 
@@ -111,11 +113,34 @@
             this.atrásMenuTvItem.Text = "Atrás";
             this.atrásMenuTvItem.Click += new System.EventHandler(this.atrásMenuTvItem_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(248, 210);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(126, 24);
+            this.materialLabel1.TabIndex = 12;
+            this.materialLabel1.Text = "Tipo Vehiculo";
+            // 
+            // tipoVhTxt
+            // 
+            this.tipoVhTxt.Location = new System.Drawing.Point(407, 210);
+            this.tipoVhTxt.Name = "tipoVhTxt";
+            this.tipoVhTxt.Size = new System.Drawing.Size(175, 22);
+            this.tipoVhTxt.TabIndex = 13;
+            this.tipoVhTxt.TextChanged += new System.EventHandler(this.tipoVhTxt_TextChanged);
+            // 
             // TipoVehiculoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 519);
+            this.Controls.Add(this.tipoVhTxt);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.TVehiculosTable);
             this.Controls.Add(this.editarVehiculoBtn);
@@ -139,5 +164,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem logoutTVMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atrásMenuTvItem;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.TextBox tipoVhTxt;
     }
 }

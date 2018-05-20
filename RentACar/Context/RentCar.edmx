@@ -90,6 +90,7 @@
           <Property Name="Id_Cliente" Type="int" />
           <Property Name="Id_Estado" Type="int" />
           <Property Name="Id_User" Type="int" />
+          <Property Name="MontoTotalPorDia" Type="decimal" Precision="29" Scale="0" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -725,6 +726,7 @@
           <NavigationProperty Name="Usuario" Relationship="RentCarModel.FK_ID_USER_R" FromRole="Renta" ToRole="Usuario" />
           <NavigationProperty Name="Empleado" Relationship="RentCarModel.FK_ID_EMPLEADO_R" FromRole="Renta" ToRole="Empleado" />
           <NavigationProperty Name="Cliente" Relationship="RentCarModel.FK_ID_CLIENTE_R" FromRole="Renta" ToRole="Cliente" />
+          <Property Name="MontoTotalPorDia" Type="Decimal" Precision="29" Scale="0" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -1386,6 +1388,7 @@
           <EntitySetMapping Name="Rentas">
             <EntityTypeMapping TypeName="RentCarModel.Renta">
               <MappingFragment StoreEntitySet="Renta">
+                <ScalarProperty Name="MontoTotalPorDia" ColumnName="MontoTotalPorDia" />
                 <ScalarProperty Name="Id_User" ColumnName="Id_User" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FechaRenta" ColumnName="FechaRenta" />

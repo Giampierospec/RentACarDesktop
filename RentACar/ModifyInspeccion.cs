@@ -50,11 +50,11 @@ namespace RentACar
                     _inspeccionRepo.InsertInspeccion(new Context.Inspeccion() {
                         CantidadCombustible = decimal.Parse(cantCombTxt.Text.Trim()),
                         EstadoGomas = estadoGomasTxt.Text.Trim(),
-                        GomaRepuesta = bool.Parse(gomaResCbx.Text.Trim()),
+                        GomaRepuesta = gomaResCbx.Checked,
                         Fecha = fechaInsDt.Value,
-                        Ralladuras = bool.Parse(ralladurasCbx.Text.Trim()),
-                        TieneGato = bool.Parse(gatoCbx.Text.Trim()),
-                        TieneRoturasCristal = bool.Parse(roturasCristalCbx.Text.Trim()),
+                        Ralladuras = ralladurasCbx.Checked,
+                        TieneGato = gatoCbx.Checked,
+                        TieneRoturasCristal = roturasCristalCbx.Checked,
                         Id_Cliente = int.Parse(clienteCbx.SelectedValue.ToString()),
                         Id_Empleado = int.Parse(empleadoCbx.SelectedValue.ToString()),
                         Id_User = _userId,
@@ -70,7 +70,7 @@ namespace RentACar
                         Id = _vehiculoId,
                         Id_Estado = 4
                     });
-                    if (MessageBox.Show("Vehiculo Inspeccionado Correctamente") == DialogResult.OK)
+                    if (MessageBox.Show("Inspeccion procesada correctamente") == DialogResult.OK)
                     {
                         Utils.Returning.ReturnToPreviousForm(this, new InspeccionForm(_userId, _vehiculoId));
                     }
@@ -97,7 +97,15 @@ namespace RentACar
         {
             Text = $"{_keyword} Inspeccion";
             btnInsEnviar.Text = _keyword;
-            InitializeControls();
+           if(_inspeccionId == 0)
+            {
+                InitializeControls();
+            }
+            else
+            {
+                InitializeControls();
+                SetValues();
+            }
         }
         private void InitializeControls()
         {
@@ -110,6 +118,20 @@ namespace RentACar
             empleadoCbx.DataSource = _loadCombo.GetAllEmpleados();
             empleadoCbx.DisplayMember = "Nombre";
             empleadoCbx.ValueMember = "Id";
+        }
+        private void SetValues()
+        {
+            var inspeccion = _inspeccionRepo.GetInspeccionById(_inspeccionId);
+            estadoCbx.SelectedValue = inspeccion.Id_Estado;
+            clienteCbx.SelectedValue = inspeccion.Id_Cliente;
+            empleadoCbx.SelectedValue = inspeccion.Id_Empleado;
+            ralladurasCbx.Checked = inspeccion.Ralladuras.HasValue? inspeccion.Ralladuras.Value: false;
+            gomaResCbx.Checked = inspeccion.GomaRepuesta.HasValue ? inspeccion.GomaRepuesta.Value : false;
+            gatoCbx.Checked = inspeccion.TieneGato.HasValue ? inspeccion.TieneGato.Value : false;
+            roturasCristalCbx.Checked = inspeccion.TieneRoturasCristal.HasValue ? inspeccion.TieneRoturasCristal.Value : false;
+            cantCombTxt.Text = inspeccion.CantidadCombustible.ToString();
+            estadoGomasTxt.Text = inspeccion.EstadoGomas;
+
         }
     }
 }

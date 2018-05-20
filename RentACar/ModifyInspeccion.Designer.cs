@@ -43,15 +43,15 @@
             this.empleadoCbx = new System.Windows.Forms.ComboBox();
             this.estadoCbx = new System.Windows.Forms.ComboBox();
             this.estadoGomasTxt = new System.Windows.Forms.TextBox();
-            this.ralladurasCbx = new System.Windows.Forms.ComboBox();
-            this.gomaResCbx = new System.Windows.Forms.ComboBox();
             this.cantCombTxt = new System.Windows.Forms.TextBox();
-            this.gatoCbx = new System.Windows.Forms.ComboBox();
-            this.roturasCristalCbx = new System.Windows.Forms.ComboBox();
             this.fechaInsDt = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.atrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnInsEnviar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ralladurasCbx = new MaterialSkin.Controls.MaterialCheckBox();
+            this.gomaResCbx = new MaterialSkin.Controls.MaterialCheckBox();
+            this.gatoCbx = new MaterialSkin.Controls.MaterialCheckBox();
+            this.roturasCristalCbx = new MaterialSkin.Controls.MaterialCheckBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,60 +219,12 @@
             this.estadoGomasTxt.Size = new System.Drawing.Size(186, 22);
             this.estadoGomasTxt.TabIndex = 18;
             // 
-            // ralladurasCbx
-            // 
-            this.ralladurasCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ralladurasCbx.FormattingEnabled = true;
-            this.ralladurasCbx.Items.AddRange(new object[] {
-            "true",
-            "false"});
-            this.ralladurasCbx.Location = new System.Drawing.Point(299, 153);
-            this.ralladurasCbx.Name = "ralladurasCbx";
-            this.ralladurasCbx.Size = new System.Drawing.Size(186, 24);
-            this.ralladurasCbx.TabIndex = 19;
-            // 
-            // gomaResCbx
-            // 
-            this.gomaResCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gomaResCbx.FormattingEnabled = true;
-            this.gomaResCbx.Items.AddRange(new object[] {
-            "true",
-            "false"});
-            this.gomaResCbx.Location = new System.Drawing.Point(299, 269);
-            this.gomaResCbx.Name = "gomaResCbx";
-            this.gomaResCbx.Size = new System.Drawing.Size(186, 24);
-            this.gomaResCbx.TabIndex = 20;
-            // 
             // cantCombTxt
             // 
             this.cantCombTxt.Location = new System.Drawing.Point(299, 209);
             this.cantCombTxt.Name = "cantCombTxt";
             this.cantCombTxt.Size = new System.Drawing.Size(186, 22);
             this.cantCombTxt.TabIndex = 14;
-            // 
-            // gatoCbx
-            // 
-            this.gatoCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gatoCbx.FormattingEnabled = true;
-            this.gatoCbx.Items.AddRange(new object[] {
-            "true",
-            "false"});
-            this.gatoCbx.Location = new System.Drawing.Point(299, 323);
-            this.gatoCbx.Name = "gatoCbx";
-            this.gatoCbx.Size = new System.Drawing.Size(186, 24);
-            this.gatoCbx.TabIndex = 21;
-            // 
-            // roturasCristalCbx
-            // 
-            this.roturasCristalCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.roturasCristalCbx.FormattingEnabled = true;
-            this.roturasCristalCbx.Items.AddRange(new object[] {
-            "true",
-            "false"});
-            this.roturasCristalCbx.Location = new System.Drawing.Point(299, 369);
-            this.roturasCristalCbx.Name = "roturasCristalCbx";
-            this.roturasCristalCbx.Size = new System.Drawing.Size(186, 24);
-            this.roturasCristalCbx.TabIndex = 22;
             // 
             // fechaInsDt
             // 
@@ -317,17 +269,77 @@
             this.btnInsEnviar.UseVisualStyleBackColor = true;
             this.btnInsEnviar.Click += new System.EventHandler(this.btnInsEnviar_Click);
             // 
+            // ralladurasCbx
+            // 
+            this.ralladurasCbx.AutoSize = true;
+            this.ralladurasCbx.Depth = 0;
+            this.ralladurasCbx.Font = new System.Drawing.Font("Roboto", 10F);
+            this.ralladurasCbx.Location = new System.Drawing.Point(299, 151);
+            this.ralladurasCbx.Margin = new System.Windows.Forms.Padding(0);
+            this.ralladurasCbx.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.ralladurasCbx.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ralladurasCbx.Name = "ralladurasCbx";
+            this.ralladurasCbx.Ripple = true;
+            this.ralladurasCbx.Size = new System.Drawing.Size(26, 30);
+            this.ralladurasCbx.TabIndex = 26;
+            this.ralladurasCbx.UseVisualStyleBackColor = true;
+            // 
+            // gomaResCbx
+            // 
+            this.gomaResCbx.AutoSize = true;
+            this.gomaResCbx.Depth = 0;
+            this.gomaResCbx.Font = new System.Drawing.Font("Roboto", 10F);
+            this.gomaResCbx.Location = new System.Drawing.Point(299, 261);
+            this.gomaResCbx.Margin = new System.Windows.Forms.Padding(0);
+            this.gomaResCbx.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.gomaResCbx.MouseState = MaterialSkin.MouseState.HOVER;
+            this.gomaResCbx.Name = "gomaResCbx";
+            this.gomaResCbx.Ripple = true;
+            this.gomaResCbx.Size = new System.Drawing.Size(26, 30);
+            this.gomaResCbx.TabIndex = 27;
+            this.gomaResCbx.UseVisualStyleBackColor = true;
+            // 
+            // gatoCbx
+            // 
+            this.gatoCbx.AutoSize = true;
+            this.gatoCbx.Depth = 0;
+            this.gatoCbx.Font = new System.Drawing.Font("Roboto", 10F);
+            this.gatoCbx.Location = new System.Drawing.Point(299, 317);
+            this.gatoCbx.Margin = new System.Windows.Forms.Padding(0);
+            this.gatoCbx.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.gatoCbx.MouseState = MaterialSkin.MouseState.HOVER;
+            this.gatoCbx.Name = "gatoCbx";
+            this.gatoCbx.Ripple = true;
+            this.gatoCbx.Size = new System.Drawing.Size(26, 30);
+            this.gatoCbx.TabIndex = 28;
+            this.gatoCbx.UseVisualStyleBackColor = true;
+            // 
+            // roturasCristalCbx
+            // 
+            this.roturasCristalCbx.AutoSize = true;
+            this.roturasCristalCbx.Depth = 0;
+            this.roturasCristalCbx.Font = new System.Drawing.Font("Roboto", 10F);
+            this.roturasCristalCbx.Location = new System.Drawing.Point(299, 367);
+            this.roturasCristalCbx.Margin = new System.Windows.Forms.Padding(0);
+            this.roturasCristalCbx.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.roturasCristalCbx.MouseState = MaterialSkin.MouseState.HOVER;
+            this.roturasCristalCbx.Name = "roturasCristalCbx";
+            this.roturasCristalCbx.Ripple = true;
+            this.roturasCristalCbx.Size = new System.Drawing.Size(26, 30);
+            this.roturasCristalCbx.TabIndex = 29;
+            this.roturasCristalCbx.UseVisualStyleBackColor = true;
+            // 
             // ModifyInspeccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 684);
-            this.Controls.Add(this.btnInsEnviar);
-            this.Controls.Add(this.fechaInsDt);
             this.Controls.Add(this.roturasCristalCbx);
             this.Controls.Add(this.gatoCbx);
             this.Controls.Add(this.gomaResCbx);
             this.Controls.Add(this.ralladurasCbx);
+            this.Controls.Add(this.btnInsEnviar);
+            this.Controls.Add(this.fechaInsDt);
             this.Controls.Add(this.estadoGomasTxt);
             this.Controls.Add(this.cantCombTxt);
             this.Controls.Add(this.estadoCbx);
@@ -372,14 +384,14 @@
         private System.Windows.Forms.ComboBox empleadoCbx;
         private System.Windows.Forms.ComboBox estadoCbx;
         private System.Windows.Forms.TextBox estadoGomasTxt;
-        private System.Windows.Forms.ComboBox ralladurasCbx;
-        private System.Windows.Forms.ComboBox gomaResCbx;
         private System.Windows.Forms.TextBox cantCombTxt;
-        private System.Windows.Forms.ComboBox gatoCbx;
-        private System.Windows.Forms.ComboBox roturasCristalCbx;
         private System.Windows.Forms.DateTimePicker fechaInsDt;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem atrasToolStripMenuItem;
         private MaterialSkin.Controls.MaterialFlatButton btnInsEnviar;
+        private MaterialSkin.Controls.MaterialCheckBox ralladurasCbx;
+        private MaterialSkin.Controls.MaterialCheckBox gomaResCbx;
+        private MaterialSkin.Controls.MaterialCheckBox gatoCbx;
+        private MaterialSkin.Controls.MaterialCheckBox roturasCristalCbx;
     }
 }

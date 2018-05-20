@@ -18,6 +18,7 @@ namespace RentACar
         private int _vehiculoId;
         private InspeccionRepository _insRepo;
         private UserRepo _userRepo;
+        private int _inspId = 0;
 
         public InspeccionForm(int userId = 0, int vehiculoId = 0)
         {
@@ -48,6 +49,37 @@ namespace RentACar
         private void atrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Utils.Returning.ReturnToPreviousForm(this, new MainForm(_userId));
+        }
+
+        private void editarInsBtn_Click(object sender, EventArgs e)
+        {
+            if(_inspId == 0)
+            {
+                MessageBox.Show("Escoja una fila para editar");
+            }
+            else
+            {
+                var vehiculoId = _insRepo.GetVehiculoId(_inspId).Value;
+                Utils.Returning.ReturnToPreviousForm(this, new ModifyInspeccion(_userId,vehiculoId, _inspId, "Insertar"));
+            }
+        }
+
+        private void inspeccionTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            _inspId = int.Parse(inspeccionTable.Rows[e.RowIndex].Cells[0].Value.ToString());
+        }
+
+        private void rentarBtn_Click(object sender, EventArgs e)
+        {
+            if(_inspId == 0)
+            {
+                MessageBox.Show("Escoja una fila para Rentar");
+            }
+            else
+            {
+                var vehiculoId = _insRepo.GetVehiculoId(_inspId).Value;
+                Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, vehiculoId, 0, _inspId,"Crear"));
+            }
         }
     }
 }

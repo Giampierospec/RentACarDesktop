@@ -85,6 +85,7 @@
     <Property Name="Id_Cliente" Type="int" />
     <Property Name="Id_Estado" Type="int" />
     <Property Name="Id_User" Type="int" />
+    <Property Name="MontoTotalPorDia" Type="decimal" Precision="29" Scale="0" StoreGeneratedPattern="Computed" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>

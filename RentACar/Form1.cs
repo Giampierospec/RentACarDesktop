@@ -27,9 +27,7 @@ namespace RentACar
         }
 
         private void btnLogin_Click(object sender, System.EventArgs e)
-        {
-            Cursor = Cursors.WaitCursor;
-            btnLogin.Cursor = Cursors.WaitCursor;
+        { 
             Utils.Validate.LockControls(this);
             Utils.Validate.LockBtns(this);
            var user =  _repo.GetUserByEmailAddress(new Models.LoginModel()
@@ -45,8 +43,7 @@ namespace RentACar
                MessageBox.Show($"El usuario {userTxt.Text.Trim()} no existe  o la contraseña es incorrecta");
             }
             else
-            {
-                Thread.Sleep(2000);
+            { 
                 Hide();
                 var mainForm = new MainForm(user.Id);
                 mainForm.ShowDialog();

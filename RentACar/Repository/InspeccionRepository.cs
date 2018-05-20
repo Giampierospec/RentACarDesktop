@@ -38,6 +38,7 @@ namespace RentACar.Repository
                     Vehiculo = x.Vehiculo.Descripcion
 
                 }).ToList();
+        public Inspeccion GetInspeccionById(int id) => _db.Inspeccions.FirstOrDefault(x => x.Id == id);
         /// <summary>
         /// Consigue el Id del Vehiculo Asociado
         /// </summary>
@@ -72,6 +73,16 @@ namespace RentACar.Repository
             }
             _db.SaveChanges();
 
+        }
+        /// <summary>
+        /// Cambiar Estado de Inspeccion
+        /// </summary>
+        /// <param name="ins"></param>
+        public void CambiarEstado(Inspeccion ins)
+        {
+            var insp = _db.Inspeccions.FirstOrDefault(x => x.Id == ins.Id);
+            insp.Id_Estado = ins.Id_Estado;
+            _db.SaveChanges();
         }
         
 

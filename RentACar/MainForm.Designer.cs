@@ -39,6 +39,7 @@
             this.empleadosBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.clientesBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.inspeccionBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.rentasBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,7 +114,7 @@
             this.modelosBtn.AutoSize = true;
             this.modelosBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.modelosBtn.Depth = 0;
-            this.modelosBtn.Location = new System.Drawing.Point(145, 209);
+            this.modelosBtn.Location = new System.Drawing.Point(96, 209);
             this.modelosBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.modelosBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.modelosBtn.Name = "modelosBtn";
@@ -129,7 +130,7 @@
             this.tipoCombustibleBtn.AutoSize = true;
             this.tipoCombustibleBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tipoCombustibleBtn.Depth = 0;
-            this.tipoCombustibleBtn.Location = new System.Drawing.Point(293, 209);
+            this.tipoCombustibleBtn.Location = new System.Drawing.Point(244, 209);
             this.tipoCombustibleBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tipoCombustibleBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.tipoCombustibleBtn.Name = "tipoCombustibleBtn";
@@ -145,7 +146,7 @@
             this.empleadosBtn.AutoSize = true;
             this.empleadosBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.empleadosBtn.Depth = 0;
-            this.empleadosBtn.Location = new System.Drawing.Point(167, 280);
+            this.empleadosBtn.Location = new System.Drawing.Point(96, 280);
             this.empleadosBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.empleadosBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.empleadosBtn.Name = "empleadosBtn";
@@ -162,7 +163,7 @@
             this.clientesBtn.AutoSize = true;
             this.clientesBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.clientesBtn.Depth = 0;
-            this.clientesBtn.Location = new System.Drawing.Point(351, 280);
+            this.clientesBtn.Location = new System.Drawing.Point(244, 280);
             this.clientesBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.clientesBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.clientesBtn.Name = "clientesBtn";
@@ -179,7 +180,7 @@
             this.inspeccionBtn.AutoSize = true;
             this.inspeccionBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.inspeccionBtn.Depth = 0;
-            this.inspeccionBtn.Location = new System.Drawing.Point(264, 342);
+            this.inspeccionBtn.Location = new System.Drawing.Point(96, 337);
             this.inspeccionBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.inspeccionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.inspeccionBtn.Name = "inspeccionBtn";
@@ -191,11 +192,29 @@
             this.inspeccionBtn.Visible = false;
             this.inspeccionBtn.Click += new System.EventHandler(this.inspeccionBtn_Click);
             // 
+            // rentasBtn
+            // 
+            this.rentasBtn.AutoSize = true;
+            this.rentasBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.rentasBtn.Depth = 0;
+            this.rentasBtn.Location = new System.Drawing.Point(244, 337);
+            this.rentasBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.rentasBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rentasBtn.Name = "rentasBtn";
+            this.rentasBtn.Primary = false;
+            this.rentasBtn.Size = new System.Drawing.Size(78, 36);
+            this.rentasBtn.TabIndex = 9;
+            this.rentasBtn.Text = "Rentas";
+            this.rentasBtn.UseVisualStyleBackColor = true;
+            this.rentasBtn.Visible = false;
+            this.rentasBtn.Click += new System.EventHandler(this.rentasBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 449);
+            this.Controls.Add(this.rentasBtn);
             this.Controls.Add(this.inspeccionBtn);
             this.Controls.Add(this.clientesBtn);
             this.Controls.Add(this.empleadosBtn);
@@ -229,5 +248,6 @@
         private MaterialSkin.Controls.MaterialFlatButton empleadosBtn;
         private MaterialSkin.Controls.MaterialFlatButton clientesBtn;
         private MaterialSkin.Controls.MaterialFlatButton inspeccionBtn;
+        private MaterialSkin.Controls.MaterialFlatButton rentasBtn;
     }
 }

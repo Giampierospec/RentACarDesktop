@@ -86,6 +86,7 @@
     <NavigationProperty Name="Usuario" Relationship="RentCarModel.FK_ID_USER_R" FromRole="Renta" ToRole="Usuario" />
     <NavigationProperty Name="Empleado" Relationship="RentCarModel.FK_ID_EMPLEADO_R" FromRole="Renta" ToRole="Empleado" />
     <NavigationProperty Name="Cliente" Relationship="RentCarModel.FK_ID_CLIENTE_R" FromRole="Renta" ToRole="Cliente" />
+    <Property Name="MontoTotalPorDia" Type="Decimal" Precision="29" Scale="0" annotation:StoreGeneratedPattern="Computed" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>
