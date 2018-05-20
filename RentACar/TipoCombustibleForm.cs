@@ -70,5 +70,17 @@ namespace RentACar
                 Utils.Returning.ReturnToPreviousForm(this, new ModifyTipoCombustible(_userId, _tcId, "Editar"));
             }
         }
+
+        private void tcText_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+        private void Filter()
+        {
+           TCTable.DataSource =  _tcRepo.Filter(new Context.TipoCombustible()
+            {
+                Descripcion = tcText.Text.Trim()
+            });
+        }
     }
 }

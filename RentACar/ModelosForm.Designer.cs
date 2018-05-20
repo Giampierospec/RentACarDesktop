@@ -35,6 +35,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.modTxt = new System.Windows.Forms.TextBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.marcaTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.modeloTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,11 +50,11 @@
             this.modeloTable.AllowUserToOrderColumns = true;
             this.modeloTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.modeloTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.modeloTable.Location = new System.Drawing.Point(126, 213);
+            this.modeloTable.Location = new System.Drawing.Point(136, 265);
             this.modeloTable.Name = "modeloTable";
             this.modeloTable.ReadOnly = true;
             this.modeloTable.RowTemplate.Height = 24;
-            this.modeloTable.Size = new System.Drawing.Size(379, 205);
+            this.modeloTable.Size = new System.Drawing.Size(518, 244);
             this.modeloTable.TabIndex = 11;
             this.modeloTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.modeloTable_CellClick);
             // 
@@ -59,7 +63,7 @@
             this.editarModeloBtn.AutoSize = true;
             this.editarModeloBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarModeloBtn.Depth = 0;
-            this.editarModeloBtn.Location = new System.Drawing.Point(388, 92);
+            this.editarModeloBtn.Location = new System.Drawing.Point(473, 92);
             this.editarModeloBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarModeloBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarModeloBtn.Name = "editarModeloBtn";
@@ -75,7 +79,7 @@
             this.insertModeloBtn.AutoSize = true;
             this.insertModeloBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertModeloBtn.Depth = 0;
-            this.insertModeloBtn.Location = new System.Drawing.Point(101, 92);
+            this.insertModeloBtn.Location = new System.Drawing.Point(186, 92);
             this.insertModeloBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertModeloBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertModeloBtn.Name = "insertModeloBtn";
@@ -94,7 +98,7 @@
             this.atrásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(624, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(790, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -112,11 +116,57 @@
             this.atrásToolStripMenuItem.Text = "Atrás";
             this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(191, 195);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(75, 24);
+            this.materialLabel1.TabIndex = 13;
+            this.materialLabel1.Text = "Modelo";
+            // 
+            // modTxt
+            // 
+            this.modTxt.Location = new System.Drawing.Point(272, 197);
+            this.modTxt.Name = "modTxt";
+            this.modTxt.Size = new System.Drawing.Size(128, 22);
+            this.modTxt.TabIndex = 14;
+            this.modTxt.TextChanged += new System.EventHandler(this.modTxt_TextChanged);
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(417, 195);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(63, 24);
+            this.materialLabel2.TabIndex = 15;
+            this.materialLabel2.Text = "Marca";
+            // 
+            // marcaTxt
+            // 
+            this.marcaTxt.Location = new System.Drawing.Point(486, 195);
+            this.marcaTxt.Name = "marcaTxt";
+            this.marcaTxt.Size = new System.Drawing.Size(128, 22);
+            this.marcaTxt.TabIndex = 16;
+            this.marcaTxt.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // ModelosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 461);
+            this.ClientSize = new System.Drawing.Size(790, 577);
+            this.Controls.Add(this.marcaTxt);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.modTxt);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.modeloTable);
             this.Controls.Add(this.editarModeloBtn);
             this.Controls.Add(this.insertModeloBtn);
@@ -142,5 +192,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.TextBox modTxt;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.TextBox marcaTxt;
     }
 }

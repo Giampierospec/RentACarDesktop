@@ -45,7 +45,7 @@ namespace RentACar.Repository
 
         public void InsertModelo(Modelo md)
         {
-            if(md.Id == 0)
+            if (md.Id == 0)
             {
                 _db.Modeloes.Add(md);
             }
@@ -56,9 +56,29 @@ namespace RentACar.Repository
                 mod.Descripcion = md.Descripcion;
                 mod.Id_Marca = md.Id_Marca;
                 mod.Id_User = md.Id_User;
-                
+
             }
             _db.SaveChanges();
         }
+        /// <summary>
+        /// Filtrar el modelo
+        /// </summary>
+        /// <param name="md"></param>
+        /// <returns></returns>
+        public List<ModeloModel> Filter(Modelo md) =>
+            _db.Modeloes
+            .Where(x => (x.Id_Estado == 1) &&
+            (
+            ((md.Descripcion == null || md.Descripcion == string.Empty) ? true : x.Descripcion.ToLower().Trim().Contains(md.Descripcion.ToLower().Trim())) &&
+            ((md.Marca.Descripcion == null || md.Marca.Descripcion == string.Empty) ? true : x.Marca.Descripcion.ToLower().Trim().Contains(md.Marca.Descripcion.ToLower().Trim()))
+            )
+            )
+            .Select(x => new ModeloModel()
+            {
+                Modelo = x.Descripcion,
+                Id = x.Id,
+                Estado = x.Estado.Estado1,
+                Marca = x.Marca.Descripcion
+            }).ToList();
     }
 }

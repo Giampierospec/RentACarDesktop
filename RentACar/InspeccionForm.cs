@@ -81,5 +81,28 @@ namespace RentACar
                 Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, vehiculoId, 0, _inspId,"Crear"));
             }
         }
+        private void Filter()
+        {
+            inspeccionTable.DataSource = _insRepo.Filter(new Context.Inspeccion()
+            {
+                Cliente = new Context.Cliente()
+                {
+                    Nombre = clienteTxt.Text.Trim()
+                },
+                Empleado = new Context.Empleado()
+                {
+                    Nombre = empleadoTxt.Text.Trim()
+                }
+            }); 
+        }
+        private void clienteTxt_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void empleadoTxt_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
     }
 }

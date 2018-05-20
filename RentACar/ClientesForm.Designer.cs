@@ -35,6 +35,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.cedTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.clienteTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +48,7 @@
             this.clienteTable.AllowUserToOrderColumns = true;
             this.clienteTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.clienteTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.clienteTable.Location = new System.Drawing.Point(95, 186);
+            this.clienteTable.Location = new System.Drawing.Point(110, 254);
             this.clienteTable.Name = "clienteTable";
             this.clienteTable.ReadOnly = true;
             this.clienteTable.RowTemplate.Height = 24;
@@ -94,7 +96,7 @@
             this.atrásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(793, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(853, 28);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -112,11 +114,34 @@
             this.atrásToolStripMenuItem.Text = "Atrás";
             this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(110, 208);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(68, 24);
+            this.materialLabel1.TabIndex = 16;
+            this.materialLabel1.Text = "Cedula";
+            // 
+            // cedTxt
+            // 
+            this.cedTxt.Location = new System.Drawing.Point(185, 208);
+            this.cedTxt.Name = "cedTxt";
+            this.cedTxt.Size = new System.Drawing.Size(245, 22);
+            this.cedTxt.TabIndex = 17;
+            this.cedTxt.TextChanged += new System.EventHandler(this.cedTxt_TextChanged);
+            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 518);
+            this.ClientSize = new System.Drawing.Size(853, 579);
+            this.Controls.Add(this.cedTxt);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.clienteTable);
             this.Controls.Add(this.editarClienteBtn);
             this.Controls.Add(this.insertClienteBtn);
@@ -142,5 +167,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.TextBox cedTxt;
     }
 }

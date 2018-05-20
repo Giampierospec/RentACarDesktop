@@ -70,5 +70,26 @@ namespace RentACar
                 Utils.Returning.ReturnToPreviousForm(this,new ModifyModelos(_userId, _modeloId, "Editar"));
             }
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+        private void Filter()
+        {
+            modeloTable.DataSource = _modeloRepo.Filter(new Context.Modelo()
+            {
+                Descripcion = modTxt.Text.Trim(),
+                Marca = new Context.Marca()
+                {
+                    Descripcion = marcaTxt.Text.Trim()
+                }
+            });
+        }
+
+        private void modTxt_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
     }
 }

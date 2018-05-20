@@ -74,5 +74,18 @@ namespace RentACar
             Utils.Returning.ReturnToPreviousForm(this, new MainForm(_userId));
             
         }
+
+        private void marcaTxt_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void Filter()
+        {
+            marcaTable.DataSource = _marcaRepo.Filter(new Context.Marca()
+            {
+                Descripcion = marcaTxt.Text.Trim()
+            });
+        }
     }
 }

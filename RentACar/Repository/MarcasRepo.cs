@@ -58,6 +58,22 @@ namespace RentACar.Repository
             }
             _db.SaveChanges();
         }
+        /// <summary>
+        /// Filtra las marcas
+        /// </summary>
+        /// <param name="mr"></param>
+        /// <returns></returns>
+        public List<MarcasModel> Filter(Marca mr) =>
+            _db.Marcas
+               .Where(x => (x.Id_Estado == 1) &&
+               ((mr.Descripcion == null || mr.Descripcion == string.Empty)?true:x.Descripcion.ToLower().Trim().Contains(mr.Descripcion.ToLower().Trim()))
+               )
+                .Select(x => new MarcasModel()
+                {
+                    Id = x.Id,
+                    Estado = x.Estado.Estado1,
+                    Marca = x.Descripcion
+                }).ToList();
 
 
     }

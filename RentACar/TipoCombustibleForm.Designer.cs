@@ -35,6 +35,8 @@
             this.TCTable = new System.Windows.Forms.DataGridView();
             this.editarTcBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.insertTcBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.tcText = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TCTable)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +49,7 @@
             this.atrásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(732, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(849, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +74,7 @@
             this.TCTable.AllowUserToOrderColumns = true;
             this.TCTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.TCTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TCTable.Location = new System.Drawing.Point(149, 187);
+            this.TCTable.Location = new System.Drawing.Point(210, 277);
             this.TCTable.Name = "TCTable";
             this.TCTable.ReadOnly = true;
             this.TCTable.RowTemplate.Height = 24;
@@ -85,7 +87,7 @@
             this.editarTcBtn.AutoSize = true;
             this.editarTcBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarTcBtn.Depth = 0;
-            this.editarTcBtn.Location = new System.Drawing.Point(415, 76);
+            this.editarTcBtn.Location = new System.Drawing.Point(473, 97);
             this.editarTcBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarTcBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarTcBtn.Name = "editarTcBtn";
@@ -101,7 +103,7 @@
             this.insertTcBtn.AutoSize = true;
             this.insertTcBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertTcBtn.Depth = 0;
-            this.insertTcBtn.Location = new System.Drawing.Point(84, 76);
+            this.insertTcBtn.Location = new System.Drawing.Point(142, 97);
             this.insertTcBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertTcBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertTcBtn.Name = "insertTcBtn";
@@ -112,11 +114,34 @@
             this.insertTcBtn.UseVisualStyleBackColor = true;
             this.insertTcBtn.Click += new System.EventHandler(this.insertTcBtn_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(206, 203);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(161, 24);
+            this.materialLabel1.TabIndex = 12;
+            this.materialLabel1.Text = "Tipo Combustible";
+            // 
+            // tcText
+            // 
+            this.tcText.Location = new System.Drawing.Point(373, 205);
+            this.tcText.Name = "tcText";
+            this.tcText.Size = new System.Drawing.Size(227, 22);
+            this.tcText.TabIndex = 13;
+            this.tcText.TextChanged += new System.EventHandler(this.tcText_TextChanged);
+            // 
             // TipoCombustibleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 464);
+            this.ClientSize = new System.Drawing.Size(849, 599);
+            this.Controls.Add(this.tcText);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.TCTable);
             this.Controls.Add(this.editarTcBtn);
             this.Controls.Add(this.insertTcBtn);
@@ -142,5 +167,7 @@
         private System.Windows.Forms.DataGridView TCTable;
         private MaterialSkin.Controls.MaterialFlatButton editarTcBtn;
         private MaterialSkin.Controls.MaterialFlatButton insertTcBtn;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.TextBox tcText;
     }
 }

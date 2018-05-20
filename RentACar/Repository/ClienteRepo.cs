@@ -60,5 +60,21 @@ namespace RentACar.Repository
             }
             _db.SaveChanges();
         }
+        public List<ClienteModel> Filter(Cliente cl) =>
+            _db.Clientes
+               .Where(x => (x.Id_Estado == 1) &&
+               (
+               (cl.Cedula == null || cl.Cedula == string.Empty)?true:x.Cedula.Trim().Contains(cl.Cedula.Trim())
+               ))
+            .Select(x => new ClienteModel()
+            {
+                Cedula = x.Cedula,
+                Estado = x.Estado.Estado1,
+                Id = x.Id,
+                LimiteCredito = x.LimiteCredito,
+                Nombre = x.Nombre,
+                NoTarjeta = x.NoTarjetaCr,
+                TipoPersona = x.TipoPersona
+            }).ToList();
     }
 }

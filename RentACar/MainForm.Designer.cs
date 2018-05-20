@@ -206,7 +206,6 @@
             this.rentasBtn.TabIndex = 9;
             this.rentasBtn.Text = "Rentas";
             this.rentasBtn.UseVisualStyleBackColor = true;
-            this.rentasBtn.Visible = false;
             this.rentasBtn.Click += new System.EventHandler(this.rentasBtn_Click);
             // 
             // MainForm

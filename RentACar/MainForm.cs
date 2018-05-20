@@ -75,7 +75,6 @@ namespace RentACar
             if (user.Id_Rol != 2)
             {
                 inspeccionBtn.Visible = true;
-                rentasBtn.Visible = true;
             }
                 
         }

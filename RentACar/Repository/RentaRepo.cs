@@ -70,6 +70,32 @@ namespace RentACar.Repository
 
         }
         /// <summary>
+        /// Filtra por renta
+        /// </summary>
+        /// <param name="rm"></param>
+        /// <returns></returns>
+        public List<RentaModel> Filter(Renta rm) =>
+            _db.Rentas
+            .Where(x => (x.Id_Estado == 1) &&
+            (
+            ((rm.Cliente.Nombre == string.Empty || rm.Cliente.Nombre == null) ? true: x.Cliente.Nombre.Trim().ToLower().Contains(rm.Cliente.Nombre.Trim().ToLower())) &&
+            ((rm.Empleado.Nombre == string.Empty || rm.Empleado.Nombre == null)?true: x.Empleado.Nombre.Trim().ToLower().Contains(rm.Empleado.Nombre.Trim().ToLower()))
+            ))
+            .Select(x => new RentaModel()
+            {
+                Id = x.Id,
+                Cliente = x.Cliente.Nombre,
+                Dias = x.Dias,
+                Comentario = x.Comentario,
+                Empleado = x.Empleado.Nombre,
+                Estado = x.Estado.Estado1,
+                Fecha = x.FechaRenta,
+                FechaDevolucion = x.FechaDevolucion,
+                MontoDiario = x.MontoDiario,
+                MontoTotal = x.MontoTotalPorDia,
+                Vehiculo = x.Vehiculo.Descripcion
+            }).ToList();
+        /// <summary>
         /// Devuelve el vehiculoRentado
         /// </summary>
         /// <param name="rt"></param>

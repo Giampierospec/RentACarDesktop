@@ -94,7 +94,6 @@ namespace RentACar
                         {
                             Cedula = cedTxt.Text.Trim(),
                             Id_Estado = int.Parse(estadoCbx.SelectedValue.ToString()),
-                            Id_User = _userId,
                             Nombre = nombreTxt.Text.Trim().ToUpper(),
                             LimiteCredito = decimal.Parse(lmCrdTxt.Text.Trim()),
                             NoTarjetaCr = nmTarTxt.Text.Trim(),

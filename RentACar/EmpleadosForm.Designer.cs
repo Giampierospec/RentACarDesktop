@@ -35,6 +35,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.cedTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.EmpleadoTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,21 +48,20 @@
             this.EmpleadoTable.AllowUserToOrderColumns = true;
             this.EmpleadoTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.EmpleadoTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmpleadoTable.Location = new System.Drawing.Point(144, 225);
+            this.EmpleadoTable.Location = new System.Drawing.Point(183, 293);
             this.EmpleadoTable.Name = "EmpleadoTable";
             this.EmpleadoTable.ReadOnly = true;
             this.EmpleadoTable.RowTemplate.Height = 24;
             this.EmpleadoTable.Size = new System.Drawing.Size(603, 299);
             this.EmpleadoTable.TabIndex = 11;
             this.EmpleadoTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpleadoTable_CellClick);
-            this.EmpleadoTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpleadoTable_CellContentClick);
             // 
             // editarEmpleadoBtn
             // 
             this.editarEmpleadoBtn.AutoSize = true;
             this.editarEmpleadoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarEmpleadoBtn.Depth = 0;
-            this.editarEmpleadoBtn.Location = new System.Drawing.Point(501, 93);
+            this.editarEmpleadoBtn.Location = new System.Drawing.Point(530, 93);
             this.editarEmpleadoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarEmpleadoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarEmpleadoBtn.Name = "editarEmpleadoBtn";
@@ -76,7 +77,7 @@
             this.insertEmpleadoBtn.AutoSize = true;
             this.insertEmpleadoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertEmpleadoBtn.Depth = 0;
-            this.insertEmpleadoBtn.Location = new System.Drawing.Point(214, 93);
+            this.insertEmpleadoBtn.Location = new System.Drawing.Point(243, 93);
             this.insertEmpleadoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertEmpleadoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertEmpleadoBtn.Name = "insertEmpleadoBtn";
@@ -95,7 +96,7 @@
             this.atrásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(890, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(968, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -113,11 +114,34 @@
             this.atrásToolStripMenuItem.Text = "Atrás";
             this.atrásToolStripMenuItem.Click += new System.EventHandler(this.atrásToolStripMenuItem_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(183, 228);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(68, 24);
+            this.materialLabel1.TabIndex = 13;
+            this.materialLabel1.Text = "Cedula";
+            // 
+            // cedTxt
+            // 
+            this.cedTxt.Location = new System.Drawing.Point(268, 228);
+            this.cedTxt.Name = "cedTxt";
+            this.cedTxt.Size = new System.Drawing.Size(187, 22);
+            this.cedTxt.TabIndex = 14;
+            this.cedTxt.TextChanged += new System.EventHandler(this.cedTxt_TextChanged);
+            // 
             // EmpleadosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 614);
+            this.ClientSize = new System.Drawing.Size(968, 667);
+            this.Controls.Add(this.cedTxt);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.EmpleadoTable);
             this.Controls.Add(this.editarEmpleadoBtn);
             this.Controls.Add(this.insertEmpleadoBtn);
@@ -143,5 +167,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.TextBox cedTxt;
     }
 }

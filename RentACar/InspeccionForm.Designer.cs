@@ -35,6 +35,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadoTxt = new System.Windows.Forms.TextBox();
+            this.clienteTxt = new System.Windows.Forms.TextBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.inspeccionTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +50,7 @@
             this.inspeccionTable.AllowUserToOrderColumns = true;
             this.inspeccionTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.inspeccionTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inspeccionTable.Location = new System.Drawing.Point(115, 226);
+            this.inspeccionTable.Location = new System.Drawing.Point(92, 265);
             this.inspeccionTable.Name = "inspeccionTable";
             this.inspeccionTable.ReadOnly = true;
             this.inspeccionTable.RowTemplate.Height = 24;
@@ -59,7 +63,7 @@
             this.rentarBtn.AutoSize = true;
             this.rentarBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.rentarBtn.Depth = 0;
-            this.rentarBtn.Location = new System.Drawing.Point(531, 105);
+            this.rentarBtn.Location = new System.Drawing.Point(522, 105);
             this.rentarBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.rentarBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.rentarBtn.Name = "rentarBtn";
@@ -75,7 +79,7 @@
             this.editarInsBtn.AutoSize = true;
             this.editarInsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarInsBtn.Depth = 0;
-            this.editarInsBtn.Location = new System.Drawing.Point(230, 105);
+            this.editarInsBtn.Location = new System.Drawing.Point(221, 105);
             this.editarInsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarInsBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarInsBtn.Name = "editarInsBtn";
@@ -112,11 +116,57 @@
             this.atrasToolStripMenuItem.Text = "atras";
             this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
             // 
+            // empleadoTxt
+            // 
+            this.empleadoTxt.Location = new System.Drawing.Point(596, 210);
+            this.empleadoTxt.Name = "empleadoTxt";
+            this.empleadoTxt.Size = new System.Drawing.Size(139, 22);
+            this.empleadoTxt.TabIndex = 22;
+            this.empleadoTxt.TextChanged += new System.EventHandler(this.empleadoTxt_TextChanged);
+            // 
+            // clienteTxt
+            // 
+            this.clienteTxt.Location = new System.Drawing.Point(246, 209);
+            this.clienteTxt.Name = "clienteTxt";
+            this.clienteTxt.Size = new System.Drawing.Size(139, 22);
+            this.clienteTxt.TabIndex = 21;
+            this.clienteTxt.TextChanged += new System.EventHandler(this.clienteTxt_TextChanged);
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(406, 208);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(170, 24);
+            this.materialLabel2.TabIndex = 20;
+            this.materialLabel2.Text = "Nombre Empleado";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(97, 208);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(142, 24);
+            this.materialLabel1.TabIndex = 19;
+            this.materialLabel1.Text = "Nombre Cliente";
+            // 
             // InspeccionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 605);
+            this.Controls.Add(this.empleadoTxt);
+            this.Controls.Add(this.clienteTxt);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.inspeccionTable);
             this.Controls.Add(this.rentarBtn);
             this.Controls.Add(this.editarInsBtn);
@@ -142,5 +192,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atrasToolStripMenuItem;
+        private System.Windows.Forms.TextBox empleadoTxt;
+        private System.Windows.Forms.TextBox clienteTxt;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

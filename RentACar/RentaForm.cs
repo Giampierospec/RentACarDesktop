@@ -96,5 +96,31 @@ namespace RentACar
                 Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, _vehiculoId, _rentaId, 0, "Editar"));
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+       
+
+        private void empleadoTxt_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+        private void Filter()
+        {
+            rentaTable.DataSource = _rentaRepo.Filter(new Context.Renta()
+            {
+                Empleado = new Context.Empleado()
+                {
+                    Nombre = empleadoTxt.Text.Trim()
+                },
+                Cliente = new Context.Cliente()
+                {
+                    Nombre = clienteTxt.Text.Trim()
+                }
+            });
+        }
     }
 }

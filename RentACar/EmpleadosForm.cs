@@ -69,9 +69,16 @@ namespace RentACar
             }
         }
 
-        private void EmpleadoTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void cedTxt_TextChanged(object sender, EventArgs e)
         {
-
+            Filter();
+        }
+        private void Filter()
+        {
+            EmpleadoTable.DataSource = _empRepo.Filter(new Context.Empleado()
+            {
+                Cedula = cedTxt.Text.Trim()
+            });
         }
     }
 }

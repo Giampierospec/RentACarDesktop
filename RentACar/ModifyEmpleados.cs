@@ -98,7 +98,6 @@ namespace RentACar
                             Comision = decimal.Parse(cmsTxt.Text.Trim()),
                             FechaIngreso = fechaIngrestoDt.Value,
                             Tanda = tandaCbx.Text.Trim(),
-                            Id_User = _userId,
                             Id_Estado = int.Parse(estadoCbx.SelectedValue.ToString()),
                             Nombre = nombreTxt.Text.Trim().ToUpper(),
                             Usuario = new Context.Usuario()

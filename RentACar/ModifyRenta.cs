@@ -134,5 +134,10 @@ namespace RentACar
                 MessageBox.Show("Hubo un error al rentar");
             }
         }
+
+        private void atrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils.Returning.ReturnToPreviousForm(this, new RentaForm(_userId, _vehiculoId));
+        }
     }
 }

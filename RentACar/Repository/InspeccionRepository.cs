@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.Repository
 {
-    public class InspeccionRepository: VehiculosRepo
+    public class InspeccionRepository : VehiculosRepo
     {
         private RentCarContext _db;
 
@@ -51,7 +51,7 @@ namespace RentACar.Repository
         /// <param name="inspeccion"></param>
         public void InsertInspeccion(Inspeccion inspeccion)
         {
-            if(inspeccion.Id == 0)
+            if (inspeccion.Id == 0)
             {
                 _db.Inspeccions.Add(inspeccion);
             }
@@ -84,6 +84,32 @@ namespace RentACar.Repository
             insp.Id_Estado = ins.Id_Estado;
             _db.SaveChanges();
         }
+        /// <summary>
+        /// Filtra la inspeccion
+        /// </summary>
+        /// <param name="ins"></param>
+        /// <returns></returns>
+        public List<InspeccionModel> Filter(Inspeccion ins) =>
+            _db.Inspeccions
+               .Where(x => (x.Id_Estado == 1) &&
+               (
+               ((ins.Cliente.Nombre == null || ins.Cliente.Nombre == string.Empty) ? true : x.Cliente.Nombre.ToLower().Trim().Contains(ins.Cliente.Nombre.ToLower().Trim()))&&
+               ((ins.Empleado.Nombre == null || ins.Empleado.Nombre == string.Empty)? true:x.Empleado.Nombre.ToLower().Trim().Contains(ins.Empleado.Nombre.ToLower().Trim()))
+               )
+               ).Select(x => new InspeccionModel() {
+                   Cliente = x.Cliente.Nombre.Trim(),
+                   Estado = x.Estado.Estado1.Trim(),
+                   CantidadCombustible = x.CantidadCombustible,
+                   Empleado = x.Empleado.Nombre,
+                   EstadoGomas = x.EstadoGomas,
+                   Fecha = x.Fecha,
+                   Gato = x.TieneGato,
+                   GomaRespuesta = x.GomaRepuesta,
+                   Ralladuras = x.Ralladuras,
+                   RoturasCristal = x.TieneRoturasCristal,
+                   Id = x.Id,
+                   Vehiculo = x.Vehiculo.Descripcion
+               }).ToList();
         
 
     }

@@ -44,6 +44,9 @@
             this.montoxDiaTxt = new System.Windows.Forms.TextBox();
             this.cantidadDiasTxt = new System.Windows.Forms.TextBox();
             this.comentartioTxt = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.atrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -210,6 +213,24 @@
             this.comentartioTxt.Size = new System.Drawing.Size(200, 22);
             this.comentartioTxt.TabIndex = 17;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.atrasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(828, 28);
+            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // atrasToolStripMenuItem
+            // 
+            this.atrasToolStripMenuItem.Name = "atrasToolStripMenuItem";
+            this.atrasToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.atrasToolStripMenuItem.Text = "atras";
+            this.atrasToolStripMenuItem.Click += new System.EventHandler(this.atrasToolStripMenuItem_Click);
+            // 
             // ModifyRenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,10 +251,14 @@
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "ModifyRenta";
             this.Text = "Rent A Car - ";
             this.Load += new System.EventHandler(this.ModifyRenta_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +281,7 @@
         private System.Windows.Forms.TextBox montoxDiaTxt;
         private System.Windows.Forms.TextBox cantidadDiasTxt;
         private System.Windows.Forms.TextBox comentartioTxt;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem atrasToolStripMenuItem;
     }
 }

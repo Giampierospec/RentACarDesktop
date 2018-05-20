@@ -68,5 +68,30 @@ namespace RentACar.Repository
             }
             _db.SaveChanges();
         }
+        /// <summary>
+        /// Busca si las fechas estan entre ese rango
+        /// </summary>
+        /// <param name="Inicio"></param>
+        /// <param name="Fin"></param>
+        /// <param name="FechaIngreso"></param>
+        /// <returns></returns>
+        public bool AreDatesBetween(DateTime Inicio, DateTime Fin, DateTime FechaIngreso) => FechaIngreso.Date >= Inicio.Date && FechaIngreso.Date <= Fin;
+
+        public List<EmpleadoModel> Filter(Empleado em) =>
+            _db.Empleadoes
+                .Where(x => (x.Id_Estado == 1) &&
+                (
+                (em.Cedula == null || em.Cedula == string.Empty)?true:x.Cedula.Trim().Contains(em.Cedula.Trim())
+                ))
+                .Select(x => new EmpleadoModel() {
+                    Cedula = x.Cedula,
+                    Comision = x.Comision,
+                    Estado = x.Estado.Estado1,
+                    FechaIngreso = x.FechaIngreso,
+                    Nombre = x.Nombre,
+                    Tanda = x.Tanda,
+                    Id = x.Id
+                }).ToList();
+
     }
 }

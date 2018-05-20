@@ -60,6 +60,23 @@ namespace RentACar.Repository
         /// <returns></returns>
         public bool CheckIfTipoCombustibleExists(string desc) =>
             _db.TipoCombustibles.Any(x => x.Descripcion.ToLower().Trim() == desc.ToLower().Trim() && x.Id_Estado == 1);
+        /// <summary>
+        /// Filtra el tipo de Combustible
+        /// </summary>
+        /// <param name="tc"></param>
+        /// <returns></returns>
+        public List<TipoCombustibleModel> Filter(TipoCombustible tc) =>
+            _db.TipoCombustibles
+               .Where(x => 
+                (x.Id_Estado == 1) && 
+                ((tc.Descripcion == null || tc.Descripcion == string.Empty)? true: x.Descripcion.ToLower().Trim().Contains(tc.Descripcion.Trim().ToLower()))
+               )
+               .Select(x => new TipoCombustibleModel()
+               {
+                   Id = x.Id,
+                   Estado = x.Estado.Estado1,
+                   TipoCombustible = x.Descripcion
+               }).ToList();
 
 
     }

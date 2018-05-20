@@ -35,6 +35,10 @@
             this.rentaTable = new System.Windows.Forms.DataGridView();
             this.editarRenta = new MaterialSkin.Controls.MaterialFlatButton();
             this.devolverBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.clienteTxt = new System.Windows.Forms.TextBox();
+            this.empleadoTxt = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentaTable)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +51,7 @@
             this.atrasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(817, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(857, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +76,7 @@
             this.rentaTable.AllowUserToOrderColumns = true;
             this.rentaTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.rentaTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentaTable.Location = new System.Drawing.Point(86, 225);
+            this.rentaTable.Location = new System.Drawing.Point(127, 280);
             this.rentaTable.Name = "rentaTable";
             this.rentaTable.ReadOnly = true;
             this.rentaTable.RowTemplate.Height = 24;
@@ -85,7 +89,7 @@
             this.editarRenta.AutoSize = true;
             this.editarRenta.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarRenta.Depth = 0;
-            this.editarRenta.Location = new System.Drawing.Point(443, 93);
+            this.editarRenta.Location = new System.Drawing.Point(507, 93);
             this.editarRenta.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarRenta.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarRenta.Name = "editarRenta";
@@ -101,7 +105,7 @@
             this.devolverBtn.AutoSize = true;
             this.devolverBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.devolverBtn.Depth = 0;
-            this.devolverBtn.Location = new System.Drawing.Point(156, 93);
+            this.devolverBtn.Location = new System.Drawing.Point(220, 93);
             this.devolverBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.devolverBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.devolverBtn.Name = "devolverBtn";
@@ -112,11 +116,57 @@
             this.devolverBtn.UseVisualStyleBackColor = true;
             this.devolverBtn.Click += new System.EventHandler(this.devolverBtn_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(109, 224);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(142, 24);
+            this.materialLabel1.TabIndex = 15;
+            this.materialLabel1.Text = "Nombre Cliente";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(418, 224);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(170, 24);
+            this.materialLabel2.TabIndex = 16;
+            this.materialLabel2.Text = "Nombre Empleado";
+            // 
+            // clienteTxt
+            // 
+            this.clienteTxt.Location = new System.Drawing.Point(258, 225);
+            this.clienteTxt.Name = "clienteTxt";
+            this.clienteTxt.Size = new System.Drawing.Size(139, 22);
+            this.clienteTxt.TabIndex = 17;
+            this.clienteTxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // empleadoTxt
+            // 
+            this.empleadoTxt.Location = new System.Drawing.Point(608, 226);
+            this.empleadoTxt.Name = "empleadoTxt";
+            this.empleadoTxt.Size = new System.Drawing.Size(139, 22);
+            this.empleadoTxt.TabIndex = 18;
+            this.empleadoTxt.TextChanged += new System.EventHandler(this.empleadoTxt_TextChanged);
+            // 
             // RentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 589);
+            this.ClientSize = new System.Drawing.Size(857, 616);
+            this.Controls.Add(this.empleadoTxt);
+            this.Controls.Add(this.clienteTxt);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.rentaTable);
             this.Controls.Add(this.editarRenta);
             this.Controls.Add(this.devolverBtn);
@@ -142,5 +192,9 @@
         private System.Windows.Forms.DataGridView rentaTable;
         private MaterialSkin.Controls.MaterialFlatButton editarRenta;
         private MaterialSkin.Controls.MaterialFlatButton devolverBtn;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.TextBox clienteTxt;
+        private System.Windows.Forms.TextBox empleadoTxt;
     }
 }

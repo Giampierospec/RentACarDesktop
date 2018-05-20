@@ -69,5 +69,17 @@ namespace RentACar
                 Utils.Returning.ReturnToPreviousForm(this, new ModifyClientesForm(_userId, _clienteId, "Editar"));
             }
         }
+
+        private void cedTxt_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+        private void Filter()
+        {
+            clienteTable.DataSource = _clienteRepo.Filter(new Context.Cliente() {
+                Cedula = cedTxt.Text.Trim()
+            });
+
+        }
     }
 }

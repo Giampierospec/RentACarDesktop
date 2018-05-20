@@ -37,6 +37,7 @@ namespace RentACar
                 {
                     insertVehiculoBtn.Enabled = false;
                     editarVehiculoBtn.Enabled = false;
+                    InspeccionBtn.Enabled = false;
                 }
             }
 
