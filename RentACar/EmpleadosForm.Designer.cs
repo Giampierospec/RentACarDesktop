@@ -37,6 +37,7 @@
             this.atrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.cedTxt = new System.Windows.Forms.TextBox();
+            this.reporteBtn = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.EmpleadoTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.editarEmpleadoBtn.AutoSize = true;
             this.editarEmpleadoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarEmpleadoBtn.Depth = 0;
-            this.editarEmpleadoBtn.Location = new System.Drawing.Point(530, 93);
+            this.editarEmpleadoBtn.Location = new System.Drawing.Point(467, 93);
             this.editarEmpleadoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarEmpleadoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarEmpleadoBtn.Name = "editarEmpleadoBtn";
@@ -77,7 +78,7 @@
             this.insertEmpleadoBtn.AutoSize = true;
             this.insertEmpleadoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertEmpleadoBtn.Depth = 0;
-            this.insertEmpleadoBtn.Location = new System.Drawing.Point(243, 93);
+            this.insertEmpleadoBtn.Location = new System.Drawing.Point(180, 93);
             this.insertEmpleadoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertEmpleadoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertEmpleadoBtn.Name = "insertEmpleadoBtn";
@@ -135,11 +136,28 @@
             this.cedTxt.TabIndex = 14;
             this.cedTxt.TextChanged += new System.EventHandler(this.cedTxt_TextChanged);
             // 
+            // reporteBtn
+            // 
+            this.reporteBtn.AutoSize = true;
+            this.reporteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reporteBtn.Depth = 0;
+            this.reporteBtn.Location = new System.Drawing.Point(701, 93);
+            this.reporteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reporteBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reporteBtn.Name = "reporteBtn";
+            this.reporteBtn.Primary = false;
+            this.reporteBtn.Size = new System.Drawing.Size(87, 36);
+            this.reporteBtn.TabIndex = 28;
+            this.reporteBtn.Text = "Reporte";
+            this.reporteBtn.UseVisualStyleBackColor = true;
+            this.reporteBtn.Click += new System.EventHandler(this.reporteBtn_Click);
+            // 
             // EmpleadosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 667);
+            this.Controls.Add(this.reporteBtn);
             this.Controls.Add(this.cedTxt);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.EmpleadoTable);
@@ -169,5 +187,6 @@
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.TextBox cedTxt;
+        private MaterialSkin.Controls.MaterialFlatButton reporteBtn;
     }
 }

@@ -38,9 +38,9 @@ namespace RentACar
                     insertVehiculoBtn.Enabled = false;
                     editarVehiculoBtn.Enabled = false;
                     InspeccionBtn.Enabled = false;
+                    reporteBtn.Enabled = false;
                 }
             }
-
         }
 
         private void insertVehiculoBtn_Click(object sender, EventArgs e)
@@ -128,6 +128,12 @@ namespace RentACar
                 if(MessageBox.Show("Vehiculo va a pasar a proceso de inspeccion") == DialogResult.OK)
                     Utils.Returning.ReturnToPreviousForm(this, new ModifyInspeccion(_userId, _vehiculoId, 0,"Crear"));
             }
+        }
+
+        private void reporteBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ReporteVehiculos(Utils.DataSourcesEnum.Vehiculos,_userId, vehiculosTable.DataSource));
         }
     }
 

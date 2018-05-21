@@ -45,6 +45,7 @@
             this.searchTipoCo = new System.Windows.Forms.TextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.InspeccionBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.reporteBtn = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             this.insertVehiculoBtn.AutoSize = true;
             this.insertVehiculoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertVehiculoBtn.Depth = 0;
-            this.insertVehiculoBtn.Location = new System.Drawing.Point(195, 116);
+            this.insertVehiculoBtn.Location = new System.Drawing.Point(152, 116);
             this.insertVehiculoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertVehiculoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertVehiculoBtn.Name = "insertVehiculoBtn";
@@ -70,7 +71,7 @@
             this.editarVehiculoBtn.AutoSize = true;
             this.editarVehiculoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarVehiculoBtn.Depth = 0;
-            this.editarVehiculoBtn.Location = new System.Drawing.Point(433, 116);
+            this.editarVehiculoBtn.Location = new System.Drawing.Point(390, 116);
             this.editarVehiculoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarVehiculoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarVehiculoBtn.Name = "editarVehiculoBtn";
@@ -232,7 +233,7 @@
             this.InspeccionBtn.AutoSize = true;
             this.InspeccionBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.InspeccionBtn.Depth = 0;
-            this.InspeccionBtn.Location = new System.Drawing.Point(646, 116);
+            this.InspeccionBtn.Location = new System.Drawing.Point(603, 116);
             this.InspeccionBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.InspeccionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.InspeccionBtn.Name = "InspeccionBtn";
@@ -243,11 +244,28 @@
             this.InspeccionBtn.UseVisualStyleBackColor = true;
             this.InspeccionBtn.Click += new System.EventHandler(this.InspeccionBtn_Click);
             // 
+            // reporteBtn
+            // 
+            this.reporteBtn.AutoSize = true;
+            this.reporteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reporteBtn.Depth = 0;
+            this.reporteBtn.Location = new System.Drawing.Point(760, 116);
+            this.reporteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reporteBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reporteBtn.Name = "reporteBtn";
+            this.reporteBtn.Primary = false;
+            this.reporteBtn.Size = new System.Drawing.Size(87, 36);
+            this.reporteBtn.TabIndex = 22;
+            this.reporteBtn.Text = "Reporte";
+            this.reporteBtn.UseVisualStyleBackColor = true;
+            this.reporteBtn.Click += new System.EventHandler(this.reporteBtn_Click);
+            // 
             // VehiculosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 615);
+            this.Controls.Add(this.reporteBtn);
             this.Controls.Add(this.InspeccionBtn);
             this.Controls.Add(this.searchTipoCo);
             this.Controls.Add(this.materialLabel5);
@@ -293,5 +311,6 @@
         private System.Windows.Forms.TextBox searchTipoCo;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialFlatButton InspeccionBtn;
+        private MaterialSkin.Controls.MaterialFlatButton reporteBtn;
     }
 }

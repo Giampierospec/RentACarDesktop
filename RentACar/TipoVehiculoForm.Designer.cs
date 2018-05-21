@@ -36,6 +36,7 @@
             this.atrásMenuTvItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tipoVhTxt = new System.Windows.Forms.TextBox();
+            this.reporteBtn = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.TVehiculosTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             this.editarVehiculoBtn.AutoSize = true;
             this.editarVehiculoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarVehiculoBtn.Depth = 0;
-            this.editarVehiculoBtn.Location = new System.Drawing.Point(498, 95);
+            this.editarVehiculoBtn.Location = new System.Drawing.Point(444, 94);
             this.editarVehiculoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarVehiculoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarVehiculoBtn.Name = "editarVehiculoBtn";
@@ -76,7 +77,7 @@
             this.insertTVehiculoBtn.AutoSize = true;
             this.insertTVehiculoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertTVehiculoBtn.Depth = 0;
-            this.insertTVehiculoBtn.Location = new System.Drawing.Point(211, 95);
+            this.insertTVehiculoBtn.Location = new System.Drawing.Point(157, 94);
             this.insertTVehiculoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertTVehiculoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertTVehiculoBtn.Name = "insertTVehiculoBtn";
@@ -134,11 +135,28 @@
             this.tipoVhTxt.TabIndex = 13;
             this.tipoVhTxt.TextChanged += new System.EventHandler(this.tipoVhTxt_TextChanged);
             // 
+            // reporteBtn
+            // 
+            this.reporteBtn.AutoSize = true;
+            this.reporteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reporteBtn.Depth = 0;
+            this.reporteBtn.Location = new System.Drawing.Point(670, 94);
+            this.reporteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reporteBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reporteBtn.Name = "reporteBtn";
+            this.reporteBtn.Primary = false;
+            this.reporteBtn.Size = new System.Drawing.Size(87, 36);
+            this.reporteBtn.TabIndex = 23;
+            this.reporteBtn.Text = "Reporte";
+            this.reporteBtn.UseVisualStyleBackColor = true;
+            this.reporteBtn.Click += new System.EventHandler(this.reporteBtn_Click);
+            // 
             // TipoVehiculoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 519);
+            this.Controls.Add(this.reporteBtn);
             this.Controls.Add(this.tipoVhTxt);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.menuStrip1);
@@ -166,5 +184,6 @@
         private System.Windows.Forms.ToolStripMenuItem atrásMenuTvItem;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.TextBox tipoVhTxt;
+        private MaterialSkin.Controls.MaterialFlatButton reporteBtn;
     }
 }

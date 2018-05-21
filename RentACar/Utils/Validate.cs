@@ -15,6 +15,8 @@ namespace RentACar.Utils
     {
         private static Regex emailValidation = new Regex("^[a-z0-9][-a-z0-9._]+@([-a-z0-9]+.)+[a-z]{2,5}$");
         private static Regex numberValidation = new Regex(@"^[0-9.]+$");
+        private static Regex strictNumberValidation = new Regex(@"^[0-9]+$");
+        private static Regex hexadecimalValueValidator = new Regex(@"^\w+$");
         /// <summary>
         /// Genera Un mensaje de error si el control esta vacio
         /// </summary>
@@ -36,6 +38,23 @@ namespace RentACar.Utils
             if (!string.IsNullOrEmpty(validateMsg))
                 finalString = $"Siguientes campos están vacíos \n {validateMsg}";
             return finalString;
+        }
+        /// <summary>
+        /// Busca si es hexadecimal
+        /// </summary>
+        /// <param name="ctrls"></param>
+        /// <returns></returns>
+        public static string IsHexadecimal(params Control[] ctrls)
+        {
+            string msg = string.Empty;
+            foreach (var str in ctrls)
+            {
+                if (!hexadecimalValueValidator.IsMatch(str.Text))
+                    msg += $"{str.Name} no es un hexadecimal\n";
+            }
+            if (!string.IsNullOrEmpty(msg))
+                msg += "Intente denuevo";
+            return msg;
         }
         /// <summary>
         /// Revisa si el email es valido
@@ -66,6 +85,18 @@ namespace RentACar.Utils
                     ctrl.Enabled = false;
                 }
             }
+        }
+        public static string IsStrictlyANumber(params Control[] strs)
+        {
+            string msg = string.Empty;
+            foreach (var str in strs)
+            {
+                if (!strictNumberValidation.IsMatch(str.Text))
+                    msg += $"{str.Name} no es un numero\n";
+            }
+            if (!string.IsNullOrEmpty(msg))
+                msg += "Intente denuevo";
+            return msg;
         }
         /// <summary>
         /// Busca si el texto es un numero

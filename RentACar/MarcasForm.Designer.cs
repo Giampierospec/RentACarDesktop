@@ -37,6 +37,7 @@
             this.atrásMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.marcaTxt = new System.Windows.Forms.TextBox();
+            this.reporteBtn = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.marcaTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.editarMarcaBtn.AutoSize = true;
             this.editarMarcaBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarMarcaBtn.Depth = 0;
-            this.editarMarcaBtn.Location = new System.Drawing.Point(455, 90);
+            this.editarMarcaBtn.Location = new System.Drawing.Point(333, 90);
             this.editarMarcaBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarMarcaBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarMarcaBtn.Name = "editarMarcaBtn";
@@ -77,7 +78,7 @@
             this.insertMarcaBtn.AutoSize = true;
             this.insertMarcaBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertMarcaBtn.Depth = 0;
-            this.insertMarcaBtn.Location = new System.Drawing.Point(168, 90);
+            this.insertMarcaBtn.Location = new System.Drawing.Point(126, 90);
             this.insertMarcaBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertMarcaBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertMarcaBtn.Name = "insertMarcaBtn";
@@ -96,7 +97,7 @@
             this.atrásMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(758, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(823, 28);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,11 +136,28 @@
             this.marcaTxt.TabIndex = 11;
             this.marcaTxt.TextChanged += new System.EventHandler(this.marcaTxt_TextChanged);
             // 
+            // reporteBtn
+            // 
+            this.reporteBtn.AutoSize = true;
+            this.reporteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reporteBtn.Depth = 0;
+            this.reporteBtn.Location = new System.Drawing.Point(609, 90);
+            this.reporteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reporteBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reporteBtn.Name = "reporteBtn";
+            this.reporteBtn.Primary = false;
+            this.reporteBtn.Size = new System.Drawing.Size(87, 36);
+            this.reporteBtn.TabIndex = 25;
+            this.reporteBtn.Text = "Reporte";
+            this.reporteBtn.UseVisualStyleBackColor = true;
+            this.reporteBtn.Click += new System.EventHandler(this.reporteBtn_Click);
+            // 
             // MarcasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 560);
+            this.ClientSize = new System.Drawing.Size(823, 578);
+            this.Controls.Add(this.reporteBtn);
             this.Controls.Add(this.marcaTxt);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.marcaTable);
@@ -169,5 +187,6 @@
         private System.Windows.Forms.ToolStripMenuItem atrásMenuItem;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.TextBox marcaTxt;
+        private MaterialSkin.Controls.MaterialFlatButton reporteBtn;
     }
 }

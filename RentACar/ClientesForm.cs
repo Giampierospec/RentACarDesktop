@@ -30,8 +30,7 @@ namespace RentACar
             var user = _clienteRepo.GetUserById(_userId);
             if(user.Id_Rol != 1)
             {
-                editarClienteBtn.Enabled = false;
-                insertClienteBtn.Enabled = false;
+                Utils.Validate.LockBtns(this);
             }
             clienteTable.DataSource = _clienteRepo.GetAllClientes();
         }
@@ -80,6 +79,12 @@ namespace RentACar
                 Cedula = cedTxt.Text.Trim()
             });
 
+        }
+
+        private void reporteBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ReporteVehiculos(Utils.DataSourcesEnum.Cliente, _userId, clienteTable.DataSource));
         }
     }
 }

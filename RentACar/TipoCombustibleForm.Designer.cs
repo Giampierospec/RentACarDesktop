@@ -37,6 +37,7 @@
             this.insertTcBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tcText = new System.Windows.Forms.TextBox();
+            this.reporteBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TCTable)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +88,7 @@
             this.editarTcBtn.AutoSize = true;
             this.editarTcBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarTcBtn.Depth = 0;
-            this.editarTcBtn.Location = new System.Drawing.Point(473, 97);
+            this.editarTcBtn.Location = new System.Drawing.Point(375, 97);
             this.editarTcBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarTcBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarTcBtn.Name = "editarTcBtn";
@@ -103,7 +104,7 @@
             this.insertTcBtn.AutoSize = true;
             this.insertTcBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertTcBtn.Depth = 0;
-            this.insertTcBtn.Location = new System.Drawing.Point(142, 97);
+            this.insertTcBtn.Location = new System.Drawing.Point(87, 97);
             this.insertTcBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertTcBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertTcBtn.Name = "insertTcBtn";
@@ -135,11 +136,28 @@
             this.tcText.TabIndex = 13;
             this.tcText.TextChanged += new System.EventHandler(this.tcText_TextChanged);
             // 
+            // reporteBtn
+            // 
+            this.reporteBtn.AutoSize = true;
+            this.reporteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reporteBtn.Depth = 0;
+            this.reporteBtn.Location = new System.Drawing.Point(675, 97);
+            this.reporteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reporteBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reporteBtn.Name = "reporteBtn";
+            this.reporteBtn.Primary = false;
+            this.reporteBtn.Size = new System.Drawing.Size(87, 36);
+            this.reporteBtn.TabIndex = 24;
+            this.reporteBtn.Text = "Reporte";
+            this.reporteBtn.UseVisualStyleBackColor = true;
+            this.reporteBtn.Click += new System.EventHandler(this.reporteBtn_Click);
+            // 
             // TipoCombustibleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 599);
+            this.Controls.Add(this.reporteBtn);
             this.Controls.Add(this.tcText);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.TCTable);
@@ -169,5 +187,6 @@
         private MaterialSkin.Controls.MaterialFlatButton insertTcBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.TextBox tcText;
+        private MaterialSkin.Controls.MaterialFlatButton reporteBtn;
     }
 }

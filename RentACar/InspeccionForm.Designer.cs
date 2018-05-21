@@ -39,6 +39,7 @@
             this.clienteTxt = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.reporteBtn = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.inspeccionTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             this.rentarBtn.AutoSize = true;
             this.rentarBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.rentarBtn.Depth = 0;
-            this.rentarBtn.Location = new System.Drawing.Point(522, 105);
+            this.rentarBtn.Location = new System.Drawing.Point(421, 113);
             this.rentarBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.rentarBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.rentarBtn.Name = "rentarBtn";
@@ -79,7 +80,7 @@
             this.editarInsBtn.AutoSize = true;
             this.editarInsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarInsBtn.Depth = 0;
-            this.editarInsBtn.Location = new System.Drawing.Point(221, 105);
+            this.editarInsBtn.Location = new System.Drawing.Point(120, 113);
             this.editarInsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarInsBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarInsBtn.Name = "editarInsBtn";
@@ -158,11 +159,28 @@
             this.materialLabel1.TabIndex = 19;
             this.materialLabel1.Text = "Nombre Cliente";
             // 
+            // reporteBtn
+            // 
+            this.reporteBtn.AutoSize = true;
+            this.reporteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reporteBtn.Depth = 0;
+            this.reporteBtn.Location = new System.Drawing.Point(574, 113);
+            this.reporteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reporteBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reporteBtn.Name = "reporteBtn";
+            this.reporteBtn.Primary = false;
+            this.reporteBtn.Size = new System.Drawing.Size(87, 36);
+            this.reporteBtn.TabIndex = 27;
+            this.reporteBtn.Text = "Reporte";
+            this.reporteBtn.UseVisualStyleBackColor = true;
+            this.reporteBtn.Click += new System.EventHandler(this.reporteBtn_Click);
+            // 
             // InspeccionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 605);
+            this.Controls.Add(this.reporteBtn);
             this.Controls.Add(this.empleadoTxt);
             this.Controls.Add(this.clienteTxt);
             this.Controls.Add(this.materialLabel2);
@@ -196,5 +214,6 @@
         private System.Windows.Forms.TextBox clienteTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialFlatButton reporteBtn;
     }
 }

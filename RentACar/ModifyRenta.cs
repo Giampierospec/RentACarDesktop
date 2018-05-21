@@ -84,8 +84,10 @@ namespace RentACar
                 Utils.Validate.LockBtns(this);
                 Utils.Validate.LockControls(this);
                 var errMsg = Utils.Validate.GenerateErrorMessage(this);
-                var isNumber = Utils.Validate.IsANumber(montoxDiaTxt,cantidadDiasTxt);
-                if(string.IsNullOrEmpty(errMsg) && string.IsNullOrEmpty(isNumber))
+                var isNumber = Utils.Validate.IsANumber(montoxDiaTxt);
+                var isStrictlyANumber = Utils.Validate.IsStrictlyANumber(cantidadDiasTxt);
+                if(string.IsNullOrEmpty(errMsg) && string.IsNullOrEmpty(isNumber)
+                    && string.IsNullOrEmpty(isStrictlyANumber))
                 {
                     _rentaRepo.InsertRenta(new Context.Renta() {
                         Dias = int.Parse(cantidadDiasTxt.Text.Trim()),
@@ -123,7 +125,7 @@ namespace RentACar
                 {
                     Utils.Validate.UnLockControls(this);
                     Utils.Validate.EnableBtns(this);
-                    MessageBox.Show($"{errMsg} \n {isNumber}");
+                    MessageBox.Show($"{errMsg} \n {isNumber} \n {isStrictlyANumber}");
                 }
             }
             catch(Exception ex)

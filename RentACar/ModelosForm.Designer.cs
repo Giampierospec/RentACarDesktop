@@ -39,6 +39,7 @@
             this.modTxt = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.marcaTxt = new System.Windows.Forms.TextBox();
+            this.reporteBtn = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.modeloTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             this.editarModeloBtn.AutoSize = true;
             this.editarModeloBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarModeloBtn.Depth = 0;
-            this.editarModeloBtn.Location = new System.Drawing.Point(473, 92);
+            this.editarModeloBtn.Location = new System.Drawing.Point(429, 92);
             this.editarModeloBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarModeloBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarModeloBtn.Name = "editarModeloBtn";
@@ -79,7 +80,7 @@
             this.insertModeloBtn.AutoSize = true;
             this.insertModeloBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertModeloBtn.Depth = 0;
-            this.insertModeloBtn.Location = new System.Drawing.Point(186, 92);
+            this.insertModeloBtn.Location = new System.Drawing.Point(142, 92);
             this.insertModeloBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertModeloBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertModeloBtn.Name = "insertModeloBtn";
@@ -98,7 +99,7 @@
             this.atrásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(790, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(856, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,7 +123,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(191, 195);
+            this.materialLabel1.Location = new System.Drawing.Point(217, 195);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(75, 24);
@@ -131,7 +132,7 @@
             // 
             // modTxt
             // 
-            this.modTxt.Location = new System.Drawing.Point(272, 197);
+            this.modTxt.Location = new System.Drawing.Point(298, 197);
             this.modTxt.Name = "modTxt";
             this.modTxt.Size = new System.Drawing.Size(128, 22);
             this.modTxt.TabIndex = 14;
@@ -143,7 +144,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(417, 195);
+            this.materialLabel2.Location = new System.Drawing.Point(443, 195);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(63, 24);
@@ -152,17 +153,34 @@
             // 
             // marcaTxt
             // 
-            this.marcaTxt.Location = new System.Drawing.Point(486, 195);
+            this.marcaTxt.Location = new System.Drawing.Point(512, 195);
             this.marcaTxt.Name = "marcaTxt";
             this.marcaTxt.Size = new System.Drawing.Size(128, 22);
             this.marcaTxt.TabIndex = 16;
             this.marcaTxt.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // reporteBtn
+            // 
+            this.reporteBtn.AutoSize = true;
+            this.reporteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reporteBtn.Depth = 0;
+            this.reporteBtn.Location = new System.Drawing.Point(628, 92);
+            this.reporteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reporteBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reporteBtn.Name = "reporteBtn";
+            this.reporteBtn.Primary = false;
+            this.reporteBtn.Size = new System.Drawing.Size(87, 36);
+            this.reporteBtn.TabIndex = 26;
+            this.reporteBtn.Text = "Reporte";
+            this.reporteBtn.UseVisualStyleBackColor = true;
+            this.reporteBtn.Click += new System.EventHandler(this.reporteBtn_Click);
+            // 
             // ModelosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 577);
+            this.ClientSize = new System.Drawing.Size(856, 581);
+            this.Controls.Add(this.reporteBtn);
             this.Controls.Add(this.marcaTxt);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.modTxt);
@@ -196,5 +214,6 @@
         private System.Windows.Forms.TextBox modTxt;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.TextBox marcaTxt;
+        private MaterialSkin.Controls.MaterialFlatButton reporteBtn;
     }
 }

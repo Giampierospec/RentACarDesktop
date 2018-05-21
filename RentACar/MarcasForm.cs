@@ -87,5 +87,11 @@ namespace RentACar
                 Descripcion = marcaTxt.Text.Trim()
             });
         }
+
+        private void reporteBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ReporteVehiculos(Utils.DataSourcesEnum.Marcas, _userId, marcaTable.DataSource));
+        }
     }
 }

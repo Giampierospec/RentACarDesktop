@@ -45,8 +45,7 @@ namespace RentACar
             var user = _userRepo.GetUserById(_userId);
             if (user.Id_Rol == 2)
             {
-                devolverBtn.Enabled = false;
-                editarRenta.Enabled = false;
+                Utils.Validate.LockBtns(this);
             }
         }
 
@@ -93,7 +92,8 @@ namespace RentACar
             else
             {
                 Utils.Validate.LockBtns(this);
-                Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, _vehiculoId, _rentaId, 0, "Editar"));
+                var vehiculoId = _rentaRepo.GetVehiculoId(_rentaId).Value;
+                Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, vehiculoId, _rentaId, 0, "Editar"));
             }
         }
 
@@ -121,6 +121,12 @@ namespace RentACar
                     Nombre = clienteTxt.Text.Trim()
                 }
             });
+        }
+
+        private void reporteBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ReporteVehiculos(Utils.DataSourcesEnum.Renta, _userId, rentaTable.DataSource));
         }
     }
 }

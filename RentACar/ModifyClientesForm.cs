@@ -74,7 +74,9 @@ namespace RentACar
                 var clienteExists = _clientesRepo.UserExistsByCedula(cedTxt.Text.Trim());
                 var cedulaIsValid = Utils.Validate.ValidaCedula(cedTxt.Text.Trim());
                 var isNumber = Utils.Validate.IsANumber(lmCrdTxt);
-                if(string.IsNullOrEmpty(errorMsg) && string.IsNullOrEmpty(emailErrMsg) && string.IsNullOrEmpty(isNumber))
+                var isStrictlyANumber = Utils.Validate.IsStrictlyANumber(nmTarTxt);
+                if(string.IsNullOrEmpty(errorMsg) && string.IsNullOrEmpty(emailErrMsg) && string.IsNullOrEmpty(isNumber)
+                    &&string.IsNullOrEmpty(isStrictlyANumber))
                 {
                     if (clienteExists && _clienteId == 0)
                     {
@@ -116,7 +118,7 @@ namespace RentACar
                 {
                     Utils.Validate.UnLockControls(this);
                     Utils.Validate.EnableBtns(this);
-                    MessageBox.Show($"{errorMsg} \n {emailErrMsg} \n {isNumber}");
+                    MessageBox.Show($"{errorMsg} \n {emailErrMsg} \n {isNumber} \n {isStrictlyANumber}");
                 }
             }
             catch(Exception ex)

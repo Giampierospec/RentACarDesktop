@@ -59,8 +59,32 @@
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AppLocal, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.AnalysisServices.AppLocal.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.AnalysisServices.AppLocal.Tabular, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -240,6 +264,12 @@
     <Compile Include="RentaForm.Designer.cs">
       <DependentUpon>RentaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteVehiculos.Designer.cs">
+      <DependentUpon>ReporteVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repository\ClienteRepo.cs" />
     <Compile Include="Repository\EmpleadosRepo.cs" />
     <Compile Include="Repository\InspeccionRepository.cs" />
@@ -251,6 +281,7 @@
     <Compile Include="Repository\TipoVehiculosRepo.cs" />
     <Compile Include="Repository\UserRepo.cs" />
     <Compile Include="Repository\VehiculosRepo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TipoCombustibleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +294,7 @@
     <Compile Include="TipoVehiculoForm.Designer.cs">
       <DependentUpon>TipoVehiculoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\dataSourcesEnum.cs" />
     <Compile Include="Utils\Returning.cs" />
     <Compile Include="Utils\Validate.cs" />
     <Compile Include="VehiculosForm.cs">
@@ -271,9 +303,11 @@
     <Compile Include="VehiculosForm.Designer.cs">
       <DependentUpon>VehiculosForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="clienteReport.rdlc" />
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="empleadoReport.rdlc" />
     <EmbeddedResource Include="EmpleadosForm.resx">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,12 +320,15 @@
     <EmbeddedResource Include="InspeccionForm.resx">
       <DependentUpon>InspeccionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="inspeccionReport.rdlc" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="marcaReport.rdlc" />
     <EmbeddedResource Include="MarcasForm.resx">
       <DependentUpon>MarcasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="modeloReport.rdlc" />
     <EmbeddedResource Include="ModelosForm.resx">
       <DependentUpon>ModelosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,15 +368,22 @@
     <EmbeddedResource Include="RentaForm.resx">
       <DependentUpon>RentaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RentaReport.rdlc" />
+    <EmbeddedResource Include="ReporteVehiculos.resx">
+      <DependentUpon>ReporteVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TipoCombustibleForm.resx">
       <DependentUpon>TipoCombustibleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="tipoCombustibleReport.rdlc" />
     <EmbeddedResource Include="TipoVehiculoForm.resx">
       <DependentUpon>TipoVehiculoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TipoVehiculoReport.rdlc" />
     <EmbeddedResource Include="VehiculosForm.resx">
       <DependentUpon>VehiculosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="vehiculosReport.rdlc" />
     <EntityDeploy Include="Context\RentCar.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RentCar.Designer.cs</LastGenOutput>
@@ -348,6 +392,16 @@
       <DependentUpon>RentCar.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RentACar.Models.ClienteModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.EmpleadoModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.InspeccionModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.LoginModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.MarcasModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.ModeloModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.RentaModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.TipoCombustibleModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.TipoVehiculoModel.datasource" />
+    <None Include="Properties\DataSources\RentACar.Models.VehiculosModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -385,6 +439,19 @@
       <LastGenOutput>RentCar.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -69,6 +69,8 @@ namespace RentACar.Repository
             _db.SaveChanges();
 
         }
+        public int? GetVehiculoId(int rentaId) =>
+            _db.Rentas.FirstOrDefault(x => x.Id == rentaId)?.Id_Vehiculo;
         /// <summary>
         /// Filtra por renta
         /// </summary>
@@ -103,8 +105,12 @@ namespace RentACar.Repository
         {
             var rent = _db.Rentas.FirstOrDefault(x => x.Id == rt.Id);
             rent.FechaDevolucion = DateTime.Now;
-            var vehiculo = GetVehiculoById(rent.Id_Vehiculo.Value);
-            vehiculo.Id_Estado = 1;
+            rent.Id_Estado = 2;
+            CambiarEstado(new Vehiculo() {
+                Id = rent.Id_Vehiculo.Value,
+                Id_Estado = 1
+            });
+
             _db.SaveChanges();
         }
 

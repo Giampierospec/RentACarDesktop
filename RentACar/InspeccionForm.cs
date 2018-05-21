@@ -34,8 +34,7 @@ namespace RentACar
             var user = _userRepo.GetUserById(_userId);
             if(user.Id_Rol == 2)
             {
-                editarInsBtn.Enabled = false;
-                rentarBtn.Enabled = false;
+                Utils.Validate.LockBtns(this);
             }
             inspeccionTable.DataSource = _insRepo.GetAllInspeccion();
         }
@@ -103,6 +102,12 @@ namespace RentACar
         private void empleadoTxt_TextChanged(object sender, EventArgs e)
         {
             Filter();
+        }
+
+        private void reporteBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ReporteVehiculos(Utils.DataSourcesEnum.Inspeccion, _userId, inspeccionTable.DataSource));
         }
     }
 }

@@ -102,8 +102,9 @@ namespace RentACar
             try
             {
                 var errorMsg = Utils.Validate.GenerateErrorMessage(this);
+                var hexErrorMsg = Utils.Validate.IsANumber(txtNoPlaca, txtNoChasis, txtNoMotor);
                 Utils.Validate.LockBtns(this);
-                if (string.IsNullOrEmpty(errorMsg))
+                if (string.IsNullOrEmpty(errorMsg) && string.IsNullOrEmpty(hexErrorMsg))
                 {
 
                     var vehiculoExists = _vhRepo.VehiculoExists(txtDescripcionVehiculo.Text);
@@ -138,13 +139,14 @@ namespace RentACar
                 else
                 {
                     btnEnviarVehiculo.Enabled = true;
-                    MessageBox.Show(errorMsg);
+                    MessageBox.Show($"{errorMsg}\n {hexErrorMsg}");
                 }
 
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
+                MessageBox.Show("Ocurrio un error al intentar procesar el vehiculo");
             }
         }
 

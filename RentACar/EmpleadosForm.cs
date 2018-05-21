@@ -80,5 +80,11 @@ namespace RentACar
                 Cedula = cedTxt.Text.Trim()
             });
         }
+
+        private void reporteBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ReporteVehiculos(Utils.DataSourcesEnum.Empleado, _userId, EmpleadoTable.DataSource));
+        }
     }
 }

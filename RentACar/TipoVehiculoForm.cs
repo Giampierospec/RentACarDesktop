@@ -33,8 +33,7 @@ namespace RentACar
             var user = _userRepo.GetUserById(_userId);
             if(user.Id_Rol == 2)
             {
-                editarVehiculoBtn.Enabled = false;
-                insertTVehiculoBtn.Enabled = false;
+                Utils.Validate.LockBtns(this);
             }
             TVehiculosTable.DataSource = _tpVehiculoRepo.GetAllTipoVehiculos();
         }
@@ -87,6 +86,12 @@ namespace RentACar
             {
                 Descripcion = tipoVhTxt.Text.Trim()
             });
+        }
+
+        private void reporteBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ReporteVehiculos(Utils.DataSourcesEnum.TipoVehiculos, _userId, TVehiculosTable.DataSource));
         }
     }
 }

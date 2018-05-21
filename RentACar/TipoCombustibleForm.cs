@@ -82,5 +82,11 @@ namespace RentACar
                 Descripcion = tcText.Text.Trim()
             });
         }
+
+        private void reporteBtn_Click(object sender, EventArgs e)
+        {
+            Utils.Validate.LockBtns(this);
+            Utils.Returning.ReturnToPreviousForm(this, new ReporteVehiculos(Utils.DataSourcesEnum.TipoCombustible, _userId, TCTable.DataSource));
+        }
     }
 }
