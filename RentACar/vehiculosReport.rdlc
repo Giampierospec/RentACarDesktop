@@ -22,7 +22,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Marca</Value>
+                              <Value>Id</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -61,14 +61,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Marca">
+                    <Textbox Name="Id">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=CountDistinct(Fields!Marca.Value)</Value>
+                              <Value>=CountDistinct(Fields!Id.Value)</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -78,7 +78,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Marca</rd:DefaultName>
+                      <rd:DefaultName>Id</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -634,7 +634,7 @@
                       <TablixHeader>
                         <Size>1in</Size>
                         <CellContents>
-                          <Textbox Name="Marca1">
+                          <Textbox Name="Marca">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -651,7 +651,7 @@
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>Marca1</rd:DefaultName>
+                            <rd:DefaultName>Marca</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Style>None</Style>
@@ -979,52 +979,20 @@
                                               <TablixMembers>
                                                 <TablixMember />
                                               </TablixMembers>
-                                              <Visibility>
-                                                <Hidden>true</Hidden>
-                                                <ToggleItem>TipoCombustible</ToggleItem>
-                                              </Visibility>
                                             </TablixMember>
                                           </TablixMembers>
-                                          <Visibility>
-                                            <Hidden>true</Hidden>
-                                            <ToggleItem>NoPlaca</ToggleItem>
-                                          </Visibility>
                                         </TablixMember>
                                       </TablixMembers>
-                                      <Visibility>
-                                        <Hidden>true</Hidden>
-                                        <ToggleItem>NoMotor</ToggleItem>
-                                      </Visibility>
                                     </TablixMember>
                                   </TablixMembers>
-                                  <Visibility>
-                                    <Hidden>true</Hidden>
-                                    <ToggleItem>NoChasis</ToggleItem>
-                                  </Visibility>
                                 </TablixMember>
                               </TablixMembers>
-                              <Visibility>
-                                <Hidden>true</Hidden>
-                                <ToggleItem>Modelo</ToggleItem>
-                              </Visibility>
                             </TablixMember>
                           </TablixMembers>
-                          <Visibility>
-                            <Hidden>true</Hidden>
-                            <ToggleItem>Marca1</ToggleItem>
-                          </Visibility>
                         </TablixMember>
                       </TablixMembers>
-                      <Visibility>
-                        <Hidden>true</Hidden>
-                        <ToggleItem>Estado</ToggleItem>
-                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                    <ToggleItem>Descripcion</ToggleItem>
-                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixMember>
@@ -1058,7 +1026,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>5a35c13f-d673-4ec0-b1f6-4ec82ccb1e0d</rd:DataSourceID>
+      <rd:DataSourceID>04538d68-30bd-4653-97ed-ac5632851bba</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1117,5 +1085,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>f3829cf8-77df-4271-9790-455ad725f25f</rd:ReportID>
+  <rd:ReportID>132f87d8-fe50-41f5-a1f6-4f57427a00a7</rd:ReportID>
 </Report>

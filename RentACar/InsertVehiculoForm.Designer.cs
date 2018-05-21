@@ -196,6 +196,7 @@
             // txtNoChasis
             // 
             this.txtNoChasis.Location = new System.Drawing.Point(184, 162);
+            this.txtNoChasis.MaxLength = 7;
             this.txtNoChasis.Name = "txtNoChasis";
             this.txtNoChasis.Size = new System.Drawing.Size(221, 22);
             this.txtNoChasis.TabIndex = 11;
@@ -203,6 +204,7 @@
             // txtNoMotor
             // 
             this.txtNoMotor.Location = new System.Drawing.Point(184, 222);
+            this.txtNoMotor.MaxLength = 7;
             this.txtNoMotor.Name = "txtNoMotor";
             this.txtNoMotor.Size = new System.Drawing.Size(221, 22);
             this.txtNoMotor.TabIndex = 12;
@@ -210,6 +212,7 @@
             // txtNoPlaca
             // 
             this.txtNoPlaca.Location = new System.Drawing.Point(184, 277);
+            this.txtNoPlaca.MaxLength = 7;
             this.txtNoPlaca.Name = "txtNoPlaca";
             this.txtNoPlaca.Size = new System.Drawing.Size(221, 22);
             this.txtNoPlaca.TabIndex = 13;

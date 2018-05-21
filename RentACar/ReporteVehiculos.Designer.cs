@@ -45,7 +45,7 @@
             this.atrasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(655, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1059, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,14 +72,14 @@
             this.reportV.Name = "reportV";
             this.reportV.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.reportV.ServerReport.BearerToken = null;
-            this.reportV.Size = new System.Drawing.Size(546, 308);
+            this.reportV.Size = new System.Drawing.Size(979, 484);
             this.reportV.TabIndex = 1;
             // 
             // ReporteVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 463);
+            this.ClientSize = new System.Drawing.Size(1059, 618);
             this.Controls.Add(this.reportV);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

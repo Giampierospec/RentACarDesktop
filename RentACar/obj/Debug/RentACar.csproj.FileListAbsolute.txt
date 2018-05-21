@@ -120,3 +120,7 @@ C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.ReporteVehiculos.resources
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\bin\Debug\RentACar.exe.manifest
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\bin\Debug\RentACar.application
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.exe.manifest
+C:\Users\giamp\OneDrive\Trabajos de APEC\Desarrollo con Tecnologia Propietaria I\RentACar\RentACar\obj\Debug\RentACar.application
