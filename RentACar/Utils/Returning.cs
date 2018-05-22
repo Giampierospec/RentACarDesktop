@@ -18,7 +18,7 @@ namespace RentACar.Utils
         public static void ReturnToLogin(MaterialForm frm)
         {
             frm.Cursor = Cursors.WaitCursor;
-            Thread.Sleep(2000);
+            Thread.Sleep(500);
             frm.Hide();
             var mainLogin = new LoginForm();
             mainLogin.ShowDialog();
@@ -32,7 +32,7 @@ namespace RentACar.Utils
         public static void ReturnToPreviousForm(MaterialForm frm, MaterialForm FormTo)
         {
             frm.Cursor = Cursors.WaitCursor;
-            Thread.Sleep(2000);
+            Thread.Sleep(500);
             frm.Hide();
             var mainLogin = FormTo;
             mainLogin.ShowDialog();

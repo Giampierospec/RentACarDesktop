@@ -55,7 +55,7 @@
             this.insertVehiculoBtn.AutoSize = true;
             this.insertVehiculoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.insertVehiculoBtn.Depth = 0;
-            this.insertVehiculoBtn.Location = new System.Drawing.Point(152, 116);
+            this.insertVehiculoBtn.Location = new System.Drawing.Point(348, 116);
             this.insertVehiculoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.insertVehiculoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.insertVehiculoBtn.Name = "insertVehiculoBtn";
@@ -71,7 +71,7 @@
             this.editarVehiculoBtn.AutoSize = true;
             this.editarVehiculoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editarVehiculoBtn.Depth = 0;
-            this.editarVehiculoBtn.Location = new System.Drawing.Point(390, 116);
+            this.editarVehiculoBtn.Location = new System.Drawing.Point(586, 116);
             this.editarVehiculoBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editarVehiculoBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editarVehiculoBtn.Name = "editarVehiculoBtn";
@@ -89,11 +89,11 @@
             this.vehiculosTable.AllowUserToOrderColumns = true;
             this.vehiculosTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.vehiculosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vehiculosTable.Location = new System.Drawing.Point(51, 302);
+            this.vehiculosTable.Location = new System.Drawing.Point(112, 302);
             this.vehiculosTable.Name = "vehiculosTable";
             this.vehiculosTable.ReadOnly = true;
             this.vehiculosTable.RowTemplate.Height = 24;
-            this.vehiculosTable.Size = new System.Drawing.Size(879, 230);
+            this.vehiculosTable.Size = new System.Drawing.Size(1205, 230);
             this.vehiculosTable.TabIndex = 2;
             this.vehiculosTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vehiculosTable_CellClick);
             // 
@@ -105,7 +105,7 @@
             this.atrásMenuVhItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(999, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1391, 28);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -129,16 +129,16 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(42, 224);
+            this.materialLabel1.Location = new System.Drawing.Point(79, 224);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(52, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(110, 24);
             this.materialLabel1.TabIndex = 11;
-            this.materialLabel1.Text = "Desc";
+            this.materialLabel1.Text = "Descripcion";
             // 
             // searchDesc
             // 
-            this.searchDesc.Location = new System.Drawing.Point(100, 226);
+            this.searchDesc.Location = new System.Drawing.Point(195, 224);
             this.searchDesc.Name = "searchDesc";
             this.searchDesc.Size = new System.Drawing.Size(100, 22);
             this.searchDesc.TabIndex = 12;
@@ -146,7 +146,7 @@
             // 
             // searchMod
             // 
-            this.searchMod.Location = new System.Drawing.Point(305, 226);
+            this.searchMod.Location = new System.Drawing.Point(405, 226);
             this.searchMod.Name = "searchMod";
             this.searchMod.Size = new System.Drawing.Size(100, 22);
             this.searchMod.TabIndex = 14;
@@ -158,16 +158,16 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(247, 224);
+            this.materialLabel2.Location = new System.Drawing.Point(314, 224);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(49, 24);
+            this.materialLabel2.Size = new System.Drawing.Size(75, 24);
             this.materialLabel2.TabIndex = 13;
-            this.materialLabel2.Text = "Mod";
+            this.materialLabel2.Text = "Modelo";
             // 
             // searchMarca
             // 
-            this.searchMarca.Location = new System.Drawing.Point(505, 228);
+            this.searchMarca.Location = new System.Drawing.Point(588, 228);
             this.searchMarca.Name = "searchMarca";
             this.searchMarca.Size = new System.Drawing.Size(100, 22);
             this.searchMarca.TabIndex = 16;
@@ -179,18 +179,18 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(447, 226);
+            this.materialLabel3.Location = new System.Drawing.Point(519, 226);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(53, 24);
+            this.materialLabel3.Size = new System.Drawing.Size(63, 24);
             this.materialLabel3.TabIndex = 15;
-            this.materialLabel3.Text = "Marc";
+            this.materialLabel3.Text = "Marca";
             // 
             // searchTipoV
             // 
-            this.searchTipoV.Location = new System.Drawing.Point(679, 230);
+            this.searchTipoV.Location = new System.Drawing.Point(836, 228);
             this.searchTipoV.Name = "searchTipoV";
-            this.searchTipoV.Size = new System.Drawing.Size(100, 22);
+            this.searchTipoV.Size = new System.Drawing.Size(129, 22);
             this.searchTipoV.TabIndex = 18;
             this.searchTipoV.TextChanged += new System.EventHandler(this.searchTipoV_TextChanged);
             // 
@@ -200,18 +200,18 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(621, 228);
+            this.materialLabel4.Location = new System.Drawing.Point(704, 226);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(43, 24);
+            this.materialLabel4.Size = new System.Drawing.Size(126, 24);
             this.materialLabel4.TabIndex = 17;
-            this.materialLabel4.Text = "TVe";
+            this.materialLabel4.Text = "Tipo Vehiculo";
             // 
             // searchTipoCo
             // 
-            this.searchTipoCo.Location = new System.Drawing.Point(857, 232);
+            this.searchTipoCo.Location = new System.Drawing.Point(1183, 228);
             this.searchTipoCo.Name = "searchTipoCo";
-            this.searchTipoCo.Size = new System.Drawing.Size(100, 22);
+            this.searchTipoCo.Size = new System.Drawing.Size(128, 22);
             this.searchTipoCo.TabIndex = 20;
             this.searchTipoCo.TextChanged += new System.EventHandler(this.searchTipoCo_TextChanged);
             // 
@@ -221,19 +221,19 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(799, 230);
+            this.materialLabel5.Location = new System.Drawing.Point(986, 226);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(44, 24);
+            this.materialLabel5.Size = new System.Drawing.Size(161, 24);
             this.materialLabel5.TabIndex = 19;
-            this.materialLabel5.Text = "TCo";
+            this.materialLabel5.Text = "Tipo Combustible";
             // 
             // InspeccionBtn
             // 
             this.InspeccionBtn.AutoSize = true;
             this.InspeccionBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.InspeccionBtn.Depth = 0;
-            this.InspeccionBtn.Location = new System.Drawing.Point(603, 116);
+            this.InspeccionBtn.Location = new System.Drawing.Point(799, 116);
             this.InspeccionBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.InspeccionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.InspeccionBtn.Name = "InspeccionBtn";
@@ -249,7 +249,7 @@
             this.reporteBtn.AutoSize = true;
             this.reporteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.reporteBtn.Depth = 0;
-            this.reporteBtn.Location = new System.Drawing.Point(760, 116);
+            this.reporteBtn.Location = new System.Drawing.Point(956, 116);
             this.reporteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.reporteBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.reporteBtn.Name = "reporteBtn";
@@ -264,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 615);
+            this.ClientSize = new System.Drawing.Size(1391, 615);
             this.Controls.Add(this.reporteBtn);
             this.Controls.Add(this.InspeccionBtn);
             this.Controls.Add(this.searchTipoCo);
