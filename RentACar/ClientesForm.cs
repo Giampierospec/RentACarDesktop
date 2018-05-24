@@ -27,12 +27,20 @@ namespace RentACar
 
         private void ClientesForm_Load(object sender, EventArgs e)
         {
-            var user = _clienteRepo.GetUserById(_userId);
-            if(user.Id_Rol != 1)
+            try
             {
-                Utils.Validate.LockBtns(this);
+                var user = _clienteRepo.GetUserById(_userId);
+                if (user.Id_Rol != 1)
+                {
+                    Utils.Validate.LockBtns(this);
+                }
+                clienteTable.DataSource = _clienteRepo.GetAllClientes();
             }
-            clienteTable.DataSource = _clienteRepo.GetAllClientes();
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se pudo cargar los clientes", "Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
+            }
         }
 
         private void atrásToolStripMenuItem_Click(object sender, EventArgs e)

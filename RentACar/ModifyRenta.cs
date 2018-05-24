@@ -130,7 +130,7 @@ namespace RentACar
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex);
+                Utils.LogExceptions.LogToJsonFile(ex);
                 Utils.Validate.UnLockControls(this);
                 Utils.Validate.EnableBtns(this);
                 MessageBox.Show("Hubo un error al rentar");

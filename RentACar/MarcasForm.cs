@@ -35,11 +35,19 @@ namespace RentACar
 
         private void MarcasForm_Load(object sender, EventArgs e)
         {
-            marcaTable.DataSource = _marcaRepo.GetAllMarcas();
-            var user = _userRepo.GetUserById(_userId);
-            if (user.Id_Rol == 2)
+            try
             {
-                Utils.Validate.LockBtns(this);
+                marcaTable.DataSource = _marcaRepo.GetAllMarcas();
+                var user = _userRepo.GetUserById(_userId);
+                if (user.Id_Rol == 2)
+                {
+                    Utils.Validate.LockBtns(this);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se pudo acceder a las marcas", "Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
             }
         }
 

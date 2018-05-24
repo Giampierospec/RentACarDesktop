@@ -145,7 +145,7 @@ namespace RentACar
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex);
+                Utils.LogExceptions.LogToJsonFile(ex);
                 MessageBox.Show("Ocurrio un error al intentar procesar el vehiculo");
             }
         }

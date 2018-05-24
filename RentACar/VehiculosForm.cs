@@ -29,18 +29,27 @@ namespace RentACar
         }
         private void VehiculosForm_Load(object sender, EventArgs e)
         {
-            vehiculosTable.DataSource = _vehRepo.GetAllVehiculos();
-            var user = _userRepo.GetUserById(_userId);
-            if (user != null)
+            try
             {
-                if (user.Id_Rol == 2)
+                vehiculosTable.DataSource = _vehRepo.GetAllVehiculos();
+                var user = _userRepo.GetUserById(_userId);
+                if (user != null)
                 {
-                    insertVehiculoBtn.Enabled = false;
-                    editarVehiculoBtn.Enabled = false;
-                    InspeccionBtn.Enabled = false;
-                    reporteBtn.Enabled = false;
+                    if (user.Id_Rol == 2)
+                    {
+                        insertVehiculoBtn.Enabled = false;
+                        editarVehiculoBtn.Enabled = false;
+                        InspeccionBtn.Enabled = false;
+                        reporteBtn.Enabled = false;
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se pudo visualizar los vehiculos", "Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
+            }
+
         }
 
         private void insertVehiculoBtn_Click(object sender, EventArgs e)

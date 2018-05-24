@@ -31,12 +31,20 @@ namespace RentACar
 
         private void InspeccionForm_Load(object sender, EventArgs e)
         {
-            var user = _userRepo.GetUserById(_userId);
-            if(user.Id_Rol == 2)
+            try
             {
-                Utils.Validate.LockBtns(this);
+                var user = _userRepo.GetUserById(_userId);
+                if (user.Id_Rol == 2)
+                {
+                    Utils.Validate.LockBtns(this);
+                }
+                inspeccionTable.DataSource = _insRepo.GetAllInspeccion();
             }
-            inspeccionTable.DataSource = _insRepo.GetAllInspeccion();
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se pudo acceder a la Inspeccion", "Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
+            }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)

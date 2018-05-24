@@ -124,7 +124,7 @@ namespace RentACar
             catch(Exception ex)
             {
                 MessageBox.Show("No se pudo procesar al Cliente");
-                Console.WriteLine(ex);
+                Utils.LogExceptions.LogToJsonFile(ex);
 
             }
         }

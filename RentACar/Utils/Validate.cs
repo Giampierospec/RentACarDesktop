@@ -200,7 +200,8 @@ namespace RentACar.Utils
         {
             foreach (Control ctrl in ctrls.Controls)
             {
-                if (ctrl.GetType() == typeof(Button) || ctrl.GetType() == typeof(MaterialFlatButton))
+                if (ctrl.GetType() == typeof(Button) || ctrl.GetType() == typeof(MaterialFlatButton)
+                    || ctrl.GetType() == typeof(MaterialRaisedButton))
                 {
                     ctrl.Enabled = false;
                 }
@@ -214,7 +215,8 @@ namespace RentACar.Utils
         {
             foreach (Control ctrl in ctrls.Controls)
             {
-                if (ctrl.GetType() == typeof(Button) || ctrl.GetType() == typeof(MaterialSkin.Controls.MaterialFlatButton))
+                if (ctrl.GetType() == typeof(Button) || ctrl.GetType() == typeof(MaterialFlatButton)
+                    || ctrl.GetType() == typeof(MaterialRaisedButton))
                 {
                     ctrl.Enabled = true;
                 }

@@ -86,7 +86,7 @@ namespace RentACar
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex);
+                Utils.LogExceptions.LogToJsonFile(ex);
                 Utils.Validate.EnableBtns(this);
                 Utils.Validate.UnLockControls(this);
                 MessageBox.Show("Ocurrio un error al inspeccionar");

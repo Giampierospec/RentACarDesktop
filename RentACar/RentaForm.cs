@@ -41,11 +41,19 @@ namespace RentACar
 
         private void RentaForm_Load(object sender, EventArgs e)
         {
-            rentaTable.DataSource = _rentaRepo.GetAllRentas();
-            var user = _userRepo.GetUserById(_userId);
-            if (user.Id_Rol == 2)
+            try
             {
-                Utils.Validate.LockBtns(this);
+                rentaTable.DataSource = _rentaRepo.GetAllRentas();
+                var user = _userRepo.GetUserById(_userId);
+                if (user.Id_Rol == 2)
+                {
+                    Utils.Validate.LockBtns(this);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se pudo conectar a la base de datos de renta", "Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
             }
         }
 
@@ -73,7 +81,7 @@ namespace RentACar
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Utils.LogExceptions.LogToJsonFile(ex);
                 MessageBox.Show("Ocurrio un error al devolver");
             }
         }

@@ -66,15 +66,23 @@ namespace RentACar
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            var user = _userRepo.GetUserById(_id);
-            if(user.Id_Rol == 1)
+            try
             {
-                empleadosBtn.Visible = true;
-                clientesBtn.Visible = true;
+                var user = _userRepo.GetUserById(_id);
+                if (user.Id_Rol == 1)
+                {
+                    empleadosBtn.Visible = true;
+                    clientesBtn.Visible = true;
+                }
+                if (user.Id_Rol != 2)
+                {
+                    inspeccionBtn.Visible = true;
+                }
             }
-            if (user.Id_Rol != 2)
+            catch(Exception ex)
             {
-                inspeccionBtn.Visible = true;
+                MessageBox.Show("No se pudo conectar con la base de datos", "Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
             }
                 
         }

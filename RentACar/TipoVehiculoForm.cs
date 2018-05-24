@@ -30,12 +30,19 @@ namespace RentACar
 
         private void TipoVehiculoForm_Load(object sender, EventArgs e)
         {
-            var user = _userRepo.GetUserById(_userId);
-            if(user.Id_Rol == 2)
+            try
             {
-                Utils.Validate.LockBtns(this);
+                var user = _userRepo.GetUserById(_userId);
+                if (user.Id_Rol == 2)
+                {
+                    Utils.Validate.LockBtns(this);
+                }
+                TVehiculosTable.DataSource = _tpVehiculoRepo.GetAllTipoVehiculos();
+            }catch(Exception ex)
+            {
+                Utils.LogExceptions.LogToJsonFile(ex);
+                MessageBox.Show("Ocurrio un error al ver los tipos de vehiculos", "Error");
             }
-            TVehiculosTable.DataSource = _tpVehiculoRepo.GetAllTipoVehiculos();
         }
 
         private void insertTVehiculoBtn_Click(object sender, EventArgs e)

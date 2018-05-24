@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\giamp\Desktop\Publish\new\</PublishUrl>
+    <PublishUrl>C:\Users\giamp\Desktop\Publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,8 +22,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -308,6 +308,7 @@
       <DependentUpon>TipoVehiculoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\dataSourcesEnum.cs" />
+    <Compile Include="Utils\LogExceptions.cs" />
     <Compile Include="Utils\Returning.cs" />
     <Compile Include="Utils\Validate.cs" />
     <Compile Include="VehiculosForm.cs">

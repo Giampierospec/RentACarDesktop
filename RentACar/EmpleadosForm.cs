@@ -27,12 +27,20 @@ namespace RentACar
 
         private void EmpleadosForm_Load(object sender, EventArgs e)
         {
-            var user = _empRepo.GetUserById(_userId);
-            if(user.Id_Rol != 1)
+            try
             {
-                Utils.Validate.LockBtns(this);
+                var user = _empRepo.GetUserById(_userId);
+                if (user.Id_Rol != 1)
+                {
+                    Utils.Validate.LockBtns(this);
+                }
+                EmpleadoTable.DataSource = _empRepo.GetAllEmpleados();
             }
-            EmpleadoTable.DataSource = _empRepo.GetAllEmpleados();
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se pudo cargar a los empleados","Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
+            }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)

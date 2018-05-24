@@ -38,11 +38,19 @@ namespace RentACar
 
         private void TipoCombustibleForm_Load(object sender, EventArgs e)
         {
-            TCTable.DataSource = _tcRepo.GetAllTipoCombustible();
-            var user = _userRepo.GetUserById(_userId);
-            if(user.Id_Rol== 2)
+            try
             {
-                Utils.Validate.LockBtns(this);
+                TCTable.DataSource = _tcRepo.GetAllTipoCombustible();
+                var user = _userRepo.GetUserById(_userId);
+                if (user.Id_Rol == 2)
+                {
+                    Utils.Validate.LockBtns(this);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error al mostrar los tipos de combustible", "Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
             }
         }
 

@@ -29,12 +29,20 @@ namespace RentACar
 
         private void ModelosForm_Load(object sender, EventArgs e)
         {
-            var user = _userRepo.GetUserById(_userId);
-            if(user.Id_Rol == 2)
+            try
             {
-                Utils.Validate.LockBtns(this);
+                var user = _userRepo.GetUserById(_userId);
+                if (user.Id_Rol == 2)
+                {
+                    Utils.Validate.LockBtns(this);
+                }
+                modeloTable.DataSource = _modeloRepo.GetAllModelos();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("No se pudo mostrar los modelos", "Error");
+                Utils.LogExceptions.LogToJsonFile(ex);
             }
-            modeloTable.DataSource = _modeloRepo.GetAllModelos();
+
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)

@@ -102,7 +102,7 @@ namespace RentACar
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex);
+                Utils.LogExceptions.LogToJsonFile(ex);
                 MessageBox.Show("No se pudo Editar el tipo de vehiculo");
             }
         }
