@@ -22,7 +22,7 @@ namespace RentACar.Utils
             var exList = new List<Exception>();
             path += $@"\{DateTime.Now.ToString("dd-MM-yyyy")}.json";
             if (File.Exists(path))
-                exList = JsonConvert.DeserializeObject<List<Exception>>(path);
+                exList = JsonConvert.DeserializeObject<List<Exception>>(File.ReadAllText(path));
             exList.Add(ex);
             File.WriteAllText(path, JsonConvert.SerializeObject(exList));
         }
