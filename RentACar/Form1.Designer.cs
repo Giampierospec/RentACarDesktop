@@ -39,7 +39,7 @@
             // 
             // userTxt
             // 
-            this.userTxt.Location = new System.Drawing.Point(359, 192);
+            this.userTxt.Location = new System.Drawing.Point(359, 204);
             this.userTxt.Name = "userTxt";
             this.userTxt.Size = new System.Drawing.Size(198, 22);
             this.userTxt.TabIndex = 0;
@@ -50,7 +50,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(248, 190);
+            this.materialLabel1.Location = new System.Drawing.Point(248, 202);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(74, 24);
@@ -59,7 +59,7 @@
             // 
             // passTxt
             // 
-            this.passTxt.Location = new System.Drawing.Point(359, 234);
+            this.passTxt.Location = new System.Drawing.Point(359, 246);
             this.passTxt.Name = "passTxt";
             this.passTxt.PasswordChar = '*';
             this.passTxt.Size = new System.Drawing.Size(198, 22);
@@ -71,7 +71,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(216, 232);
+            this.materialLabel2.Location = new System.Drawing.Point(216, 244);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(105, 24);
@@ -81,7 +81,7 @@
             // btnLogin
             // 
             this.btnLogin.Depth = 0;
-            this.btnLogin.Location = new System.Drawing.Point(359, 289);
+            this.btnLogin.Location = new System.Drawing.Point(359, 301);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Primary = true;
@@ -98,7 +98,7 @@
             this.errLabel.Depth = 0;
             this.errLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.errLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.errLabel.Location = new System.Drawing.Point(359, 136);
+            this.errLabel.Location = new System.Drawing.Point(359, 148);
             this.errLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.errLabel.Name = "errLabel";
             this.errLabel.Size = new System.Drawing.Size(0, 24);
