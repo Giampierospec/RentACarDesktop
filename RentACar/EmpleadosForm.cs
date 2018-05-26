@@ -46,6 +46,7 @@ namespace RentACar
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Utils.Returning.ReturnToLogin(this);
+
         }
 
         private void atrásToolStripMenuItem_Click(object sender, EventArgs e)

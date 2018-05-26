@@ -53,7 +53,9 @@ namespace RentACar
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ocurrio un erro al realizar el log in", "Error");
+                Utils.Validate.EnableBtns(this);
+                Utils.Validate.UnLockControls(this);
+                MessageBox.Show("Ocurrio un error al realizar el log in", "Error");
                 Utils.LogExceptions.LogToJsonFile(ex);
             }
             

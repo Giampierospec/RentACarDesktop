@@ -46,6 +46,7 @@ namespace RentACar
             }
             catch(Exception ex)
             {
+                Utils.Validate.EnableBtns(this);
                 MessageBox.Show("No se pudo acceder a las marcas", "Error");
                 Utils.LogExceptions.LogToJsonFile(ex);
             }

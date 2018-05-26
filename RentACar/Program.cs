@@ -14,9 +14,17 @@ namespace RentACar
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new LoginForm());
+            }
+            catch(Exception ex)
+            {
+                Utils.LogExceptions.LogToJsonFile(ex);
+            }
+
         }
     }
 }
