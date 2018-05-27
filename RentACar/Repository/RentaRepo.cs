@@ -110,6 +110,8 @@ namespace RentACar.Repository
         public void Devolver(Renta rt)
         {
             var rent = _db.Rentas.FirstOrDefault(x => x.Id == rt.Id);
+            var cliente = _db.Clientes.FirstOrDefault(x => x.Id == rent.Id_Cliente);
+            cliente.LimiteCredito += rent.MontoTotalPorDia;
             rent.FechaDevolucion = DateTime.Now;
             rent.Id_Estado = 2;
             CambiarEstado(new Vehiculo() {
