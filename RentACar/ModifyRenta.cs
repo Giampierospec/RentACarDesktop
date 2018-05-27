@@ -21,9 +21,11 @@ namespace RentACar
         private RentaRepo _rentaRepo;
         private int _inspeccionId;
         private InspeccionRepository _inspeccionRepo;
+        private int _clienteId;
+        private int _empleadoId;
         private LoadComboBoxesRepo _loadCombo;
 
-        public ModifyRenta(int userId = 0, int vehiculoId = 0, int rentaId = 0, int inspeccionId = 0,string keyword = "")
+        public ModifyRenta(int userId = 0, int vehiculoId = 0, int rentaId = 0, int clienteId = 0, int empleadoId = 0, int inspeccionId = 0, string keyword = "")
         {
             _userId = userId;
             _vehiculoId = vehiculoId;
@@ -32,6 +34,8 @@ namespace RentACar
             _rentaRepo = new RentaRepo();
             _inspeccionId = inspeccionId;
             _inspeccionRepo = new InspeccionRepository();
+            _clienteId = clienteId;
+            _empleadoId = empleadoId;
             _loadCombo = new LoadComboBoxesRepo();
             InitializeComponent();
         }
@@ -40,15 +44,22 @@ namespace RentACar
         {
             Text = $"{_keyword} Renta";
             enviarRentaBtn.Text = _keyword;
-            if(_rentaId == 0)
+            if (_rentaId == 0)
             {
                 InitializeControls();
+                LockEmpleadoCliente();
             }
             else
             {
                 InitializeControls();
                 SetValues();
             }
+        }
+        private void LockEmpleadoCliente(){
+            empleadoCbx.SelectedValue = _empleadoId;
+            empleadoCbx.Enabled = false;
+            clienteCbx.SelectedValue = _clienteId;
+            clienteCbx.Enabled = false;
         }
         private void InitializeControls()
         {
@@ -81,17 +92,21 @@ namespace RentACar
         {
             try
             {
+                var montoDiario = int.Parse(montoxDiaTxt.Text.Trim());
+                var cantidadDias = int.Parse(cantidadDiasTxt.Text.Trim());
                 Utils.Validate.LockBtns(this);
                 Utils.Validate.LockControls(this);
                 var errMsg = Utils.Validate.GenerateErrorMessage(this);
                 var isNumber = Utils.Validate.IsANumber(montoxDiaTxt);
                 var isStrictlyANumber = Utils.Validate.IsStrictlyANumber(cantidadDiasTxt);
+                var isGreaterThanZero = Utils.Validate.CheckIfNumberIsGreaterThanZero(montoDiario, cantidadDias);
                 if(string.IsNullOrEmpty(errMsg) && string.IsNullOrEmpty(isNumber)
-                    && string.IsNullOrEmpty(isStrictlyANumber))
+                    && string.IsNullOrEmpty(isStrictlyANumber)
+                    && string.IsNullOrEmpty(isGreaterThanZero))
                 {
                     _rentaRepo.InsertRenta(new Context.Renta() {
-                        Dias = int.Parse(cantidadDiasTxt.Text.Trim()),
-                        MontoDiario = int.Parse(montoxDiaTxt.Text.Trim()),
+                        Dias = cantidadDias,
+                        MontoDiario = montoDiario,
                         Comentario = comentartioTxt.Text.Trim(),
                         FechaRenta = fechaRentaDt.Value,
                         Id_Cliente = int.Parse(clienteCbx.SelectedValue.ToString()),
@@ -125,7 +140,7 @@ namespace RentACar
                 {
                     Utils.Validate.UnLockControls(this);
                     Utils.Validate.EnableBtns(this);
-                    MessageBox.Show($"{errMsg} \n {isNumber} \n {isStrictlyANumber}");
+                    MessageBox.Show($"{errMsg} \n {isNumber} \n {isStrictlyANumber} \n {isGreaterThanZero}");
                 }
             }
             catch(Exception ex)

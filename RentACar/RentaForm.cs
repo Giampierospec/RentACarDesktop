@@ -100,8 +100,9 @@ namespace RentACar
             else
             {
                 Utils.Validate.LockBtns(this);
+                var renta = _rentaRepo.GetRenta(_rentaId);
                 var vehiculoId = _rentaRepo.GetVehiculoId(_rentaId).Value;
-                Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, vehiculoId, _rentaId, 0, "Editar"));
+                Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, vehiculoId, _rentaId, 0, renta.Id_Cliente.Value,renta.Id_Empleado.Value,"Editar"));
             }
         }
 

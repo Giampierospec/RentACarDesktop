@@ -18,6 +18,22 @@ namespace RentACar.Utils
         private static Regex strictNumberValidation = new Regex(@"^[0-9]+$");
         private static Regex hexadecimalValueValidator = new Regex(@"^\w+$");
         /// <summary>
+        /// Chequea si el numero es mayor que cero
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public static string CheckIfNumberIsGreaterThanZero(params int[] num)
+        {
+            var msg = string.Empty;
+            foreach (var n in num)
+            {
+                if (n <= 0)
+                    msg += $"El número {n} no es válido intente denuevo\n";
+
+            }
+            return msg;
+        }
+        /// <summary>
         /// Genera Un mensaje de error si el control esta vacio
         /// </summary>
         /// <param name="control"></param>
