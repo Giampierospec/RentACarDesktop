@@ -18,6 +18,20 @@ namespace RentACar.Utils
         private static Regex strictNumberValidation = new Regex(@"^[0-9]+$");
         private static Regex hexadecimalValueValidator = new Regex(@"^\w+$");
         /// <summary>
+        /// Verifica si el usuario tiene dinero suficiente
+        /// </summary>
+        /// <param name="userLimit"></param>
+        /// <param name="montoDiario"></param>
+        /// <param name="montoPorDia"></param>
+        /// <returns></returns>
+        public static string UserHasMoney(decimal userLimit,  int montoDiario, int montoPorDia)
+        {
+            var montoTotal = montoDiario * montoPorDia;
+            if (montoTotal > userLimit)
+                return $"La cantidad {montoTotal} es mayor al limite de credito del usuario que es {userLimit}";
+            return string.Empty;
+        }
+        /// <summary>
         /// Chequea si el numero es mayor que cero
         /// </summary>
         /// <param name="num"></param>

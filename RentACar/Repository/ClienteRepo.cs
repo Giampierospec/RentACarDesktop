@@ -47,12 +47,12 @@ namespace RentACar.Repository
             {
                 var cliente = _db.Clientes.FirstOrDefault(x => x.Id == cl.Id);
                 cliente.Id_Estado = cl.Id_Estado;
-                cliente.Id_User = cl.Id_User;
                 cliente.Cedula = cl.Cedula.Trim();
                 cliente.LimiteCredito = cl.LimiteCredito;
                 cliente.Nombre = cl.Nombre;
                 cliente.NoTarjetaCr = cl.NoTarjetaCr.Trim();
                 cliente.TipoPersona = cl.TipoPersona.Trim();
+                cliente.Usuario.Id = cliente.Id_User.Value;
                 cliente.Usuario.Email = cl.Usuario.Email;
                 cliente.Usuario.Pass = cl.Usuario.Pass;
                 cliente.Usuario.Id_Rol = cl.Usuario.Id_Rol;

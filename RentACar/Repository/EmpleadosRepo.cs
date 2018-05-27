@@ -62,6 +62,7 @@ namespace RentACar.Repository
                 emp.Nombre = em.Nombre;
                 emp.Tanda = em.Tanda;
                 emp.FechaIngreso = em.FechaIngreso;
+                emp.Usuario.Id = emp.Id_User.Value;
                 emp.Usuario.Email = em.Usuario.Email;
                 emp.Usuario.Pass = em.Usuario.Pass;
                 emp.Usuario.Id_Rol = em.Usuario.Id_Rol;

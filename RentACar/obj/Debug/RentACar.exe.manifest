@@ -1139,14 +1139,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RentACar.exe" size="1125848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RentACar.exe" size="1127384">
       <assemblyIdentity name="RentACar" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fgQg//JvLSco2aKxbp0ju3lTj3XyL4eTr/nT9zgATUU=</dsig:DigestValue>
+        <dsig:DigestValue>jPGk6SkAEGRd5ogrgOgj9YpON0B2ojUN+W7mJP9OnAU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

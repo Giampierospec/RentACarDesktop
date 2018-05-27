@@ -53,8 +53,9 @@ namespace RentACar
         }
         private void SetValues()
         {
-            var cliente = _clientesRepo.GetClienteById(_userId);
+            var cliente = _clientesRepo.GetClienteById(_clienteId);
             cedTxt.Text = cliente.Cedula;
+            cedTxt.Enabled = false;
             nombreTxt.Text = cliente.Nombre;
             lmCrdTxt.Text = cliente.LimiteCredito?.ToString();
             nmTarTxt.Text = cliente.NoTarjetaCr;
@@ -73,22 +74,27 @@ namespace RentACar
                 var emailErrMsg = _clientesRepo.GenerateMessageIfUserExists(emailTxt.Text.Trim(),_clienteId);
                 var clienteExists = _clientesRepo.UserExistsByCedula(cedTxt.Text.Trim());
                 var cedulaIsValid = Utils.Validate.ValidaCedula(cedTxt.Text.Trim());
+                var limiteCr = decimal.Parse(lmCrdTxt.Text.Trim());
+                var isGreaterThanZero = Utils.Validate.CheckIfNumberIsGreaterThanZero((int)limiteCr);
                 var isNumber = Utils.Validate.IsANumber(lmCrdTxt);
                 var isStrictlyANumber = Utils.Validate.IsStrictlyANumber(nmTarTxt);
                 if(string.IsNullOrEmpty(errorMsg) && string.IsNullOrEmpty(emailErrMsg) && string.IsNullOrEmpty(isNumber)
-                    &&string.IsNullOrEmpty(isStrictlyANumber))
+                    &&string.IsNullOrEmpty(isStrictlyANumber)
+                    &&string.IsNullOrEmpty(isGreaterThanZero))
                 {
                     if (clienteExists && _clienteId == 0)
                     {
                         Utils.Validate.UnLockControls(this);
                         Utils.Validate.EnableBtns(this);
                         MessageBox.Show("El cliente ya existe intente denuevo");
+                        return;
                     }
                     if (!cedulaIsValid)
                     {
                         Utils.Validate.UnLockControls(this);
                         Utils.Validate.EnableBtns(this);
                         MessageBox.Show("Cedula no valida");
+                        return;
                     }
                     else
                     {
@@ -97,7 +103,7 @@ namespace RentACar
                             Cedula = cedTxt.Text.Trim(),
                             Id_Estado = int.Parse(estadoCbx.SelectedValue.ToString()),
                             Nombre = nombreTxt.Text.Trim().ToUpper(),
-                            LimiteCredito = decimal.Parse(lmCrdTxt.Text.Trim()),
+                            LimiteCredito = limiteCr ,
                             NoTarjetaCr = nmTarTxt.Text.Trim(),
                             TipoPersona = tipoPCbx.Text.Trim(),
                             Id = _clienteId,
@@ -118,7 +124,7 @@ namespace RentACar
                 {
                     Utils.Validate.UnLockControls(this);
                     Utils.Validate.EnableBtns(this);
-                    MessageBox.Show($"{errorMsg} \n {emailErrMsg} \n {isNumber} \n {isStrictlyANumber}");
+                    MessageBox.Show($"{errorMsg} \n {emailErrMsg} \n {isNumber} \n {isStrictlyANumber} \n {isGreaterThanZero}");
                 }
             }
             catch(Exception ex)

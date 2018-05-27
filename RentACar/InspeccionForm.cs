@@ -84,11 +84,9 @@ namespace RentACar
             }
             else
             {
-                var inspeccion = _insRepo.GetInspeccionById(_inspId);
                 
                 var vehiculoId = _insRepo.GetVehiculoId(_inspId).Value;
-
-                Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, vehiculoId, 0, inspeccion.Id_Cliente.Value,inspeccion.Id_Empleado.Value,_inspId,"Crear"));
+                Utils.Returning.ReturnToPreviousForm(this, new ModifyRenta(_userId, vehiculoId, 0,_inspId,"Crear"));
             }
         }
         private void Filter()

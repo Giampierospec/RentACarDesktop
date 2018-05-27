@@ -49,11 +49,17 @@ namespace RentACar.Repository
         {
             if(rt.Id== 0)
             {
+                var cliente = _db.Clientes.FirstOrDefault(x => x.Id == rt.Id_Cliente);
+                cliente.LimiteCredito -= rt.MontoDiario * rt.Dias;
+                rt.Cliente = cliente;
                 _db.Rentas.Add(rt);
             }
             else
             {
                 var rent = _db.Rentas.FirstOrDefault(x => x.Id == rt.Id);
+                var cliente = _db.Clientes.FirstOrDefault(x => x.Id == rt.Id_Cliente);
+                cliente.LimiteCredito -= rt.MontoDiario * rt.Dias;
+                rt.Cliente = cliente;
                 rent.FechaRenta = rt.FechaRenta;
                 rent.Id_Cliente = rt.Id_Cliente;
                 rent.Id_Empleado = rt.Id_Empleado;

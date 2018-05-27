@@ -55,6 +55,7 @@ namespace RentACar
         {
             var empleado = _empleadoRepo.GetEmpleadoById(_empleadoId);
             cedTxt.Text = empleado.Cedula;
+            cedTxt.Enabled = false;
             nombreTxt.Text = empleado.Nombre;
             emailTxt.Text = empleado.Usuario.Email;
             passTxt.Text = empleado.Usuario.Pass;
@@ -83,12 +84,14 @@ namespace RentACar
                         Utils.Validate.UnLockControls(this);
                         Utils.Validate.EnableBtns(this);
                         MessageBox.Show("El empleado ya existe intente denuevo");
+                        return;
                     }
                     if (!cedulaIsValid)
                     {
                         Utils.Validate.UnLockControls(this);
                         Utils.Validate.EnableBtns(this);
                         MessageBox.Show("Cedula invalida intente denuevo");
+                        return;
                     }
                     else
                     {
