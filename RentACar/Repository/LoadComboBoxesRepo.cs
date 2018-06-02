@@ -16,7 +16,9 @@ namespace RentACar.Repository
             _db = new RentCarContext();
         }
 
-        public List<Estado> GetEstado() => _db.Estadoes.ToList();
+        public List<Estado> GetEstado() => _db.Estadoes
+            .Where(x => x.Id <= 2)
+            .ToList();
         public List<Marca> GetMarcas() => _db.Marcas.Where(x => x.Id_Estado == 1).ToList();
 
         public List<TipoCombustible> GetTipoCombustible() => _db.TipoCombustibles.Where(x => x.Id_Estado == 1).ToList();
