@@ -96,8 +96,9 @@ namespace RentACar
                     MessageBox.Show(errorMessage);
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Utils.LogExceptions.LogToJsonFile(ex);
                 MessageBox.Show("No se pudo procesar la Marca");
             }
         }
